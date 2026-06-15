@@ -2,7 +2,6 @@
 __pycache__/
 *.pyc
 *.pyo
-reports/*.md
-!reports/.gitkeep
+!reports/*.md
 memory/*.md
 !memory/last-session.md
