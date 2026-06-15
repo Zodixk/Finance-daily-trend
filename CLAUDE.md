@@ -16,6 +16,18 @@ GOOG, AMZN, AVGO, NVDA, AMD, AAPL, ASML, CSCO, META, MSFT, QCOM, TSM
 - `ADANOS_API_KEY` — Adanos Finance (Reddit/X/Polymarket sentiment)
 - `GITHUB_TOKEN` — GitHub token for pushing memory at end of session
 
+All keys are stored in `.env` (repo root, gitignored). The scripts auto-load `.env` at startup.
+
+### ⚠️ Network Policy (Claude Code on the Web)
+
+The sandbox may block external API hosts. If you see `"Host not in allowlist"` errors, add these to your environment's egress whitelist:
+
+- `financialmodelingprep.com` — FMP API (quotes, news, earnings, macro)
+- `api.adanos.org` — Adanos sentiment API
+- `query1.finance.yahoo.com`, `query2.finance.yahoo.com` — yfinance fallback
+
+**Fallback chain:** FMP → yfinance → web search (WebSearch tool). Skills always degrade gracefully.
+
 ## User-Aware Framing Rules
 
 Apply these rules throughout the entire session, including on-demand questions:

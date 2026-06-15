@@ -1,29 +1,45 @@
 #!/usr/bin/env python3
 """
 Daily Finance Briefing — Alessandro's Portfolio
-Financial Modeling Prep API | ~8 API calls per run
+Primary: Financial Modeling Prep API (~8 calls/run)
+Fallback: yfinance (if FMP unreachable or returns 4xx)
+Env: loaded from .env in repo root if present
 """
 
 import os
 import sys
 import time
+import json
 import requests
 from datetime import date, datetime, timedelta
+from pathlib import Path
+
+# ── Load .env from repo root ──────────────────────────────────────────────────
+_env_path = Path(__file__).parent.parent / ".env"
+if _env_path.exists():
+    for line in _env_path.read_text().splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip())
 
 FMP_API_KEY = os.getenv("FMP_API_KEY")
-if not FMP_API_KEY:
-    sys.exit("ERROR: FMP_API_KEY environment variable not set.")
 
 BASE_V3 = "https://financialmodelingprep.com/api/v3"
-BASE_STABLE = "https://financialmodelingprep.com/stable"
-
 SESSION = requests.Session()
 
 PIE = ["GOOG", "AMZN", "AVGO", "NVDA", "AMD", "AAPL", "ASML", "CSCO", "META", "MSFT", "QCOM", "TSM"]
 ETF = "FTDL.DE"
 
+_FMP_OK = True  # set False on first network block
+
+
+# ── FMP helpers ───────────────────────────────────────────────────────────────
 
 def fmp(url, params=None):
+    global _FMP_OK
+    if not _FMP_OK or not FMP_API_KEY:
+        return None
     time.sleep(0.35)
     p = {"apikey": FMP_API_KEY, **(params or {})}
     try:
@@ -31,12 +47,69 @@ def fmp(url, params=None):
         if r.status_code == 200:
             data = r.json()
             return data if data else None
+        if r.status_code in (403, 401):
+            body = r.text[:200]
+            if "allowlist" in body.lower() or "not in allowlist" in body.lower():
+                print(f"WARN: FMP blocked by network policy ({url}). Switching to yfinance fallback.", file=sys.stderr)
+                _FMP_OK = False
+                return None
         print(f"WARN: {url} → HTTP {r.status_code}", file=sys.stderr)
         return None
     except Exception as e:
         print(f"WARN: {url} failed: {e}", file=sys.stderr)
         return None
 
+
+# ── yfinance fallback ─────────────────────────────────────────────────────────
+
+def _yf_quotes(tickers):
+    """Return dict {symbol: {price, changesPercentage, yearHigh, yearLow}} via yfinance."""
+    try:
+        import yfinance as yf
+        results = {}
+        for t in tickers:
+            try:
+                tk = yf.Ticker(t)
+                hist = tk.history(period="5d", auto_adjust=True)
+                if hist.empty:
+                    continue
+                p = float(hist["Close"].iloc[-1])
+                prev = float(hist["Close"].iloc[-2]) if len(hist) >= 2 else p
+                chg = ((p - prev) / prev) * 100 if prev else 0.0
+                info = tk.fast_info
+                hi = float(getattr(info, "year_high", 0) or 0)
+                lo = float(getattr(info, "year_low", 0) or 0)
+                results[t] = {"price": p, "changesPercentage": chg, "yearHigh": hi, "yearLow": lo}
+            except Exception as e:
+                print(f"WARN: yfinance {t}: {e}", file=sys.stderr)
+        return results
+    except ImportError:
+        print("WARN: yfinance not installed. Run: pip install yfinance", file=sys.stderr)
+        return {}
+
+
+def _yf_index():
+    """Return {^VIX, ^GSPC, ^IXIC} via yfinance."""
+    try:
+        import yfinance as yf
+        results = {}
+        for sym, key in [("^VIX", "^VIX"), ("^GSPC", "^GSPC"), ("^IXIC", "^IXIC")]:
+            try:
+                hist = yf.Ticker(sym).history(period="5d")
+                if hist.empty:
+                    continue
+                p = float(hist["Close"].iloc[-1])
+                prev = float(hist["Close"].iloc[-2]) if len(hist) >= 2 else p
+                chg = ((p - prev) / prev) * 100 if prev else 0.0
+                results[key] = {"price": p, "changesPercentage": chg}
+            except Exception as e:
+                print(f"WARN: yfinance {sym}: {e}", file=sys.stderr)
+        return results
+    except ImportError:
+        return {}
+
+
+# ── Data fetchers (FMP first, yfinance fallback) ───────────────────────────────
 
 def batch_quotes(tickers):
     results = {}
@@ -46,18 +119,24 @@ def batch_quotes(tickers):
         if data:
             for q in data:
                 results[q["symbol"]] = q
+    if len(results) < len(tickers):
+        missing = [t for t in tickers if t not in results]
+        print(f"INFO: FMP missing {missing}, trying yfinance...", file=sys.stderr)
+        yf_data = _yf_quotes(missing)
+        results.update(yf_data)
     return results
 
 
 def index_quotes():
     data = fmp(f"{BASE_V3}/quote/%5EVIX,%5EGSPC,%5EIXIC")
     if not data:
-        # fallback via proxies
         data = fmp(f"{BASE_V3}/quote/SPY,QQQ")
     results = {}
     if data:
         for q in data:
             results[q["symbol"]] = q
+    if not results:
+        results = _yf_index()
     return results
 
 
@@ -77,6 +156,8 @@ def earnings_calendar():
     return data or []
 
 
+# ── Formatting ────────────────────────────────────────────────────────────────
+
 def pct(val):
     if val is None:
         return "N/A"
@@ -91,22 +172,34 @@ def price_str(val):
     return f"{val:.2f}"
 
 
+# ── Main ──────────────────────────────────────────────────────────────────────
+
 def main():
+    if not FMP_API_KEY:
+        print("WARN: FMP_API_KEY not set — running in yfinance-only mode.", file=sys.stderr)
+
     today_str = date.today().strftime("%d %B %Y")
     today_file = date.today().isoformat()
 
     print("Fetching market data...", file=sys.stderr)
 
-    pie_q = batch_quotes(PIE)                   # 3 API calls
-    etf_data = fmp(f"{BASE_V3}/quote/{ETF}")    # 1 API call
+    pie_q = batch_quotes(PIE)
+    etf_data = fmp(f"{BASE_V3}/quote/{ETF}")
     etf_q = etf_data[0] if etf_data else None
-    idx_q = index_quotes()                       # 1 API call
-    news = recent_news(PIE[:6]) + recent_news(PIE[6:])  # 2 API calls
-    earnings = earnings_calendar()               # 1 API call
-    # Total: ~8 calls
+    if etf_q is None:
+        yf_etf = _yf_quotes([ETF])
+        etf_q = yf_etf.get(ETF)
+    idx_q = index_quotes()
+    news = recent_news(PIE[:6]) + recent_news(PIE[6:])
+    earnings = earnings_calendar()
+
+    used_fallback = not _FMP_OK or not FMP_API_KEY
+    source_note = "yfinance (FMP network-blocked)" if used_fallback else "Financial Modeling Prep"
 
     lines = []
     lines.append(f"# Briefing del {today_str} — Buongiorno Alessandro\n")
+    if used_fallback:
+        lines.append("> ⚠️ **FMP API bloccato dalla network policy** — prezzi da yfinance (meno precisi).\n")
 
     # ── Section 1: Market ──────────────────────────────────────────────────
     lines.append("## 1. Market Overview\n")
@@ -133,27 +226,37 @@ def main():
         lines.append("- **NASDAQ:** ⚠️ unavailable")
 
     if etf_q:
-        lines.append(f"- **FTDL (ETF core):** €{price_str(etf_q.get('price'))} {pct(etf_q.get('changesPercentage'))}")
+        price_key = "price" if "price" in etf_q else "price"
+        chg_key = "changesPercentage"
+        lines.append(f"- **FTDL (ETF core):** €{price_str(etf_q.get(price_key))} {pct(etf_q.get(chg_key))}")
     else:
-        lines.append("- **FTDL (ETF core):** ⚠️ unavailable — check XETRA manually")
+        lines.append("- **FTDL (ETF core):** ⚠️ unavailable — verifica manualmente su XETRA/Trader 212")
 
     lines.append("")
 
     # ── Section 2: PIE AI Quotes ───────────────────────────────────────────
     lines.append("## 2. PIE AI — Quotes\n")
-    lines.append("| Ticker | Price | Change % | 52w High | 52w Low |")
-    lines.append("|--------|-------|----------|----------|---------|")
+    lines.append("| Ticker | Price | Change % | 52w High | 52w Low | Flag |")
+    lines.append("|--------|-------|----------|----------|---------|------|")
 
     for ticker in PIE:
         q = pie_q.get(ticker)
         if q:
-            p = price_str(q.get("price"))
-            chg = pct(q.get("changesPercentage"))
+            p_val = q.get("price")
+            chg_val = q.get("changesPercentage")
+            p = price_str(p_val)
+            chg = pct(chg_val)
             hi = price_str(q.get("yearHigh"))
             lo = price_str(q.get("yearLow"))
-            lines.append(f"| **{ticker}** | ${p} | {chg} | ${hi} | ${lo} |")
+            flag = ""
+            if chg_val is not None:
+                if chg_val <= -5:
+                    flag = "⚠️ NEAR STOP"
+                elif chg_val >= 10:
+                    flag = "📈 LIMIT REVIEW"
+            lines.append(f"| **{ticker}** | ${p} | {chg} | ${hi} | ${lo} | {flag} |")
         else:
-            lines.append(f"| **{ticker}** | ⚠️ N/A | — | — | — |")
+            lines.append(f"| **{ticker}** | ⚠️ N/A | — | — | — | — |")
 
     lines.append("")
 
@@ -179,7 +282,7 @@ def main():
             pub = (item.get("publishedDate") or "")[:16]
             lines.append(f"- **[{tks}]** {title}  \n  *{site} · {pub} UTC*")
     else:
-        lines.append("- ⚠️ No news found in the last 24h")
+        lines.append("- ⚠️ No news found in the last 24h (FMP news endpoint unavailable)")
 
     lines.append("")
 
@@ -191,7 +294,7 @@ def main():
     other_earnings = [e for e in earnings if e.get("symbol") not in pie_set]
 
     if pie_earnings:
-        lines.append("**PIE AI reporting:**")
+        lines.append("**⚠️ PIE AI reporting:**")
         for e in pie_earnings:
             eps_est = e.get("epsEstimated")
             rev_est = e.get("revenueEstimated")
@@ -200,7 +303,7 @@ def main():
             extras = " · ".join(filter(None, [eps_str, rev_str]))
             lines.append(f"- **{e['symbol']}** — {e.get('date', 'TBD')} ({e.get('time', '')}){f' · {extras}' if extras else ''}")
     else:
-        lines.append("- No PIE AI stocks reporting this week.")
+        lines.append("- ✅ No PIE AI stocks reporting this week.")
 
     if other_earnings:
         lines.append("\n**Other notable reports:**")
@@ -209,12 +312,11 @@ def main():
 
     lines.append("")
     lines.append("---")
-    lines.append(f"*Source: Financial Modeling Prep · Generated {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC*")
+    lines.append(f"*Source: {source_note} · Generated {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC*")
     lines.append("\nHai domande su qualcosa di specifico di oggi?")
 
     output = "\n".join(lines)
 
-    # Save to reports/
     os.makedirs("reports", exist_ok=True)
     out_path = f"reports/briefing-{today_file}.md"
     with open(out_path, "w", encoding="utf-8") as f:
