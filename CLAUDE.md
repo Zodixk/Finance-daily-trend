@@ -15,6 +15,8 @@ GOOG, AMZN, AVGO, NVDA, AMD, AAPL, ASML, CSCO, META, MSFT, QCOM, TSM
 - `FMP_API_KEY` — Financial Modeling Prep (quotes, earnings, macro)
 - `ADANOS_API_KEY` — Adanos Finance (Reddit/X/Polymarket sentiment)
 - `GITHUB_TOKEN` — GitHub token for pushing memory at end of session
+- `TELEGRAM_BOT_TOKEN` — Telegram bot token for daily notification
+- `TELEGRAM_CHAT_ID` — Telegram chat ID (your personal chat with the bot)
 
 All keys are stored in `.env` (repo root, gitignored). The scripts auto-load `.env` at startup.
 
@@ -271,6 +273,18 @@ Save a single markdown report to `reports/briefing-YYYY-MM-DD.md`.
 9. **Insight of the Day** — one concrete, data-backed observation for Alessandro
 
 **Always end with:** "Hai domande su qualcosa di specifico di oggi?"
+
+### Step 9b — Telegram Notification (after saving report)
+
+Run after the report is saved:
+```bash
+python scripts/telegram_notify.py
+```
+
+This sends a concise summary to your Telegram bot with postura, VIX, S&P 500, NASDAQ, composite confidence, and insight of the day.
+
+If `TELEGRAM_CHAT_ID` is `INSERISCI_QUI` or missing → skip silently and note ⚠️ in output.
+If `api.telegram.org` is not in the network whitelist → skip and note ⚠️.
 
 ### Step 9 — Write Memory (always run last)
 
