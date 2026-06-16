@@ -273,6 +273,7 @@ Save a single markdown report to `reports/briefing-YYYY-MM-DD.md`.
 8. **What to do** — ALLOW / RESTRICT / CASH-PRIORITY with plain-English reasoning. Confidence %.
 9. **Watchlist** — 3–5 stocks/assets/commodities to watch TODAY with key level and reason. Always include gold, oil, and 2–3 specific PIE AI tickers.
 10. **Idea of the day** — one concrete, data-backed observation. One memorable sentence.
+11. **Glossary** — define every technical term used in today's report. One plain-English sentence per term. Always include: VIX, 52w High/Low, breadth, dot plot, FOMC, sector rotation, stop loss, bullish/bearish, yield, and any other jargon that appeared today.
 
 **Always end with:** "Any questions about something specific today?"
 
