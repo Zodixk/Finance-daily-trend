@@ -34,7 +34,7 @@ The sandbox may block external API hosts. If you see `"Host not in allowlist"` e
 
 Apply these rules throughout the entire session, including on-demand questions:
 
-1. **Language:** explain signals in plain language. Alessandro is a beginner — no unexplained jargon.
+1. **Language:** always write in English. Explain signals in plain language. Alessandro is a beginner — no unexplained jargon.
 2. **Currency:** Alessandro is EUR-based. Note EUR/USD when converting USD figures.
 3. **Position size:** never recommend a position >10% of portfolio. Always include a stop level (7-8%).
 4. **Portfolio relevance:** when any signal fires, immediately flag which PIE AI tickers are directly affected.
@@ -262,19 +262,19 @@ Apply automatic caps (see Confidence Scoring section).
 
 Save a single markdown report to `reports/briefing-YYYY-MM-DD.md`.
 
-**Report structure (in plain Italian, beginner-friendly — no unexplained jargon):**
-1. **Cosa è cambiato da ieri** — confronto con memoria: regime, breadth, postura. Max 3 righe.
-2. **Mercato oggi** — VIX, VWCE, NASDAQ. Una frase di interpretazione in italiano semplice.
-3. **Il tuo portafoglio (PIE AI)** — tabella: prezzo, cambio%, 52w high/low. Flag vicino allo stop o al limite.
-4. **Notizie di oggi** — top 3–5 notizie reali da WebSearch. Una riga per notizia + "cosa significa per te".
-5. **Sentiment social** — Reddit/X/Polymarket per i ticker principali (se disponibile).
-6. **Scadenze importanti** — FOMC, CPI, NFP, earnings. Solo le cose che contano questa settimana.
-7. **Settore & temi** — rotazione tech: sì o no? Top 2 temi. Una frase ognuno.
-8. **Cosa fare** — ALLOW / RESTRICT / CASH-PRIORITY con spiegazione in italiano semplice. Confidence %.
-9. **Watchlist del giorno** — 3–5 azioni/asset/commodity da guardare OGGI con livello e motivo. Include sempre oro, petrolio, e 2–3 titoli PIE AI specifici.
-10. **L'idea del giorno** — una osservazione concreta e data-backed. Una frase sola, memorabile.
+**Report structure (in plain English, beginner-friendly — no unexplained jargon):**
+1. **What changed since yesterday** — compare with memory: regime, breadth, posture. Max 3 lines.
+2. **Market today** — VIX, VWCE, NASDAQ. One plain-English sentence of interpretation.
+3. **Your portfolio (PIE AI)** — table: price, change%, 52w high/low. Flag anything near stop or limit.
+4. **Today's news** — top 3–5 real news items from WebSearch. One line each + "what it means for you".
+5. **Social sentiment** — Reddit/X/Polymarket scores per ticker (if available).
+6. **Key dates this week** — FOMC, CPI, NFP, earnings. Only the things that matter this week.
+7. **Sector & themes** — is tech rotating? Top 2 themes. One sentence each.
+8. **What to do** — ALLOW / RESTRICT / CASH-PRIORITY with plain-English reasoning. Confidence %.
+9. **Watchlist** — 3–5 stocks/assets/commodities to watch TODAY with key level and reason. Always include gold, oil, and 2–3 specific PIE AI tickers.
+10. **Idea of the day** — one concrete, data-backed observation. One memorable sentence.
 
-**Always end with:** "Hai domande su qualcosa di specifico di oggi?"
+**Always end with:** "Any questions about something specific today?"
 
 ### Step 9b — Telegram Notification (after saving report)
 
