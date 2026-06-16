@@ -41,6 +41,7 @@ Apply these rules throughout the entire session, including on-demand questions:
 5. **Tech bias:** PIE AI is concentrated in tech/AI/semiconductors. Flag when sector rotation moves against tech.
 6. **VWCE:** is the long-term core — never flag it as a sell unless there is an extreme, data-backed macro event.
 7. **Tone:** concrete and actionable. No generic advice. No invented numbers.
+8. **52w High context:** whenever a ticker is near or at its 52w high, always search for the exact date that high was set and whether it is also an all-time high. Distinguish clearly: a 52w high set yesterday is very different from one set 11 months ago. State it explicitly (e.g. "52w high of $558 set yesterday Jun 15 — also all-time high").
 
 ## Confidence Scoring
 
