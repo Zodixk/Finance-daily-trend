@@ -5,7 +5,7 @@
 **Investor profile:** Growth investor, beginner, EUR-based, broker Trader 212.
 **Risk:** max 7-8% stop loss, max 10% per position, max drawdown 15%.
 
-**ETF Core:** FTDL.DE — All-World Accumulating, XETRA (long-term anchor — never recommend selling entirely)
+**ETF Core:** VWCE (VWCE.DE su XETRA) — Vanguard FTSE All-World Accumulating, EUR-hedged. Long-term anchor — never recommend selling entirely.
 
 **PIE AI (Trader 212):**
 GOOG, AMZN, AVGO, NVDA, AMD, AAPL, ASML, CSCO, META, MSFT, QCOM, TSM
@@ -39,7 +39,7 @@ Apply these rules throughout the entire session, including on-demand questions:
 3. **Position size:** never recommend a position >10% of portfolio. Always include a stop level (7-8%).
 4. **Portfolio relevance:** when any signal fires, immediately flag which PIE AI tickers are directly affected.
 5. **Tech bias:** PIE AI is concentrated in tech/AI/semiconductors. Flag when sector rotation moves against tech.
-6. **FTDL.DE:** is the long-term core — never flag it as a sell unless there is an extreme, data-backed macro event.
+6. **VWCE:** is the long-term core — never flag it as a sell unless there is an extreme, data-backed macro event.
 7. **Tone:** concrete and actionable. No generic advice. No invented numbers.
 
 ## Confidence Scoring
@@ -226,8 +226,9 @@ If Steps 1 and 2 contradict (e.g., breadth is healthy but regime is bear), flag 
 
 ### Step 3 — Portfolio Quotes
 7. `pip install -q requests`
-8. `python scripts/fmp_briefing.py` → quotes for FTDL.DE + 12 PIE tickers
+8. `python scripts/fmp_briefing.py` → quotes for VWCE.DE + 12 PIE tickers
 
+If FMP is blocked, use WebSearch to find prices for each ticker. Always search for VWCE.DE price.
 For each PIE AI ticker, flag if it is down >5% (approaching stop) or up >10% (approaching position size limit review).
 
 ### Step 4 — News & Sentiment
@@ -261,16 +262,17 @@ Apply automatic caps (see Confidence Scoring section).
 
 Save a single markdown report to `reports/briefing-YYYY-MM-DD.md`.
 
-**Report structure:**
-1. **Memory Delta** — comparison with last session (regime shift? breadth shift? posture change?)
-2. **Market Overview** — risk-on/off, VIX, breadth score, regime
-3. **PIE AI Quotes** — table: price, change%, 52w high/low; flag any ticker near stop or limit
-4. **Morning News** — top 5 market-moving events with PIE AI impact rating
-5. **Social Sentiment** — Reddit/X/Polymarket scores for top PIE tickers
-6. **Calendar** — macro events + earnings this week, flag PIE AI tickers
-7. **Sector & Themes** — rotation signal, top 2 themes; flag if tech is losing
-8. **Exposure Decision** — allow / restrict / cash-priority with reasoning and **composite confidence %**
-9. **Insight of the Day** — one concrete, data-backed observation for Alessandro
+**Report structure (in plain Italian, beginner-friendly — no unexplained jargon):**
+1. **Cosa è cambiato da ieri** — confronto con memoria: regime, breadth, postura. Max 3 righe.
+2. **Mercato oggi** — VIX, VWCE, NASDAQ. Una frase di interpretazione in italiano semplice.
+3. **Il tuo portafoglio (PIE AI)** — tabella: prezzo, cambio%, 52w high/low. Flag vicino allo stop o al limite.
+4. **Notizie di oggi** — top 3–5 notizie reali da WebSearch. Una riga per notizia + "cosa significa per te".
+5. **Sentiment social** — Reddit/X/Polymarket per i ticker principali (se disponibile).
+6. **Scadenze importanti** — FOMC, CPI, NFP, earnings. Solo le cose che contano questa settimana.
+7. **Settore & temi** — rotazione tech: sì o no? Top 2 temi. Una frase ognuno.
+8. **Cosa fare** — ALLOW / RESTRICT / CASH-PRIORITY con spiegazione in italiano semplice. Confidence %.
+9. **Watchlist del giorno** — 3–5 azioni/asset/commodity da guardare OGGI con livello e motivo. Include sempre oro, petrolio, e 2–3 titoli PIE AI specifici.
+10. **L'idea del giorno** — una osservazione concreta e data-backed. Una frase sola, memorabile.
 
 **Always end with:** "Hai domande su qualcosa di specifico di oggi?"
 

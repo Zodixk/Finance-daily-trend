@@ -29,7 +29,7 @@ BASE_V3 = "https://financialmodelingprep.com/api/v3"
 SESSION = requests.Session()
 
 PIE = ["GOOG", "AMZN", "AVGO", "NVDA", "AMD", "AAPL", "ASML", "CSCO", "META", "MSFT", "QCOM", "TSM"]
-ETF = "FTDL.DE"
+ETF = "VWCE.DE"
 
 _FMP_OK = True  # set False on first network block
 
