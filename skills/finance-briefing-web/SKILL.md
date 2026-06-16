@@ -200,9 +200,42 @@ Un'osservazione concreta e basata sui dati per Alessandro.
 
 ---
 
-### Passo 9 — Cosa fare (OBBLIGATORIO)
+### Passo 9 — Aggiorna memoria
 
-Questa sezione non può essere omessa. Deve essere concreta e specifica.
+Genera il contenuto aggiornato del file `last-session.md` da salvare nella Project Knowledge:
+
+```
+# Session Memory — [DATA OGGI]
+
+## Regime
+- Market environment: [risk-on/risk-off]
+- VIX: [valore]
+- Breadth score: [0-100]
+- Uptrend participation: [%]
+- Macro regime: [bull/bear/sideways]
+- Distribution days: [count]
+
+## Segnali
+- Sentiment bias: [bullish/bearish/neutral]
+- Rotazione settoriale: [tech leading/lagging]
+- Top temi: [tema1, tema2]
+
+## Decisione esposizione
+- Postura: [ALLOW/RESTRICT/CASH-PRIORITY]
+- Confidenza composita: [%]
+
+## In sospeso
+- [Evento macro o earnings nei prossimi 1-3 giorni]
+```
+
+Mostra questo blocco all'utente con le istruzioni:
+> "Copia questo testo, vai su Project Knowledge, sostituisci il file `last-session.md` con questo contenuto. La prossima sessione partirà da qui."
+
+---
+
+### Passo 10 — Cosa fare (OBBLIGATORIO)
+
+Questa sezione non può mai essere omessa. Deve essere concreta e specifica.
 
 **Comprare (se ALLOW):**
 Lista titoli con: entry price, stop loss, size massima (% portafoglio)
@@ -224,13 +257,20 @@ Se il contesto suggerisce un titolo interessante non nella PIE AI, segnalarlo co
 
 ## Come salvare su claude.ai
 
-Per usare questa skill su claude.ai:
+### Setup iniziale (una volta sola)
 
-1. Vai su **claude.ai → Projects → Crea nuovo progetto** (es. "Finance Briefing")
-2. Nelle **Project Instructions** incolla il contenuto di questo file (da "# Finance Briefing" in poi)
-3. Ogni volta che apri quel progetto e scrivi **"briefing"**, Claude esegue l'analisi completa
+1. Vai su **claude.ai → Projects → New Project** (es. "Finance Briefing")
+2. In **Project Instructions** incolla il contenuto di questo file
+3. In **Project Knowledge** carica un file `last-session.md` vuoto (o con "First session — no prior memory")
+4. Ogni volta che scrivi **"briefing"** in quel progetto, Claude esegue l'analisi completa
 
-Il progetto ricorda le istruzioni permanentemente — non devi re-incollare ogni volta.
+### Aggiornare la memoria dopo ogni sessione
+
+Al termine di ogni briefing, Claude genera un blocco `last-session.md` aggiornato.
+Vai su Project Knowledge → sostituisci il file con il nuovo contenuto.
+La sessione successiva partirà dal contesto di quella precedente.
+
+Le istruzioni sono permanenti — non devi re-incollare ogni volta.
 
 ---
 
@@ -242,7 +282,7 @@ Il progetto ricorda le istruzioni permanentemente — non devi re-incollare ogni
 | Sentiment social | Adanos API (Reddit/X/Polymarket) | Web search (meno preciso) |
 | Breadth quantitativo | CSV pubblici (precisi) | Web search (stimato) |
 | Salvataggio report | File locale automatico | Copia/incolla manuale |
-| Memoria sessione precedente | Git (automatica) | Non disponibile |
+| Memoria sessione precedente | Git (automatica) | Project Knowledge (manuale) |
 | Skill avanzate (71) | Tutte disponibili | Solo web search |
 
 Per analisi approfondite su singoli titoli (es. "analizza NVDA in dettaglio"), chiedile esplicitamente dopo il briefing — claude.ai con web search può comunque fare analisi di qualità.
