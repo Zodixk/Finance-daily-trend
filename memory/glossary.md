@@ -91,7 +91,9 @@ Aggiornato progressivamente sessione per sessione.
 
 ---
 
-## FEDERAL RESERVE & TASSI
+## BANCHE CENTRALI & POLITICA MONETARIA
+
+> Le voci FOMC, Fed Funds Rate, Dot Plot, Fed Pivot e CME FedWatch riguardano specificamente la **Federal Reserve** (banca centrale USA). Le voci **Hawkish/Dovish** si applicano a **qualsiasi banca centrale** (BCE, Bank of Japan, Bank of England, ecc.).
 
 ---
 
@@ -132,15 +134,18 @@ Aggiornato progressivamente sessione per sessione.
 ---
 
 ### Hawkish / Dovish
-**Definizione tecnica:** Aggettivi che descrivono l'orientamento di un banchiere centrale o di una politica monetaria rispetto all'inflazione e alla crescita.
+**Definizione tecnica:** Aggettivi che descrivono l'orientamento di **qualsiasi banca centrale** (non solo la Fed) rispetto alla politica monetaria. Si usano per la Federal Reserve (USA), la BCE (Europa), la Bank of Japan, la Bank of England — qualsiasi istituzione che controlla i tassi di interesse.
 
 **In parole semplici:**
 - **Hawkish** (falco): priorità a combattere l'inflazione → alza i tassi o li mantiene alti a lungo. Male per le azioni, bene per i bond.
 - **Dovish** (colomba): priorità a stimolare la crescita → taglia i tassi o li mantiene bassi. Bene per le azioni, meno per i bond.
 
-**Esempio pratico:** Kevin Warsh è storicamente considerato hawkish. Quando ha preso il posto di Powell nel maggio 2026, il mercato ha iniziato a prezzare meno tagli perché si aspettava un approccio più aggressivo sull'inflazione.
+**Esempi pratici:**
+- **Fed (USA):** Kevin Warsh (presidente dal maggio 2026) è hawkish — si aspettava meno tagli dei tassi rispetto al suo predecessore Powell.
+- **BCE (Europa):** Christine Lagarde è stata hawkish nel 2022–2023 per combattere l'inflazione europea, poi più dovish nel 2024–2025 quando ha iniziato a tagliare.
+- **Bank of Japan:** per 30 anni è stata ultra-dovish (tassi negativi). Il passaggio a tassi positivi nel 2024 è stato un cambio hawkish importante.
 
-**Perché ti riguarda:** Un Fed Chair hawkish = pressione sui titoli growth del tuo PIE AI. Un cambio di tono verso il dovish = potenziale rally, specialmente per NVDA, AMD, ASML.
+**Perché ti riguarda:** Un banchiere centrale hawkish (ovunque) = pressione sui titoli growth del PIE AI. La BCE hawkish pesa su ASML (che vende in Europa). La Fed hawkish pesa su tutto il PIE AI. Un cambio verso il dovish = potenziale rally, specialmente per NVDA, AMD, ASML.
 
 ---
 
