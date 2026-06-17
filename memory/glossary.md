@@ -1,556 +1,556 @@
-# Glossario Personale — Alessandro
+# Personal Glossary — Alessandro
 
-Ogni termine ha: definizione tecnica → spiegazione semplice → esempio pratico → perché ti riguarda.
-Aggiornato progressivamente sessione per sessione.
+Every term includes: technical definition → plain English explanation → practical example → why it matters to you.
+Updated progressively session by session.
 
 ---
 
-## MERCATO & SENTIMENT
+## MARKET & SENTIMENT
 
 ---
 
 ### VIX
-**Definizione tecnica:** Indice di volatilità implicita calcolato dal Chicago Board Options Exchange (CBOE) sulle opzioni dell'S&P 500 a 30 giorni. Misura quanto il mercato si aspetta che i prezzi oscillino nel prossimo mese.
+**Technical definition:** Volatility index calculated by the Chicago Board Options Exchange (CBOE) from S&P 500 options expiring in 30 days. It measures how much the market expects prices to fluctuate over the next month.
 
-**In parole semplici:** È il "termometro della paura" del mercato. Quando gli investitori sono nervosi e comprano protezione (opzioni put), il VIX sale. Quando sono tranquilli, scende.
+**Plain English:** The market's "fear thermometer." When investors are nervous and buy protection (put options), VIX rises. When they're calm, it falls.
 
-**Scale di riferimento:**
-- VIX < 15 → mercato molto calmo, euforia
-- VIX 15–20 → normalità
-- VIX 20–30 → incertezza crescente
-- VIX > 30 → paura diffusa
-- VIX > 40 → panico (è successo durante COVID-2020, crisi 2008)
+**Reference levels:**
+- VIX < 15 → very calm market, euphoria
+- VIX 15–20 → normal
+- VIX 20–30 → growing uncertainty
+- VIX > 30 → widespread fear
+- VIX > 40 → panic (happened during COVID-2020, 2008 crisis)
 
-**Esempio pratico:** Il 16 giugno 2026 il VIX era 16.23 — mercato calmo. Ma il VIX9D (versione a 9 giorni) era 22.14 — significava che i trader stavano comprando protezione specifica per l'FOMC del 17 giugno. Il mercato era calmo in generale ma nervoso per quell'evento preciso.
+**Practical example:** On June 16, 2026 VIX was 16.23 — calm market. But VIX9D (9-day version) was 22.14 — traders were buying protection specifically for the June 17 FOMC meeting. The market was calm in general but nervous about that specific event.
 
-**Perché ti riguarda:** VIX > 25 per 2+ settimane → il briefing ti dirà CASH-PRIORITY. VIX > 40 → opportunità di comprare il PIE AI ai minimi, ma solo quando il VIX inizia a scendere.
+**Why it matters to you:** VIX > 25 for 2+ weeks → the briefing will say CASH-PRIORITY. VIX > 40 → opportunity to buy PIE AI at lows, but only when VIX starts declining.
 
 ---
 
 ### VIX9D
-**Definizione tecnica:** Variante del VIX che misura la volatilità implicita sui prossimi 9 giorni invece dei 30 standard.
+**Technical definition:** A variant of the VIX that measures implied volatility over the next 9 days instead of the standard 30.
 
-**In parole semplici:** Zoom sul breve termine. Se il VIX9D è molto più alto del VIX normale, vuol dire che il mercato teme un evento specifico imminente (FOMC, dati CPI, earnings importanti), non il futuro in generale.
+**Plain English:** A zoom into the short term. If VIX9D is much higher than the regular VIX, the market fears a specific imminent event (FOMC, CPI data, major earnings), not the future in general.
 
-**Esempio pratico:** Il 17 giugno 2026: VIX30D = 20.25, VIX9D = 22.14. La differenza (+1.89 punti) segnalava che i trader stavano comprando protezione proprio per la conferenza stampa di Warsh quella sera.
+**Practical example:** June 17, 2026: VIX30D = 20.25, VIX9D = 22.14. The gap (+1.89 points) signaled that traders were buying protection specifically for Warsh's press conference that evening.
 
-**Perché ti riguarda:** Quando VIX9D > VIX30D di 2+ punti prima di un evento macro (FOMC, CPI), aspetta l'evento prima di fare mosse sul PIE AI.
+**Why it matters to you:** When VIX9D > VIX30D by 2+ points ahead of a macro event (FOMC, CPI), wait for the event before making moves on the PIE AI.
 
 ---
 
 ### Bullish / Bearish
-**Definizione tecnica:** Termini che descrivono la direzione attesa del mercato o di un titolo. Derivano da come attaccano un toro (dal basso verso l'alto) e un orso (dall'alto verso il basso).
+**Technical definition:** Terms describing the expected direction of a market or a stock. They derive from how a bull attacks (upward from below) and a bear attacks (downward from above).
 
-**In parole semplici:**
-- **Bullish** = ottimista, ci si aspetta che i prezzi salgano
-- **Bearish** = pessimista, ci si aspetta che i prezzi scendano
+**Plain English:**
+- **Bullish** = optimistic, expecting prices to rise
+- **Bearish** = pessimistic, expecting prices to fall
 
-**Esempio pratico:** Su Reddit, GOOG aveva il 38% di commenti bullish vs 19% bearish il 17 giugno — segnale che la community era ottimista su Alphabet. AMD invece aveva buzz in salita ma il titolo scendeva: il mercato era bearish, Reddit bullish — conflitto di segnali.
+**Practical example:** On Reddit, GOOG had 38% bullish comments vs 19% bearish on June 17 — the community was optimistic on Alphabet. AMD instead had rising buzz but the stock was falling: the market was bearish, Reddit bullish — a conflicting signal.
 
-**Perché ti riguarda:** Il briefing ti dà il sentiment bullish/bearish per ogni ticker del PIE AI. Quando prezzo e sentiment vanno in direzioni opposte, è un segnale da monitorare attentamente.
+**Why it matters to you:** The briefing gives you bullish/bearish sentiment for every PIE AI ticker. When price and sentiment move in opposite directions, it's a signal to watch closely.
 
 ---
 
-### Breadth (Ampiezza di mercato)
-**Definizione tecnica:** Misura della partecipazione al mercato: quante azioni stanno salendo vs quante stanno scendendo in un dato periodo.
+### Breadth (Market Breadth)
+**Technical definition:** A measure of market participation: how many stocks are advancing vs declining over a given period.
 
-**In parole semplici:** Immagina un concerto — breadth ti dice se stanno ballando tutti o solo quelli in prima fila. Un rally "stretto" (solo 5 mega-cap salgono mentre tutto il resto scende) è fragile. Un rally "ampio" (la maggioranza delle azioni sale) è sano e duraturo.
+**Plain English:** Imagine a concert — breadth tells you whether everyone is dancing or just the people in the front row. A "narrow" rally (only 5 mega-caps rising while everything else falls) is fragile. A "broad" rally (most stocks rising) is healthy and lasting.
 
-**Come si misura:** Il briefing usa l'Uptrend Ratio di Monty: percentuale delle ~2.800 azioni tracciate attualmente in uptrend.
-- < 9.7% → mercato ipervenduto (possibile rimbalzo)
-- 9.7–37% → zona normale
-- > 37% → mercato surriscaldato (possibile calo)
+**How it's measured:** The briefing uses Monty's Uptrend Ratio: percentage of ~2,800 tracked stocks currently in an uptrend.
+- < 9.7% → oversold market (possible bounce)
+- 9.7–37% → normal zone
+- > 37% → overbought market (possible pullback)
 
-**Esempio pratico:** Il 16 giugno 2026, solo il 28.6% delle 2.800 azioni era in uptrend — basso in assoluto, ma in miglioramento (10 giorni prima era 23.8%). Il mercato stava recuperando larghezza, non perdendola.
+**Practical example:** On June 16, 2026, only 28.6% of 2,800 stocks were in an uptrend — low in absolute terms, but improving (10 days earlier it was 23.8%). The market was gaining breadth, not losing it.
 
-**Perché ti riguarda:** Se NVDA e GOOG salgono ma la breadth è bassa, il tuo PIE AI è fragile — pochi titoli tengono su tutto. Quando la breadth sale, il rally diventa più solido.
+**Why it matters to you:** If NVDA and GOOG are rising but breadth is low, your PIE AI is fragile — a few stocks are holding everything up. When breadth rises, the rally becomes more solid.
 
 ---
 
 ### Sentiment
-**Definizione tecnica:** Misura qualitativa e quantitativa dell'umore collettivo degli investitori verso un asset, ottenuta analizzando social media, survey, opzioni e flussi di capitali.
+**Technical definition:** A qualitative and quantitative measure of investors' collective mood toward an asset, obtained by analyzing social media, surveys, options flow, and capital flows.
 
-**In parole semplici:** È "cosa pensa la gente" di un titolo in questo momento. Si misura su Reddit, X (Twitter), Polymarket, articoli di news, ecc.
+**Plain English:** It's "what people think" about a stock right now. Measured on Reddit, X (Twitter), Polymarket, news articles, etc.
 
-**Esempio pratico:** AMD il 17 giugno aveva buzz in salita su Reddit (74/100, trend rising) nonostante fosse scesa del 7.3%. Questo è il classico "buy the dip" social — la gente vuole comprare il calo. Non è sempre giusto seguire il sentiment: in quel caso ARK e la CEO avevano già venduto $130M di AMD.
+**Practical example:** AMD on June 17 had rising buzz on Reddit (74/100, trend rising) despite falling 7.3%. This is the classic "buy the dip" social behavior — people want to buy the pullback. It's not always right to follow sentiment: in that case ARK and the CEO had already sold $130M of AMD.
 
-**Perché ti riguarda:** Il briefing usa Adanos API per darti sentiment su NVDA, AAPL, MSFT, META, GOOG, AMZN, AMD, AVGO ogni mattina. Usalo come segnale complementare, mai primario.
+**Why it matters to you:** The briefing uses the Adanos API to give you sentiment for NVDA, AAPL, MSFT, META, GOOG, AMZN, AMD, AVGO every morning. Use it as a complementary signal, never a primary one.
 
 ---
 
 ### Buzz Score
-**Definizione tecnica:** Punteggio 0–100 che quantifica il volume di menzioni e discussioni attorno a un titolo su una piattaforma specifica (Reddit, X, ecc.) in un periodo dato (default: 7 giorni).
+**Technical definition:** A 0–100 score that quantifies the volume of mentions and discussions about a stock on a specific platform (Reddit, X, etc.) over a given period (default: 7 days).
 
-**In parole semplici:** Quanto si parla di un titolo online. 100 = tutti ne parlano, 0 = nessuno. Alto buzz può significare interesse genuino o semplice rumore speculativo.
+**Plain English:** How much a stock is being talked about online. 100 = everyone's talking about it, 0 = nobody is. High buzz can mean genuine interest or pure speculative noise.
 
-**Importante:** Buzz alto ≠ buon investimento. GameStop nel 2021 aveva buzz altissimo su Reddit e poi è crollata dell'80%.
+**Important:** High buzz ≠ good investment. GameStop in 2021 had extremely high Reddit buzz and then crashed 80%.
 
-**Esempio pratico:** Il 17 giugno, MSFT aveva buzz 82.1/100 e AVGO 72.8/100. AVGO era il meno discusso del PIE AI — coerente con il fatto che è il più debole del gruppo dopo la miss degli earnings di giugno.
+**Practical example:** On June 17, MSFT had buzz 82.1/100 and AVGO 72.8/100. AVGO was the least discussed in the PIE AI — consistent with it being the weakest performer after the June earnings miss.
 
-**Perché ti riguarda:** Utile per capire quali ticker del PIE AI sono "in evidenza" sul mercato. Se un ticker del tuo PIE ha buzz in calo e prezzo in calo, è un doppio segnale negativo.
-
----
-
-## BANCHE CENTRALI & POLITICA MONETARIA
-
-> Le voci FOMC, Fed Funds Rate, Dot Plot, Fed Pivot e CME FedWatch riguardano specificamente la **Federal Reserve** (banca centrale USA). Le voci **Hawkish/Dovish** si applicano a **qualsiasi banca centrale** (BCE, Bank of Japan, Bank of England, ecc.).
+**Why it matters to you:** Useful for understanding which PIE AI tickers are "in the spotlight." If a ticker has falling buzz and falling price, that's a double negative signal.
 
 ---
 
-### FOMC
-**Definizione tecnica:** Federal Open Market Committee — comitato della Federal Reserve (banca centrale USA) composto da 12 membri votanti (7 governatori + 5 presidenti di banche regionali a rotazione) che decide la politica monetaria USA, principalmente il tasso sui Federal Funds.
+## CENTRAL BANKS & MONETARY POLICY
 
-**In parole semplici:** È il gruppo di persone più potente per i mercati finanziari mondiali. Si riunisce 8 volte l'anno e decide se alzare, tagliare o mantenere i tassi di interesse negli USA. La loro decisione influenza tutto: mutui, prestiti aziendali, valore delle azioni, cambi valutari.
-
-**Esempio pratico:** Il 17 giugno 2026 era il primo FOMC di Kevin Warsh come nuovo presidente della Fed. La decisione (hold a 3.50–3.75%) era già scontata al 99%. La vera incognita era il tono della conferenza stampa delle 14:30 ET.
-
-**Perché ti riguarda:** Le decisioni FOMC muovono i mercati anche del 3–5% in un giorno. Il giorno di FOMC è sempre RESTRICT per default nel tuo briefing — non fare mosse prima della conferenza stampa.
-
----
-
-### Tassi di Interesse (Fed Funds Rate)
-**Definizione tecnica:** Tasso al quale le banche si prestano denaro overnight tra loro, stabilito dalla Fed come strumento principale di politica monetaria.
-
-**In parole semplici:** È il "costo del denaro" nell'economia americana. Quando la Fed alza i tassi, diventa più caro prendere soldi in prestito — per le famiglie (mutui), per le aziende (finanziare la crescita), per tutti. Quando li taglia, il denaro diventa più economico e l'economia accelera.
-
-**Esempio pratico:**
-- Tasso al 0% (2020–2022): era facilissimo prendere prestiti → aziende tech crescevano a leva → NVDA, AMD esplodevano
-- Tasso al 5.25% (2023–2024): costo alto → aziende tech frenano → crollo dei multipli P/E
-- Tasso al 3.50–3.75% (giugno 2026): ancora elevato ma in discesa → mercato in transizione
-
-**Perché ti riguarda:** Tassi alti penalizzano le aziende ad alta crescita e alto P/E come quelle nel tuo PIE AI (NVDA P/E >40x, AMD P/E >60x). Quando i tassi scendono, queste aziende vengono rivalutate per prime.
-
----
-
-### Dot Plot
-**Definizione tecnica:** Grafico pubblicato dalla Fed 4 volte l'anno (Summary of Economic Projections) dove ogni membro del FOMC indica anonimamente dove prevede che il tasso Fed Funds sarà a fine anno, fine anno+1, fine anno+2 e nel lungo periodo.
-
-**In parole semplici:** È come chiedere a tutti i 19 membri della Fed "dove pensi che saranno i tassi tra 1 anno?" e mettere i loro voti su un grafico. Ogni punto (dot) è un voto. La mediana dei punti è la previsione ufficiale.
-
-**Esempio pratico:** A marzo 2026 il dot plot mostrava ancora 1 taglio atteso per fine 2026. A giugno 2026, il mercato si aspettava che il nuovo dot plot rimuovesse quell'ultimo taglio — ovvero la Fed diceva "non tagliamo più quest'anno." Questo era un segnale hawkish e pesava sui titoli tech ad alto P/E.
-
-**Perché ti riguarda:** Ogni volta che esce un dot plot, il mercato reagisce. Se i dot salgono (più rialzi) → male per il PIE AI. Se scendono (tagli in arrivo) → bene per il PIE AI. Arriva 4 volte l'anno: marzo, giugno, settembre, dicembre.
+> The entries FOMC, Fed Funds Rate, Dot Plot, Fed Pivot, and CME FedWatch are specific to the **Federal Reserve** (US central bank). **Hawkish/Dovish** apply to **any central bank** (ECB, Bank of Japan, Bank of England, etc.).
 
 ---
 
 ### Hawkish / Dovish
-**Definizione tecnica:** Aggettivi che descrivono l'orientamento di **qualsiasi banca centrale** (non solo la Fed) rispetto alla politica monetaria. Si usano per la Federal Reserve (USA), la BCE (Europa), la Bank of Japan, la Bank of England — qualsiasi istituzione che controlla i tassi di interesse.
+**Technical definition:** Adjectives describing the stance of **any central bank** — not just the Fed — toward monetary policy. Used for the Federal Reserve (USA), the ECB (Europe), the Bank of Japan, the Bank of England, and any institution that controls interest rates.
 
-**In parole semplici:**
-- **Hawkish** (falco): priorità a combattere l'inflazione → alza i tassi o li mantiene alti a lungo. Male per le azioni, bene per i bond.
-- **Dovish** (colomba): priorità a stimolare la crescita → taglia i tassi o li mantiene bassi. Bene per le azioni, meno per i bond.
+**Plain English:**
+- **Hawkish** (hawk): priority is fighting inflation → raises rates or keeps them high for longer. Bad for stocks, good for bonds.
+- **Dovish** (dove): priority is stimulating growth → cuts rates or keeps them low. Good for stocks, less so for bonds.
 
-**Esempi pratici:**
-- **Fed (USA):** Kevin Warsh (presidente dal maggio 2026) è hawkish — si aspettava meno tagli dei tassi rispetto al suo predecessore Powell.
-- **BCE (Europa):** Christine Lagarde è stata hawkish nel 2022–2023 per combattere l'inflazione europea, poi più dovish nel 2024–2025 quando ha iniziato a tagliare.
-- **Bank of Japan:** per 30 anni è stata ultra-dovish (tassi negativi). Il passaggio a tassi positivi nel 2024 è stato un cambio hawkish importante.
+**Practical examples:**
+- **Fed (USA):** Kevin Warsh (president since May 2026) is hawkish — the market priced in fewer rate cuts compared to his predecessor Powell.
+- **ECB (Europe):** Christine Lagarde was hawkish in 2022–2023 to fight European inflation, then turned more dovish in 2024–2025 when she started cutting rates.
+- **Bank of Japan:** For 30 years it was ultra-dovish (negative rates). The shift to positive rates in 2024 was a significant hawkish change that shook global markets.
 
-**Perché ti riguarda:** Un banchiere centrale hawkish (ovunque) = pressione sui titoli growth del PIE AI. La BCE hawkish pesa su ASML (che vende in Europa). La Fed hawkish pesa su tutto il PIE AI. Un cambio verso il dovish = potenziale rally, specialmente per NVDA, AMD, ASML.
+**Why it matters to you:** A hawkish central banker (anywhere) puts pressure on growth stocks in the PIE AI. A hawkish ECB weighs on ASML (sells in Europe). A hawkish Fed weighs on the entire PIE AI. A shift toward dovish = potential rally, especially for NVDA, AMD, ASML.
+
+---
+
+### FOMC
+**Technical definition:** Federal Open Market Committee — the committee of the Federal Reserve (US central bank) composed of 12 voting members (7 governors + 5 rotating regional bank presidents) that decides US monetary policy, primarily the Federal Funds rate.
+
+**Plain English:** The most powerful group for global financial markets. It meets 8 times a year and decides whether to raise, cut, or hold US interest rates. Their decision affects everything: mortgages, corporate loans, stock valuations, currency exchange rates.
+
+**Practical example:** June 17, 2026 was Kevin Warsh's first FOMC as new Fed Chair. The decision (hold at 3.50–3.75%) was already priced in at 99%. The real unknown was the tone of the 2:30 PM ET press conference.
+
+**Why it matters to you:** FOMC decisions can move markets 3–5% in a single day. FOMC day is always RESTRICT by default in your briefing — don't make moves before the press conference.
+
+---
+
+### Fed Funds Rate (Interest Rates)
+**Technical definition:** The rate at which banks lend money to each other overnight, set by the Fed as its primary monetary policy tool.
+
+**Plain English:** The "cost of money" in the American economy. When the Fed raises rates, borrowing becomes more expensive — for families (mortgages), for companies (financing growth), for everyone. When it cuts, money becomes cheaper and the economy accelerates.
+
+**Practical examples:**
+- Rate at 0% (2020–2022): very cheap to borrow → tech companies grew with leverage → NVDA, AMD exploded
+- Rate at 5.25% (2023–2024): high cost → tech companies slow down → P/E multiple compression
+- Rate at 3.50–3.75% (June 2026): still elevated but declining → market in transition
+
+**Why it matters to you:** High rates penalize high-growth, high-P/E companies like those in your PIE AI (NVDA P/E >40x, AMD P/E >60x). When rates fall, these companies get repriced upward first.
+
+---
+
+### Dot Plot
+**Technical definition:** A chart published by the Fed 4 times a year (Summary of Economic Projections) where each FOMC member anonymously indicates where they expect the Fed Funds rate to be at year-end, year+1, year+2, and in the long run.
+
+**Plain English:** It's like asking all 19 Fed members "where do you think rates will be in 1 year?" and putting their votes on a chart. Each dot is a vote. The median of the dots is the official forecast.
+
+**Practical example:** In March 2026 the dot plot still showed 1 cut expected by end of 2026. In June 2026, the market expected the new dot plot to remove that last cut — meaning the Fed was saying "we're not cutting this year." This was a hawkish signal and weighed on high-P/E tech stocks.
+
+**Why it matters to you:** Every time a dot plot is released, the market reacts. If dots move up (more hikes) → bad for PIE AI. If they move down (cuts coming) → good for PIE AI. It comes out 4 times a year: March, June, September, December.
 
 ---
 
 ### Fed Pivot
-**Definizione tecnica:** Momento in cui la Federal Reserve cambia direzione nella politica monetaria — tipicamente dalla fase di rialzi (tightening) a quella di tagli (easing).
+**Technical definition:** The moment when the Federal Reserve changes direction in monetary policy — typically from a hiking cycle (tightening) to a cutting cycle (easing).
 
-**In parole semplici:** Il "punto di svolta" della Fed. Storicamente, i mercati anticipano il pivot anche 6–12 mesi prima che avvenga davvero, perché iniziano a scontare tassi più bassi nel futuro.
+**Plain English:** The Fed's "turning point." Historically, markets anticipate the pivot 6–12 months before it actually happens, because they start discounting lower rates in the future.
 
-**Esempio pratico:** Dopo i rialzi aggressivi del 2022–2023, la Fed ha iniziato a tagliare a fine 2024. I mercati avevano già iniziato a salire nella seconda metà del 2023, anticipando il pivot. Chi ha comprato NVDA o AMD durante il ribasso del 2022–2023 ha poi visto guadagni enormi.
+**Practical example:** After the aggressive hikes of 2022–2023, the Fed started cutting in late 2024. Markets had already started rising in the second half of 2023, anticipating the pivot. Those who bought NVDA or AMD during the 2022–2023 downturn saw enormous gains afterward.
 
-**Perché ti riguarda:** La finestra tra l'ultimo rialzo e il primo taglio è storicamente uno dei migliori momenti per costruire posizioni su titoli growth come quelli del tuo PIE AI. Il Pattern Playbook (Sezione 7.2 del tuo profilo) descrive esattamente questa strategia.
+**Why it matters to you:** The window between the last hike and the first cut is historically one of the best times to build positions in growth stocks like those in your PIE AI. The Pattern Playbook (Section 7.2 of your profile) describes exactly this strategy.
 
 ---
 
 ### CME FedWatch
-**Definizione tecnica:** Strumento del Chicago Mercantile Exchange che calcola la probabilità implicita di variazioni del tasso Fed Funds a ogni riunione FOMC, derivandola dai prezzi dei futures sui Fed Funds (contratti 30-day Federal Funds futures).
+**Technical definition:** A tool from the Chicago Mercantile Exchange that calculates the implied probability of Fed Funds rate changes at each FOMC meeting, derived from the prices of Federal Funds futures contracts.
 
-**In parole semplici:** È come un sondaggio in tempo reale su cosa si aspetta il mercato dalla Fed — ma invece di chiedere alle persone, guarda i contratti futures dove i trader mettono soldi veri. È più accurato dei sondaggi perché costa sbagliare.
+**Plain English:** It's like a real-time poll on what the market expects from the Fed — but instead of asking people, it looks at futures contracts where traders put real money. It's more accurate than surveys because being wrong costs money.
 
-**Esempio pratico:** Il 17 giugno 2026, CME FedWatch mostrava: 99% probabilità di hold, 1% probabilità di taglio. Mostrava anche 70% probabilità di almeno un rialzo entro fine 2026 — segnale che il mercato si aspettava che Warsh tornasse ad alzare i tassi prima di tagliarli.
+**Practical example:** On June 17, 2026, CME FedWatch showed: 99% probability of hold, 1% probability of a cut. It also showed 70% probability of at least one rate hike by end of 2026 — signaling the market expected Warsh to raise rates before cutting them.
 
-**Perché ti riguarda:** È il riferimento principale per capire cosa "prezza" il mercato prima di ogni FOMC. Se il mercato prezza hold (99%) e arriva un taglio a sorpresa → rally. Se prezza tagli e arriva un hold → sell-off.
+**Why it matters to you:** It's the primary reference for understanding what the market is "pricing in" before each FOMC. If the market prices a hold (99%) and a surprise cut arrives → rally. If it prices cuts and a hold arrives → sell-off.
 
 ---
 
-## ANALISI TECNICA
+## TECHNICAL ANALYSIS
 
 ---
 
 ### 52 Week High / 52 Week Low (52w High / 52w Low)
-**Definizione tecnica:** Il prezzo massimo e minimo registrato da un titolo negli ultimi 52 settimane (un anno di calendario) di contrattazioni.
+**Technical definition:** The highest and lowest price recorded by a stock over the past 52 weeks (one calendar year) of trading.
 
-**In parole semplici:** È il "range" dell'ultimo anno. Sapere dove si trova il prezzo attuale rispetto a questo range ti dice molto: vicino al massimo = momentum forte ma rischio di "vendita sui massimi"; vicino al minimo = debolezza, ma possibile rimbalzo se i fondamentali reggono.
+**Plain English:** The "range" of the past year. Knowing where the current price sits relative to this range tells you a lot: near the high = strong momentum but risk of "selling at the top"; near the low = weakness, but possible bounce if fundamentals hold.
 
-**Esempio pratico:** Il 17 giugno 2026:
-- AMD: prezzo $507, 52w high $558 → era all'91% del suo massimo annuale. Alto, ma aveva appena perso il 7.3% dal picco.
-- MSFT: prezzo $393, 52w high $555 → era solo al 71% del suo massimo. Molto lontano dai massimi — più upside potenziale ma anche più debolezza recente.
+**Practical example:** On June 17, 2026:
+- AMD: price $507, 52w high $558 → at 91% of its annual high. High, but had just lost 7.3% from the peak.
+- MSFT: price $393, 52w high $555 → only at 71% of its high. Much further from highs — more upside potential but also more recent weakness.
 
-**Regola del briefing:** Quando un ticker è vicino al 52w high, il briefing cerca sempre la data esatta in cui quel massimo è stato toccato e se coincide con l'ATH (All-Time High).
+**Briefing rule:** When a ticker is near its 52w high, the briefing always looks for the exact date that high was set and whether it coincides with the ATH (All-Time High).
 
-**Perché ti riguarda:** Comprare vicino al 52w high va bene se il titolo sta rompendo al rialzo (breakout). Comprare vicino al 52w low è rischioso a meno che ci sia un chiaro motivo per un rimbalzo.
+**Why it matters to you:** Buying near the 52w high is fine if the stock is breaking out to the upside. Buying near the 52w low is risky unless there's a clear reason for a bounce.
 
 ---
 
 ### ATH (All-Time High)
-**Definizione tecnica:** Il prezzo più alto mai raggiunto da un titolo dall'inizio della sua quotazione in borsa.
+**Technical definition:** The highest price ever reached by a stock since the beginning of its stock market listing.
 
-**In parole semplici:** Il record assoluto. Diverso dal 52w high — l'ATH è il massimo di sempre, il 52w high è il massimo dell'ultimo anno. Un titolo può avere un 52w high di $200 ma un ATH di $400 (se è crollato 2 anni fa).
+**Plain English:** The absolute record. Different from the 52w high — the ATH is the all-time maximum, the 52w high is the maximum of the past year. A stock can have a 52w high of $200 but an ATH of $400 (if it crashed 2 years ago).
 
-**Esempio pratico:** NVDA ha toccato l'ATH a giugno 2024 sopra $140 (aggiustato per i frazionamenti). AMD aveva il 52w high a $558 a giugno 2026, ma il suo ATH era superiore — quindi $558 NON era un record assoluto.
+**Practical example:** NVDA hit its ATH above $140 (adjusted for splits) in June 2024. AMD had its 52w high at $558 in June 2026, but its ATH was higher — so $558 was NOT an absolute record.
 
-**Perché ti riguarda:** Un titolo che rompe l'ATH non ha "resistenze" tecniche sopra — teoricamente può salire senza limiti storici. È un segnale molto bullish se accompagnato da fondamentali solidi.
+**Why it matters to you:** A stock breaking its ATH has no technical resistance above it — theoretically it can rise without historical limits. It's a very bullish signal when accompanied by solid fundamentals.
 
 ---
 
 ### Stop Loss
-**Definizione tecnica:** Ordine condizionato che vende automaticamente un titolo quando raggiunge un prezzo predefinito inferiore al prezzo di acquisto, limitando così la perdita massima su quella posizione.
+**Technical definition:** A conditional order that automatically sells a stock when it reaches a predefined price below the purchase price, limiting the maximum loss on that position.
 
-**In parole semplici:** È il tuo "piano di uscita di emergenza". Prima di comprare decidi: "Se questo titolo scende del X%, esco automaticamente." Protegge il capitale da perdite catastrofiche.
+**Plain English:** Your "emergency exit plan." Before buying, you decide: "If this stock falls X%, I exit automatically." It protects capital from catastrophic losses.
 
-**Esempio pratico:** Hai AMD a $547. Il tuo stop loss è 7–8%. Quindi:
-- Stop a 7%: $547 × (1 - 0.07) = **$509** → vendi automaticamente
-- Stop a 8%: $547 × (1 - 0.08) = **$503** → vendi automaticamente
+**Practical example:** You have AMD at $547. Your stop loss is 7–8%. So:
+- Stop at 7%: $547 × (1 - 0.07) = **$509** → automatic sell
+- Stop at 8%: $547 × (1 - 0.08) = **$503** → automatic sell
 
-Il 17 giugno 2026, AMD era a $507 — esattamente in zona stop. Per questo il briefing segnalava 🔴 NEAR STOP.
+On June 17, 2026, AMD was at $507 — exactly in the stop zone. That's why the briefing flagged 🔴 NEAR STOP.
 
-**Perché ti riguarda:** Il tuo limite personale è 7–8% per ogni posizione. Il PIE AI però gestisce i pesi automaticamente, quindi non puoi impostare uno stop loss diretto su AMD dentro la PIE — devi monitorare manualmente e decidere se ridurre la PIE o aggiungere fondi.
+**Why it matters to you:** Your personal limit is 7–8% per position. The PIE AI manages weights automatically, so you can't set a direct stop loss on AMD inside the PIE — you have to monitor manually and decide whether to reduce the PIE or add more funds.
 
 ---
 
-### Supporto e Resistenza
-**Definizione tecnica:** Livelli di prezzo storici dove un titolo ha ripetutamente trovato acquirenti (supporto = pavimento) o venditori (resistenza = soffitto).
+### Support and Resistance
+**Technical definition:** Historical price levels where a stock has repeatedly found buyers (support = floor) or sellers (resistance = ceiling).
 
-**In parole semplici:**
-- **Supporto**: prezzo dove in passato l'azione ha smesso di scendere e ha rimbalzato. I compratori si fanno avanti a quel livello.
-- **Resistenza**: prezzo dove l'azione fatica a salire oltre. I venditori si fanno avanti a quel livello.
+**Plain English:**
+- **Support**: price where the stock has stopped falling in the past and bounced. Buyers step in at that level.
+- **Resistance**: price where the stock struggles to rise above. Sellers step in at that level.
 
-**Esempio pratico:** AMD aveva un supporto importante intorno a $490–500: era un'area dove era consolidata per settimane prima del rally verso $558. Se rompe $490, il prossimo supporto era più in basso, intorno a $450.
+**Practical example:** AMD had key support around $490–500: it was an area where it had consolidated for weeks before the rally to $558. If it breaks $490, the next support was further down, around $450.
 
-**Regola pratica:** Quando un supporto viene rotto diventa resistenza (e viceversa). È uno dei principi più importanti dell'analisi tecnica.
+**Key rule:** When a support is broken it becomes resistance (and vice versa). It's one of the most important principles in technical analysis.
 
-**Perché ti riguarda:** Il briefing ti dà i livelli chiave di supporto/resistenza per i ticker del PIE AI nella sezione "Watchlist". Sono i prezzi a cui fare attenzione per decidere se aggiungere o ridurre.
+**Why it matters to you:** The briefing gives you key support/resistance levels for PIE AI tickers in the "Watchlist" section. These are the prices to watch when deciding whether to add to or reduce positions.
 
 ---
 
 ### P/E Ratio (Price-to-Earnings)
-**Definizione tecnica:** Rapporto tra il prezzo corrente di un'azione e gli utili per azione (EPS) degli ultimi 12 mesi (trailing P/E) o dei prossimi 12 mesi stimati (forward P/E).
+**Technical definition:** The ratio between a stock's current price and its earnings per share (EPS) over the past 12 months (trailing P/E) or the next 12 estimated months (forward P/E).
 
-**In parole semplici:** Ti dice quanto stai pagando per ogni euro/dollaro di profitto che l'azienda genera. P/E 20x = paghi $20 per $1 di utile annuale. P/E 100x = paghi $100 per $1 di utile — ci credi molto nella crescita futura.
+**Plain English:** It tells you how much you're paying for every dollar of profit the company generates. P/E 20x = you pay $20 for $1 of annual earnings. P/E 100x = you pay $100 for $1 of earnings — you believe very strongly in future growth.
 
-**Esempio pratico:**
-- AMD a giugno 2026: trailing P/E >100x, forward P/E >60x. Significa che il mercato si aspettava una crescita enorme degli utili futuri. Quando ARK e Lisa Su hanno venduto, il mercato ha detto "forse 100x è troppo" e il titolo ha perso il 7.3% in un giorno.
-- Una banca come JPMorgan: P/E ~12x. Basso — azienda matura, crescita limitata, ma stabile.
+**Practical examples:**
+- AMD in June 2026: trailing P/E >100x, forward P/E >60x. The market expected enormous future earnings growth. When ARK and Lisa Su sold, the market said "maybe 100x is too much" and the stock lost 7.3% in one day.
+- A bank like JPMorgan: P/E ~12x. Low — mature company, limited growth, but stable.
 
-**Perché ti riguarda:** Tutto il tuo PIE AI ha P/E elevati (growth stocks). In un ambiente di tassi alti, i titoli ad alto P/E vengono penalizzati di più — perché i profitti futuri valgono meno oggi se devi scontarli a un tasso alto. Quando i tassi scendono, il P/E può espandersi → i titoli salgono.
+**Why it matters to you:** Your entire PIE AI has high P/E ratios (growth stocks). In a high-rate environment, high P/E stocks get penalized more — because future profits are worth less today when discounted at a high rate. When rates fall, P/E can expand → stocks rise.
 
 ---
 
 ### VCP (Volatility Contraction Pattern)
-**Definizione tecnica:** Pattern tecnico sviluppato da Mark Minervini: una serie di consolidamenti (stalls) con range di prezzo progressivamente più stretto e volume in calo, che culmina in un breakout su volume elevato.
+**Technical definition:** A technical pattern developed by Mark Minervini: a series of consolidations (stalls) with progressively narrowing price range and declining volume, culminating in a breakout on elevated volume.
 
-**In parole semplici:** Il titolo "si comprime come una molla" — le oscillazioni di prezzo diventano sempre più piccole, il volume si secca. Poi, quando arriva la notizia giusta o il momento giusto, esplode al rialzo con volume alto. È uno dei pattern più affidabili per i titoli growth.
+**Plain English:** The stock "compresses like a spring" — price swings become smaller and smaller, volume dries up. Then, when the right catalyst or moment arrives, it explodes upward on high volume. It's one of the most reliable patterns for growth stocks.
 
-**Come riconoscerlo:**
-1. Il titolo fa un massimo, poi corregge (es. -20%)
-2. Poi rimbalza ma non torna al massimo (es. +15%)
-3. Poi corregge ancora ma meno (es. -10%)
-4. Ancora rimbalzo più piccolo, correzione più piccola...
-5. Il range si stringe sempre di più (da -20% a -5%)
-6. Volume cala durante le correzioni
-7. Breakout su volume 3x la media → segnale di entrata
+**How to recognize it:**
+1. The stock makes a high, then corrects (e.g., -20%)
+2. Then bounces but doesn't return to the high (e.g., +15%)
+3. Then corrects again but less (e.g., -10%)
+4. Another smaller bounce, smaller correction...
+5. The range narrows more and more (from -20% to -5%)
+6. Volume declines during corrections
+7. Breakout on volume 3x the average → entry signal
 
-**Perché ti riguarda:** Il briefing usa `vcp-screener` per trovare titoli in fase di VCP. Quando un tuo ticker PIE AI è in VCP, è un potenziale punto di accumulo prima del prossimo rally.
+**Why it matters to you:** The briefing uses `vcp-screener` to find stocks in the VCP phase. When one of your PIE AI tickers is forming a VCP, it's a potential accumulation point before the next rally.
 
 ---
 
 ### Breakout
-**Definizione tecnica:** Movimento del prezzo di un titolo al di sopra di un livello di resistenza chiave (o al di sotto di un supporto, in caso di breakdown), generalmente accompagnato da un aumento del volume di negoziazione.
+**Technical definition:** A price move above a key resistance level (or below support, in the case of a breakdown), generally accompanied by increased trading volume.
 
-**In parole semplici:** È quando l'azione "sfonda" un tetto che la bloccava. Come un pugile che finalmente supera l'avversario. Per essere valido, deve avvenire su volume alto (almeno 50% sopra la media) — altrimenti è un "falso breakout" e il titolo torna indietro.
+**Plain English:** When a stock "punches through" a ceiling that was blocking it. Like a boxer finally beating the opponent. To be valid, it must happen on high volume (at least 50% above average) — otherwise it's a "false breakout" and the stock falls back.
 
-**Esempio pratico:** TSM aveva il 52w high a $450. Se il titolo supera $450 con volume alto, è un breakout — segnale bullish che potrebbe anticipare un ulteriore rally verso $470–480.
+**Practical example:** TSM had its 52w high at $450. If the stock surpasses $450 with high volume, that's a breakout — a bullish signal that could anticipate a further rally toward $470–480.
 
-**Regola di Alessandro:** Mai entrare su un falso breakout. Il prezzo deve chiudere sopra il livello pivot, non solo toccarlo intraday.
+**Alessandro's rule:** Never enter on a false breakout. The price must close above the pivot level, not just touch it intraday.
 
-**Perché ti riguarda:** Il Pattern Playbook descrive l'entry su breakout per VCP, Cup & Handle, Flat Base. È la strategia principale per aggiungere posizioni ai tuoi titoli del PIE AI al momento giusto.
+**Why it matters to you:** The Pattern Playbook describes breakout entries for VCP, Cup & Handle, and Flat Base. It's the main strategy for adding to your PIE AI positions at the right moment.
 
 ---
 
 ### PEAD (Post-Earnings Announcement Drift)
-**Definizione tecnica:** Fenomeno documentato accademicamente (Ball & Brown, 1968) secondo cui i titoli che battono le stime degli analisti tendono a continuare a salire per 30–60 giorni dopo la pubblicazione degli earnings, mentre quelli che deludono continuano a scendere.
+**Technical definition:** An academically documented phenomenon (Ball & Brown, 1968) where stocks that beat analyst estimates tend to continue rising for 30–60 days after earnings, while those that disappoint continue to fall.
 
-**In parole semplici:** Quando un'azienda pubblica risultati migliori del previsto, il mercato non incorpora subito tutta l'informazione — ci mette settimane. Puoi approfittare di questo "ritardo" comprando nei 1–3 giorni dopo l'earnings beat e mantenendo per 1–2 mesi.
+**Plain English:** When a company publishes better-than-expected results, the market doesn't fully incorporate the information immediately — it takes weeks. You can take advantage of this "delay" by buying in the 1–3 days after an earnings beat and holding for 1–2 months.
 
-**Esempio pratico:** Se NVDA batte le stime il 28 luglio e sale il 5% il giorno dopo, il PEAD suggerisce che potrebbe continuare a salire nelle settimane successive. L'entry ideale è il primo giorno di pullback dopo il gap up — non il giorno stesso (troppo emozionale).
+**Practical example:** If NVDA beats estimates on July 28 and rises 5% the next day, PEAD suggests it may continue rising in the following weeks. The ideal entry is the first pullback day after the gap up — not the day itself (too emotional).
 
-**Perché ti riguarda:** NVDA, META, MSFT sono i migliori candidati PEAD nel tuo PIE AI per via dell'alto institutional ownership. Dopo gli earnings di luglio, monitora questi tre per opportunità di accumulo.
+**Why it matters to you:** NVDA, META, MSFT are the best PEAD candidates in your PIE AI due to high institutional ownership. After July earnings, watch these three for accumulation opportunities.
 
 ---
 
-## MACRO & ECONOMIA
+## MACRO & ECONOMICS
 
 ---
 
 ### CPI (Consumer Price Index)
-**Definizione tecnica:** Indice statistico che misura la variazione media nel tempo dei prezzi pagati dai consumatori urbani per un paniere fisso di beni e servizi (alimentari, energia, affitti, servizi medici, trasporti, ecc.).
+**Technical definition:** A statistical index that measures the average change over time in prices paid by urban consumers for a fixed basket of goods and services (food, energy, rent, medical services, transportation, etc.).
 
-**In parole semplici:** È il principale termometro dell'inflazione. Se il CPI sale del 4.2% in un anno, significa che in media tutto costa il 4.2% in più rispetto all'anno scorso. La Fed vuole tenerlo intorno al 2%.
+**Plain English:** The main inflation thermometer. If CPI rises 4.2% in a year, it means everything costs on average 4.2% more than a year ago. The Fed wants to keep it around 2%.
 
-**Esempio pratico:** A giugno 2026 il CPI USA era al 4.2% — più del doppio del target Fed del 2%. Questo è il motivo principale per cui Warsh non poteva tagliare i tassi: tagliare con inflazione al 4.2% avrebbe rischiato di far risalire ulteriormente i prezzi.
+**Practical example:** In June 2026 US CPI was at 4.2% — more than double the Fed's 2% target. This is the main reason Warsh couldn't cut rates: cutting with inflation at 4.2% would risk pushing prices even higher.
 
-**Perché ti riguarda:** CPI alto → Fed hawkish → tassi alti → pressione sul PIE AI. CPI in discesa verso 2% → Fed dovish → tagli in arrivo → rally del PIE AI. Esce una volta al mese, sempre un market-mover.
-
----
-
-### Inflazione
-**Definizione tecnica:** Aumento generalizzato e sostenuto del livello dei prezzi di beni e servizi in un'economia nel tempo, che riduce il potere d'acquisto della moneta.
-
-**In parole semplici:** I soldi valgono meno nel tempo. €100 oggi comprano meno cose di €100 dieci anni fa. Un po' di inflazione (2%) è sana — significa che l'economia cresce. Troppa inflazione (>4%) è un problema perché erode i risparmi e costringe la Fed ad alzare i tassi.
-
-**Perché i tagli dei tassi la fanno salire:** Tassi bassi → credito più economico → famiglie e aziende spendono di più → domanda supera l'offerta → i prezzi salgono. È un effetto collaterale intenzionale dei tagli, ma se l'inflazione è già alta, rischi di peggiorare il problema.
-
-**Perché ti riguarda:** Inflazione alta = tassi alti = male per il PIE AI (vedi P/E Ratio). Inflazione bassa = Fed può tagliare = bene per il PIE AI.
+**Why it matters to you:** High CPI → hawkish Fed → high rates → pressure on PIE AI. CPI declining toward 2% → dovish Fed → rate cuts coming → PIE AI rally. It's released once a month, always a market mover.
 
 ---
 
-### Yield (Rendimento Obbligazionario)
-**Definizione tecnica:** Tasso di rendimento annuo di un'obbligazione, espresso come percentuale del prezzo corrente. Inversamente correlato al prezzo dell'obbligazione: se il prezzo scende, il rendimento sale, e viceversa.
+### Inflation
+**Technical definition:** A generalized and sustained increase in the price level of goods and services in an economy over time, which reduces the purchasing power of money.
 
-**In parole semplici:** È quanto ti paga un'obbligazione (bond) ogni anno. Il Treasury USA a 10 anni (10Y yield) è il riferimento globale. Se rende il 4.5%, significa che presti soldi al governo USA per 10 anni e ti restituiscono il 4.5% all'anno.
+**Plain English:** Money is worth less over time. €100 today buys fewer things than €100 ten years ago. A little inflation (2%) is healthy — it means the economy is growing. Too much inflation (>4%) is a problem because it erodes savings and forces the Fed to raise rates.
 
-**La relazione con le azioni:** Se il 10Y yield sale al 5%, molti investitori preferiscono i bond (rendimento sicuro al 5%) alle azioni (rischiose). Questo sposta capitali dalle azioni ai bond → le azioni scendono.
+**Why rate cuts cause it to rise:** Lower rates → cheaper credit → families and companies spend more → demand exceeds supply → prices rise. It's an intentional side effect of rate cuts, but if inflation is already high, you risk making the problem worse.
 
-**Esempio pratico:** A giugno 2026 il 10Y yield era al 4.28%. Non altissimo, ma abbastanza da creare pressione sui titoli ad alto P/E del PIE AI.
-
-**Perché ti riguarda:** Quando il 10Y yield sale → attenzione al PIE AI, soprattutto ASML e NVDA (alto P/E). Quando scende → tailwind per i titoli growth.
+**Why it matters to you:** High inflation = high rates = bad for PIE AI (see P/E Ratio). Low inflation = Fed can cut = good for PIE AI.
 
 ---
 
-### Curva dei Rendimenti (Yield Curve)
-**Definizione tecnica:** Rappresentazione grafica dei rendimenti di obbligazioni dello stesso emittente (tipicamente il governo USA) a diverse scadenze (da 3 mesi a 30 anni).
+### Yield (Bond Yield)
+**Technical definition:** The annual rate of return on a bond, expressed as a percentage of its current price. Inversely correlated with bond price: if the price falls, the yield rises, and vice versa.
 
-**In parole semplici:** In condizioni normali, prestare soldi per più tempo dovrebbe essere pagato di più (più rischio = più rendimento). Quindi normalmente: 10Y yield > 2Y yield. Quando si inverte (2Y > 10Y), è un segnale storico di recessione in arrivo.
+**Plain English:** How much a bond pays you each year. The US 10-year Treasury yield (10Y yield) is the global benchmark. If it yields 4.5%, it means you lend money to the US government for 10 years and they pay you 4.5% per year.
 
-**Le tre forme:**
-- **Normale** (10Y > 2Y): economia sana, crescita attesa
-- **Piatta** (10Y ≈ 2Y): incertezza, transizione
-- **Invertita** (2Y > 10Y): segnale di recessione (si è verificata prima di ogni recessione USA degli ultimi 50 anni)
+**The relationship with stocks:** If the 10Y yield rises to 5%, many investors prefer bonds (safe 5% return) over stocks (risky). This shifts capital from stocks to bonds → stocks fall.
 
-**Esempio pratico:** A giugno 2026 la curva si stava "bear steepening": il 10Y saliva più velocemente del 2Y. Non è un'inversione, ma è un segnale di transizione — il mercato prezza inflazione persistente nel lungo termine.
+**Practical example:** In June 2026 the 10Y yield was at 4.28%. Not extremely high, but enough to create pressure on high P/E stocks in the PIE AI.
 
-**Perché ti riguarda:** Curva invertita per 2+ mesi → riduci AMD e QCOM (più ciclici), aumenta cash. Il briefing monitora lo spread 10Y-2Y ogni giorno.
+**Why it matters to you:** When the 10Y yield rises → watch the PIE AI, especially ASML and NVDA (high P/E). When it falls → tailwind for growth stocks.
+
+---
+
+### Yield Curve
+**Technical definition:** A graphical representation of the yields of bonds from the same issuer (typically the US government) at different maturities (from 3 months to 30 years).
+
+**Plain English:** In normal conditions, lending money for longer should be paid more (more risk = more return). So normally: 10Y yield > 2Y yield. When it inverts (2Y > 10Y), it's a historical signal of a coming recession.
+
+**The three shapes:**
+- **Normal** (10Y > 2Y): healthy economy, growth expected
+- **Flat** (10Y ≈ 2Y): uncertainty, transition
+- **Inverted** (2Y > 10Y): recession signal (has occurred before every US recession in the past 50 years)
+
+**Practical example:** In June 2026 the curve was "bear steepening": the 10Y was rising faster than the 2Y. Not an inversion, but a transition signal — the market is pricing persistent inflation in the long term.
+
+**Why it matters to you:** Inverted curve for 2+ months → reduce AMD and QCOM (more cyclical), increase cash. The briefing monitors the 10Y-2Y spread every day.
 
 ---
 
 ### Bear Steepening
-**Definizione tecnica:** Movimento della curva dei rendimenti in cui i tassi a lungo termine (10Y, 30Y) salgono più velocemente dei tassi a breve termine (2Y), causando un aumento dello spread, ma in un contesto in cui entrambi i tassi salgono.
+**Technical definition:** A movement in the yield curve where long-term rates (10Y, 30Y) rise faster than short-term rates (2Y), widening the spread, but in a context where both rates are rising.
 
-**In parole semplici:** La curva diventa più ripida, ma "nel modo sbagliato" — non perché l'economia sia in salute (bull steepening) ma perché i mercati si aspettano inflazione persistente nel lungo termine. Chi compra bond a 10 anni vuole essere compensato di più per il rischio inflazione futura.
+**Plain English:** The curve becomes steeper, but in the "wrong way" — not because the economy is healthy (bull steepening) but because markets expect persistent long-term inflation. Buyers of 10-year bonds want to be compensated more for the risk of future inflation.
 
-**Perché è negativo per le azioni growth:** Le aziende come quelle del PIE AI valgono principalmente per i profitti che faranno nei prossimi 5–10 anni. Se i tassi a lungo termine salgono, quei profitti futuri "valgono meno" oggi (il tasso di sconto aumenta → il valore presente scende).
+**Why it's negative for growth stocks:** Companies like those in the PIE AI derive most of their value from profits they'll make over the next 5–10 years. If long-term rates rise, those future profits are "worth less" today (the discount rate increases → present value falls).
 
-**Perché ti riguarda:** Il macro regime detector monitorava questo segnale a giugno 2026 come fattore di rischio per il PIE AI.
+**Why it matters to you:** The macro regime detector was monitoring this signal in June 2026 as a risk factor for the PIE AI.
 
 ---
 
 ### DXY (Dollar Index)
-**Definizione tecnica:** Indice che misura il valore del dollaro USA rispetto a un paniere di 6 valute principali (EUR 57.6%, JPY 13.6%, GBP 11.9%, CAD 9.1%, SEK 4.2%, CHF 3.6%).
+**Technical definition:** An index that measures the value of the US dollar against a basket of 6 major currencies (EUR 57.6%, JPY 13.6%, GBP 11.9%, CAD 9.1%, SEK 4.2%, CHF 3.6%).
 
-**In parole semplici:** Misura quanto "vale" il dollaro rispetto alle altre valute principali. DXY alto = dollaro forte. DXY basso = dollaro debole.
+**Plain English:** Measures how much the dollar is "worth" relative to other major currencies. High DXY = strong dollar. Low DXY = weak dollar.
 
-**L'effetto sul PIE AI:**
-- **ASML** guadagna in euro ma è quotata in dollari → dollaro forte la penalizza (gli utili europei valgono meno in USD)
-- **TSM** guadagna in dollari taiwanese/USD ma ha costi in TWD → impatto misto
-- **NVDA, AMD, MSFT**: gran parte dei ricavi in USD, meno vulnerabili al DXY
+**The effect on PIE AI:**
+- **ASML** earns in euros but is quoted in dollars → a strong dollar hurts it (European profits worth less in USD)
+- **TSM** earns in Taiwanese dollars/USD but has costs in TWD → mixed impact
+- **NVDA, AMD, MSFT**: most revenues in USD, less vulnerable to DXY
 
-**Perché ti riguarda:** Se DXY sale > 105 → attenzione a ASML e TSM nel PIE. Il briefing monitora DXY come parte dell'analisi macro.
-
----
-
-## SETTORI & ROTAZIONE
+**Why it matters to you:** If DXY rises above 105 → watch ASML and TSM in the PIE. The briefing monitors DXY as part of macro analysis.
 
 ---
 
-### Sector Rotation (Rotazione Settoriale)
-**Definizione tecnica:** Movimento sistematico di capitali da un settore dell'economia a un altro, guidato dal ciclo economico, dalle politiche monetarie o da eventi specifici.
+## SECTORS & ROTATION
 
-**In parole semplici:** Gli investitori istituzionali (fondi, banche, assicurazioni) spostano continuamente i soldi tra settori. Quando tech è "in favore" (risk-on, tassi bassi, crescita), i capitali fluiscono verso NVDA, AMD, MSFT. Quando il mercato diventa difensivo (tassi alti, recessione), i capitali vanno verso Utilities, Healthcare, Consumer Staples.
+---
 
-**Il ciclo classico:**
-1. **Early cycle** (ripresa): Finanziari, Industriali
-2. **Mid cycle** (espansione): Tech, Consumer Cyclical
-3. **Late cycle** (rallentamento): Energy, Materials
+### Sector Rotation
+**Technical definition:** A systematic movement of capital from one sector of the economy to another, driven by the economic cycle, monetary policies, or specific events.
+
+**Plain English:** Institutional investors (funds, banks, insurance companies) continuously move money between sectors. When tech is "in favor" (risk-on, low rates, growth), capital flows toward NVDA, AMD, MSFT. When the market turns defensive (high rates, recession), capital goes toward Utilities, Healthcare, Consumer Staples.
+
+**The classic cycle:**
+1. **Early cycle** (recovery): Financials, Industrials
+2. **Mid cycle** (expansion): Tech, Consumer Cyclical
+3. **Late cycle** (slowdown): Energy, Materials
 4. **Recession**: Utilities, Healthcare, Consumer Staples
 
-**Esempio pratico:** Il 16 giugno 2026: XLK (tech) -2.79%, Dow Jones +0.64%, JPMorgan +3.7%. I capitali uscivano da tech ed entravano nei finanziari — classica rotazione late-cycle.
+**Practical example:** June 16, 2026: XLK (tech) -2.79%, Dow Jones +0.64%, JPMorgan +3.7%. Capital was leaving tech and entering financials — a classic late-cycle rotation.
 
-**Perché ti riguarda:** Il 100% del PIE AI è in tech/semiconduttori. Una rotazione settoriale contro tech colpisce TUTTO il portafoglio contemporaneamente. Il briefing monitora XLK ogni giorno per questo motivo.
+**Why it matters to you:** 100% of the PIE AI is in tech/semiconductors. A sector rotation against tech hits YOUR ENTIRE PORTFOLIO simultaneously. The briefing monitors XLK every day for this reason.
 
 ---
 
 ### XLK
-**Definizione tecnica:** SPDR Technology Select Sector ETF — replicatore passivo del settore tecnologico nell'S&P 500. Contiene principalmente Apple, NVDA, Microsoft, Broadcom, ecc.
+**Technical definition:** SPDR Technology Select Sector ETF — a passive replicator of the technology sector within the S&P 500. Contains mainly Apple, NVDA, Microsoft, Broadcom, etc.
 
-**In parole semplici:** È il "ETF del settore tech USA". Se XLK sale, il tuo PIE AI probabilmente sale. Se XLK scende, il tuo PIE AI probabilmente scende. È il termometro diretto del tuo settore.
+**Plain English:** The "US tech sector ETF." If XLK rises, your PIE AI is probably rising. If XLK falls, your PIE AI is probably falling. It's the direct thermometer of your sector.
 
-**Perché ti riguarda:** Il briefing confronta XLK con gli altri settori ogni giorno per capire se il tech è in favore o meno. XLK -3% mentre il Dow è flat = rotazione contro di te.
-
----
-
-### Broadening Regime (Regime di Allargamento)
-**Definizione tecnica:** Fase del mercato in cui i guadagni si espandono da un gruppo ristretto di mega-cap (concentrazione) a una partecipazione più ampia che include mid-cap, small-cap e titoli value/ciclici.
-
-**In parole semplici:** In un regime di concentrazione, salgono solo i "Magnificent 7" (Apple, NVDA, Microsoft, ecc.) mentre tutto il resto è piatto. In un regime di broadening, la crescita si allarga — industriali, finanziari, small cap iniziano a salire anche loro.
-
-**È positivo o negativo?** Per l'economia è positivo (crescita più sana e distribuita). Per il tuo PIE AI può essere temporaneamente negativo perché i capitali escono dai mega-cap tech per andare verso settori più diversificati.
-
-**Esempio pratico:** A giugno 2026 il Macro Regime Detector segnalava Broadening con 70-90% di probabilità di transizione. 5 su 6 componenti confermavano: small-cap IWM sovraperformava SPY, RSP/SPY in risalita, credit in espansione.
-
-**Perché ti riguarda:** In un broadening regime, considera se vale la pena aggiungere un ETF small-cap o value per bilanciare il PIE AI che è 100% large-cap tech.
+**Why it matters to you:** The briefing compares XLK against other sectors every day to understand whether tech is in favor or not. XLK -3% while the Dow is flat = rotation against you.
 
 ---
 
-## PORTFOLIO & RISCHIO
+### Broadening Regime
+**Technical definition:** A market phase in which gains expand from a narrow group of mega-caps (concentration) to broader participation that includes mid-caps, small-caps, and value/cyclical stocks.
+
+**Plain English:** In a concentration regime, only the "Magnificent 7" (Apple, NVDA, Microsoft, etc.) rise while everything else is flat. In a broadening regime, growth widens — industrials, financials, small caps start rising too.
+
+**Is it positive or negative?** For the economy it's positive (healthier, more distributed growth). For your PIE AI it can be temporarily negative because capital leaves mega-cap tech and moves toward more diversified sectors.
+
+**Practical example:** In June 2026 the Macro Regime Detector was signaling Broadening with 70-90% probability of transition. 5 out of 6 components confirmed: small-cap IWM outperforming SPY, RSP/SPY rising, credit expanding.
+
+**Why it matters to you:** In a broadening regime, consider whether it's worth adding a small-cap or value ETF to balance the PIE AI which is 100% large-cap tech.
+
+---
+
+## PORTFOLIO & RISK
 
 ---
 
 ### ALLOW / RESTRICT / CASH-PRIORITY
-**Definizione tecnica:** Framework di postura operativa del briefing giornaliero che sintetizza tutti i segnali di mercato in una raccomandazione d'azione.
+**Technical definition:** The operational posture framework of the daily briefing that synthesizes all market signals into an action recommendation.
 
-**In parole semplici:**
-- **ALLOW**: il contesto di mercato supporta nuovi investimenti. Puoi aggiungere al PIE AI o a VWCE con fiducia.
-- **RESTRICT**: prudenza. Non vendere quello che hai, ma non fare nuovi acquisti importanti. Aspetta chiarezza.
-- **CASH-PRIORITY**: i segnali sono negativi. Riduci l'esposizione, accumula liquidità. Non è "vendi tutto" — è "sii cauto e hai cash pronto per opportunità migliori."
+**Plain English:**
+- **ALLOW**: the market context supports new investments. You can add to the PIE AI or to VWCE with confidence.
+- **RESTRICT**: caution. Don't sell what you have, but don't make major new purchases. Wait for clarity.
+- **CASH-PRIORITY**: signals are negative. Reduce exposure, accumulate liquidity. It's not "sell everything" — it's "be careful and have cash ready for better opportunities."
 
-**Esempio pratico:** Il 17 giugno 2026 la postura era RESTRICT pre-FOMC. Il framework post-FOMC era chiaro: Warsh neutro/dovish → passa ad ALLOW; Warsh hawkish → passa a CASH-PRIORITY.
+**Practical example:** On June 17, 2026 the posture was RESTRICT pre-FOMC. The post-FOMC framework was clear: Warsh neutral/dovish → shift to ALLOW; Warsh hawkish → shift to CASH-PRIORITY.
 
-**Perché ti riguarda:** È la raccomandazione più pratica del briefing. Come principiante, seguirla ti evita di fare mosse emotive in momenti sbagliati.
+**Why it matters to you:** It's the most practical recommendation of the briefing. As a beginner, following it prevents you from making emotional moves at the wrong time.
 
 ---
 
 ### Drawdown
-**Definizione tecnica:** Perdita percentuale dal picco più recente del valore di un portafoglio o di un titolo. Calcolato come: (Valore Picco - Valore Attuale) / Valore Picco × 100.
+**Technical definition:** Percentage loss from the most recent peak of a portfolio or stock's value. Calculated as: (Peak Value - Current Value) / Peak Value × 100.
 
-**In parole semplici:** Se il tuo portafoglio valeva €1.000 e ora vale €850, il drawdown è -15%. È diverso dal rendimento totale — misura solo la perdita dal massimo recente.
+**Plain English:** If your portfolio was worth €1,000 and is now worth €850, the drawdown is -15%. It's different from total return — it only measures the loss from the recent peak.
 
-**Esempio pratico:** Se hai comprato AMD a $547 e ora vale $507, il drawdown su quella posizione è -7.3%. Il tuo limite personale è -15% sul portafoglio totale e -7-8% su ogni singola posizione.
+**Practical example:** If you bought AMD at $547 and it's now at $507, the drawdown on that position is -7.3%. Your personal limit is -15% on the total portfolio and -7-8% on each individual position.
 
-**Perché ti riguarda:** Max drawdown del 15% sul totale è il tuo limite. Se il PIE AI vale €500 e scende a €425, sei al -15% — momento di rivedere l'esposizione. Per le singole posizioni, lo stop loss del 7-8% previene che una posizione faccia troppo danno al totale.
-
----
-
-### Esposizione (Exposure)
-**Definizione tecnica:** Percentuale del capitale totale investita in asset rischiosi (azioni, ETF azionari) rispetto alla liquidità detenuta.
-
-**In parole semplici:** Se hai €1.000 e hai investito €800 in azioni e €200 in cash, la tua esposizione è 80%. Alta esposizione = più guadagni se il mercato sale, più perdi se scende. Bassa esposizione = più sicurezza ma meno rendimento.
-
-**Cosa suggerisce il briefing per ogni zona:**
-- ALLOW → 90-100% investito
-- RESTRICT → 70-80% investito
-- CASH-PRIORITY → 50% o meno investito
-
-**Perché ti riguarda:** Come principiante che sta costruendo il portafoglio, non devi ancora pensare a ridurre l'esposizione — stai ancora investendo. Ma è importante capire il concetto per quando il mercato diventerà più volatile.
+**Why it matters to you:** Max drawdown of 15% on the total is your limit. If the PIE AI is worth €500 and drops to €425, you're at -15% — time to review exposure. For individual positions, the 7-8% stop loss prevents any one position from doing too much damage to the total.
 
 ---
 
-### Insider Selling (Vendita degli Insider)
-**Definizione tecnica:** Vendita di azioni da parte di dirigenti aziendali (CEO, CFO, CTO) o grandi azionisti (>10%) che devono dichiarare pubblicamente queste transazioni alla SEC (Securities and Exchange Commission) entro 2 giorni lavorativi.
+### Exposure
+**Technical definition:** The percentage of total capital invested in risky assets (stocks, equity ETFs) relative to cash held.
 
-**In parole semplici:** Quando il CEO o un grande dirigente vende azioni della propria azienda, deve dirlo pubblicamente. Non è sempre un segnale negativo (a volte vendono per pagare le tasse o diversificare), ma quando vendono grandi quantità vicino ai massimi storici, è un segnale di cautela.
+**Plain English:** If you have €1,000 and have invested €800 in stocks and hold €200 in cash, your exposure is 80%. High exposure = more gains if the market rises, more losses if it falls. Low exposure = more safety but less return.
 
-**Esempio pratico:** Il 15 giugno 2026, Lisa Su (CEO di AMD) ha venduto 125.000 azioni per $57.6 milioni mentre il titolo era vicino al 52w high di $558. Lo stesso giorno ARK (Cathie Wood) ha venduto 141.000 azioni per $72.3 milioni. Due grandi venditori allo stesso tempo vicino ai massimi — segnale che il titolo era sopravvalutato.
+**What the briefing suggests for each zone:**
+- ALLOW → 90-100% invested
+- RESTRICT → 70-80% invested
+- CASH-PRIORITY → 50% or less invested
 
-**Perché ti riguarda:** Quando il briefing segnala insider selling su un ticker del PIE AI, è un motivo in più per non aggiungere in quel momento.
+**Why it matters to you:** As a beginner building your portfolio, you don't need to think about reducing exposure yet — you're still adding. But it's important to understand the concept for when the market becomes more volatile.
+
+---
+
+### Insider Selling
+**Technical definition:** Sale of shares by company executives (CEO, CFO, CTO) or major shareholders (>10%) who must publicly declare these transactions to the SEC (Securities and Exchange Commission) within 2 business days.
+
+**Plain English:** When the CEO or a senior executive sells shares in their own company, they must announce it publicly. It's not always a negative signal (sometimes they sell to pay taxes or diversify), but when they sell large amounts near all-time highs, it's a reason for caution.
+
+**Practical example:** On June 15, 2026, Lisa Su (AMD's CEO) sold 125,000 shares for $57.6 million while the stock was near its 52w high of $558. The same day ARK (Cathie Wood) sold 141,000 shares for $72.3 million. Two major sellers at the same time near the highs — a signal the stock was overvalued.
+
+**Why it matters to you:** When the briefing flags insider selling on a PIE AI ticker, it's one more reason not to add to that position at that moment.
 
 ---
 
 ### Composite Confidence
-**Definizione tecnica:** Punteggio aggregato 0-92% che sintetizza l'affidabilità del briefing giornaliero, calcolato come media ponderata dei livelli di fiducia di ogni skill eseguita (HIGH ≥75%, MEDIUM 50-74%, LOW <50%), con cap automatici in caso di eventi binari o segnali contrastanti.
+**Technical definition:** An aggregated 0-92% score that synthesizes the reliability of the daily briefing, calculated as a weighted average of the confidence levels of each skill run (HIGH ≥75%, MEDIUM 50-74%, LOW <50%), with automatic caps for binary events or conflicting signals.
 
-**In parole semplici:** È una misura di quanto il briefing stesso è affidabile quel giorno. Se tutti gli strumenti funzionano e i segnali sono coerenti → confidence alta (~80-90%). Se mancano dati o i segnali si contraddicono → confidence bassa (~50-60%).
+**Plain English:** A measure of how reliable the briefing itself is on a given day. If all tools work and signals are consistent → high confidence (~80-90%). If data is missing or signals contradict each other → low confidence (~50-60%).
 
-**Cap automatici:**
-- FOMC day → max 60% (troppa incertezza)
+**Automatic caps:**
+- FOMC day → max 60% (too much uncertainty)
 - VIX > 30 → max 70%
-- Regime Steps 1+2 si contraddicono → max 60%
-- Più di 2 skill falliscono → max 55%
+- Regime Steps 1+2 contradict each other → max 60%
+- More than 2 skills fail → max 55%
 
-**Esempio pratico:** Il 17 giugno 2026 la confidence era 60% — capped dal FOMC. Significa: "i dati che abbiamo sono buoni, ma c'è un evento imprevedibile oggi che rende qualsiasi previsione poco affidabile."
+**Practical example:** On June 17, 2026 confidence was 60% — capped by the FOMC. Meaning: "the data we have is good, but there's an unpredictable event today that makes any forecast unreliable."
 
-**Non arriva mai al 100%** per principio — i mercati sono intrinsecamente incerti.
+**It never reaches 100%** by design — markets are inherently uncertain.
 
-**Perché ti riguarda:** Usa la confidence come "volume" delle raccomandazioni. Confidence 85% + ALLOW = investi con fiducia. Confidence 55% + RESTRICT = aspetta davvero.
+**Why it matters to you:** Use confidence as the "volume" of the recommendations. Confidence 85% + ALLOW = invest with confidence. Confidence 55% + RESTRICT = really wait.
 
 ---
 
-## STRUMENTI & PIATTAFORME
+## TOOLS & PLATFORMS
 
 ---
 
 ### Trader 212
-**Definizione tecnica:** Broker online regolamentato (FCA UK, CySEC EU) che offre trading di azioni, ETF e CFD con commissioni zero, disponibile anche in Italia tramite l'app mobile.
+**Technical definition:** An online broker regulated by FCA (UK) and CySEC (EU) that offers zero-commission trading of stocks, ETFs, and CFDs, available in Italy via the mobile app.
 
-**In parole semplici:** È il tuo broker — la piattaforma dove compri e vendi azioni ed ETF. Ha una funzione speciale chiamata PIE che permette di creare portafogli automatici con pesi predefiniti.
+**Plain English:** Your broker — the platform where you buy and sell stocks and ETFs. It has a special feature called PIE that lets you create automatic portfolios with predefined weights.
 
-**Perché ti riguarda:** Tutte le tue posizioni sono su Trader 212. I pesi del PIE AI vengono gestiti automaticamente dalla piattaforma secondo le percentuali che hai impostato (NVDA 12%, gli altri 8%).
+**Why it matters to you:** All your positions are on Trader 212. The PIE AI weights are managed automatically by the platform according to the percentages you've set (NVDA 12%, others 8%).
 
 ---
 
 ### PIE (Trader 212)
-**Definizione tecnica:** Funzionalità di Trader 212 che permette di creare un portafoglio tematico con allocazioni percentuali predefinite. I fondi aggiunti vengono automaticamente distribuiti tra i titoli secondo i pesi impostati. Il ribilanciamento avviene automaticamente.
+**Technical definition:** A Trader 212 feature that allows creating a thematic portfolio with predefined percentage allocations. Funds added are automatically distributed among the stocks according to the set weights. Rebalancing happens automatically.
 
-**In parole semplici:** È un "cestino automatico" di azioni. Tu dici "voglio 12% NVDA e 8% di tutto il resto" e Trader 212 ci pensa lui ogni volta che aggiungi soldi. Non devi comprare manualmente ogni titolo.
+**Plain English:** It's an "automatic basket" of stocks. You say "I want 12% NVDA and 8% of everything else" and Trader 212 handles it every time you add money. You don't have to buy each stock manually.
 
-**Importante capire:** Quando aggiungi €100 al PIE, vengono distribuiti su TUTTI i 12 ticker secondo i pesi. Non puoi dire "metti questi €100 solo su GOOG."
+**Important to understand:** When you add €100 to the PIE, it gets distributed across ALL 12 tickers according to the weights. You can't say "put these €100 only in GOOG."
 
-**Perché ti riguarda:** Ogni volta che vuoi aggiungere fondi, il briefing ti dice se è un buon momento per farlo in base al mercato. Ma la distribuzione la decide Trader 212 automaticamente.
+**Why it matters to you:** Every time you want to add funds, the briefing tells you whether it's a good time based on market conditions. But the distribution is decided automatically by Trader 212.
 
 ---
 
 ### VWCE.DE
-**Definizione tecnica:** Vanguard FTSE All-World UCITS ETF Accumulating, quotato sulla borsa tedesca XETRA con ticker VWCE.DE. Replica l'indice FTSE All-World che copre ~4.000 azioni di paesi sviluppati ed emergenti.
+**Technical definition:** Vanguard FTSE All-World UCITS ETF Accumulating, listed on the German XETRA exchange with ticker VWCE.DE. It replicates the FTSE All-World index covering ~4,000 stocks from developed and emerging market countries.
 
-**In parole semplici:** È il tuo "investimento sicuro" a lungo termine. Invece di scommettere su singole aziende, compri un pezzo di quasi tutte le grandi aziende del mondo in un solo titolo.
+**Plain English:** Your long-term "safe investment." Instead of betting on individual companies, you buy a piece of almost every major company in the world in a single ticker.
 
-**Caratteristiche chiave:**
-- **Accumulante**: non paga dividendi in cash — li reinveste automaticamente (ottimo fiscalmente in Italia: tassato solo quando vendi)
-- **Diversificato**: ~60-65% USA, ~10% Europa, ~8% Giappone, resto del mondo
-- **Costo basso**: TER (costo annuale) ~0.22% — quasi gratis
-- **Valuta**: quotato in EUR, ma contiene azioni in tutte le valute
+**Key characteristics:**
+- **Accumulating**: doesn't pay cash dividends — reinvests them automatically (great for taxes in Italy: taxed only when you sell)
+- **Diversified**: ~60-65% USA, ~10% Europe, ~8% Japan, rest of the world
+- **Low cost**: TER (annual cost) ~0.22% — almost free
+- **Currency**: quoted in EUR, but holds stocks in all currencies
 
-**FTSE All-World**: è l'indice che VWCE replica. "FTSE" sta per Financial Times Stock Exchange (l'azienda che costruisce l'indice). "All-World" significa globale, sviluppati + emergenti.
+**FTSE All-World**: the index that VWCE replicates. "FTSE" stands for Financial Times Stock Exchange (the company that builds the index). "All-World" means global, developed + emerging markets.
 
-**Perché ti riguarda:** È il tuo "ancoraggio" — non venderlo mai a meno di eventi macro estremi. Mentre il PIE AI è la tua scommessa sulla crescita tech, VWCE è la tua assicurazione sul lungo termine globale.
+**Why it matters to you:** It's your "anchor" — never sell it except in extreme macro events. While the PIE AI is your bet on tech growth, VWCE is your long-term global safety net.
 
 ---
 
 ### FMP (Financial Modeling Prep)
-**Definizione tecnica:** API finanziaria che fornisce dati in tempo reale e storici su azioni, ETF, indici, earnings, bilanci aziendali e dati macroeconomici.
+**Technical definition:** A financial API that provides real-time and historical data on stocks, ETFs, indices, earnings, company financials, and macroeconomic data.
 
-**In parole semplici:** È il "database finanziario" che il briefing usa per ottenere i prezzi del PIE AI ogni mattina. Piano gratuito: 250 chiamate al giorno, un ticker alla volta.
+**Plain English:** The "financial database" the briefing uses to get PIE AI prices every morning. Free plan: 250 calls per day, one ticker at a time.
 
-**Perché ti riguarda:** Se il briefing segnala "FMP HTTP 402" su un ticker, significa che quel ticker richiede un piano premium. In quel caso il briefing usa yfinance come backup.
+**Why it matters to you:** If the briefing shows "FMP HTTP 402" for a ticker, it means that ticker requires a premium plan. In that case the briefing uses yfinance as a backup.
 
 ---
 
 ### Adanos Finance API
-**Definizione tecnica:** API di sentiment analysis che aggrega e quantifica le discussioni su Reddit, X (Twitter), articoli di news e Polymarket per singoli ticker azionari, producendo metriche come buzz_score, bullish_pct, trend.
+**Technical definition:** A sentiment analysis API that aggregates and quantifies discussions on Reddit, X (Twitter), news articles, and Polymarket for individual stock tickers, producing metrics like buzz_score, bullish_pct, trend.
 
-**In parole semplici:** È lo strumento che il briefing usa per misurare "cosa dice Internet" sui tuoi titoli. Analizza migliaia di post su Reddit e X ogni giorno e li trasforma in numeri (buzz 0-100, % bullish, % bearish, trend in salita/discesa).
+**Plain English:** The tool the briefing uses to measure "what the internet thinks" about your stocks. It analyzes thousands of posts on Reddit and X every day and turns them into numbers (buzz 0-100, % bullish, % bearish, rising/falling trend).
 
-**Perché ti riguarda:** Il sentiment da Adanos è un segnale complementare — non primario. Utile per capire se c'è "buy the dip" o "sell the rally" in atto sul tuo PIE AI.
+**Why it matters to you:** Adanos sentiment is a complementary signal — not a primary one. Useful for understanding if there's "buy the dip" or "sell the rally" behavior happening on your PIE AI.
 
 ---
 
 ### Polymarket
-**Definizione tecnica:** Piattaforma di prediction market decentralizzata basata su blockchain dove gli utenti scommettono con criptovalute su eventi futuri (politici, economici, sportivi). Le probabilità riflettono l'aggregazione delle aspettative dei partecipanti.
+**Technical definition:** A decentralized blockchain-based prediction market platform where users bet with cryptocurrency on future events (political, economic, sports). Probabilities reflect the aggregation of participants' expectations.
 
-**In parole semplici:** È un mercato dove le persone scommettono con soldi veri su cosa accadrà. Se il 99% dei soldi è scommesso su "la Fed non taglia a giugno", quella è la migliore stima collettiva disponibile. È più affidabile dei sondaggi perché chi sbaglia perde denaro reale.
+**Plain English:** A market where people bet real money on what will happen. If 99% of the money is bet on "the Fed won't cut in June," that's the best available collective estimate. It's more reliable than surveys because being wrong costs real money.
 
-**Esempio pratico:** Il 17 giugno 2026: Polymarket mostrava 99% probabilità di hold Fed. Questo era il segnale più forte che il mercato aveva già "prezzato" il hold — non ci sarebbe stata sorpresa e il movimento di mercato dipendeva solo dal tono di Warsh.
+**Practical example:** On June 17, 2026: Polymarket showed 99% probability of a Fed hold. This was the strongest signal that the market had already "priced in" the hold — there would be no surprise, and the market movement depended only on Warsh's tone.
 
-**Perché ti riguarda:** Il briefing usa le probabilità di Polymarket per calibrare l'incertezza su eventi macro (FOMC, CPI, elezioni). Alta probabilità = evento già prezzato = poca sorpresa attesa.
+**Why it matters to you:** The briefing uses Polymarket probabilities to calibrate uncertainty around macro events (FOMC, CPI, elections). High probability = event already priced in = little surprise expected.
 
 ---
 
-*Ultimo aggiornamento: 2026-06-17*
-*Prossima aggiunta: aggiungi qui i termini che vuoi imparare nelle prossime sessioni.*
+*Last updated: 2026-06-17*
+*Next addition: add here the terms you want to learn in upcoming sessions.*
