@@ -6,3 +6,4 @@ __pycache__/
 memory/*.md
 !memory/last-session.md
 !memory/finance-profile.md
+!memory/glossary.md
