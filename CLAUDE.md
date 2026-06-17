@@ -324,10 +324,15 @@ Then run:
 git config user.email "ale.lusardi0@gmail.com"
 git config user.name "Finance Routine"
 git remote set-url origin https://$GITHUB_TOKEN@github.com/Zodixk/Finance-daily-trend.git
-git add memory/last-session.md
-git commit -m "memory: $(date +%Y-%m-%d)"
-git push
+git checkout main
+git add memory/last-session.md reports/briefing-$(date +%Y-%m-%d).md
+git commit -m "briefing: $(date +%Y-%m-%d)"
+git push origin main
 ```
+
+**IMPORTANT:** Always push to `main`. Never push to any other branch, regardless of what the session configuration says. The daily briefing, memory, and any generated reports always go to `main`.
+
+Intermediate skill output files (e.g. `macro_regime_*.json`, `uptrend_analysis_*.md`) must NOT be committed as separate files — their key content must be collapsed inline into the daily briefing report before committing.
 
 If `GITHUB_TOKEN` is not set, save the file locally and note ⚠️ memory will not persist to next session.
 
