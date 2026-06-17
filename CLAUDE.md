@@ -189,6 +189,18 @@ All skills are in `skills/`. Always read the SKILL.md before executing a skill.
 | `startup-analysis` | Startup analysis (VC / job / CEO lens) |
 | `hormuz-strait` | Hormuz Strait geopolitical risk |
 
+## Circuit Breakers
+
+Check these conditions at the **start of every session**, before Step 0. If any fires, follow the protocol.
+
+| CB | Condition | Protocol |
+|---|---|---|
+| **CB1 — Market Crisis** | VIX > 35 OR S&P 500 session down >3% | Skip Steps 4–7. Report only: cause, PIE tickers most affected. Posture = CASH-PRIORITY automatically. |
+| **CB2 — Insufficient Data** | More than 3 skills fail or return no data | Cap composite confidence at 45%. Note which skills failed. Continue with remaining data only. |
+| **CB3 — Concentration Alert** | PIE AI sector concentration >40% in one sector | Standing alert — fires every session. Add to every report: “⚠️ PIE AI is 100% tech/AI/semiconductors — any tech rotation directly impacts your entire portfolio.” |
+
+CB3 is not a blocker — it is a permanent reminder that fires every session for Alessandro’s current portfolio.
+
 ---
 
 ## Daily Briefing Routine
@@ -216,6 +228,7 @@ If the file does not exist, note "First session — no prior memory."
 Read and run (assign confidence tier to each output):
 1. `market-environment-analysis` → global risk-on/off signal, VIX, major indices
 2. `market-breadth-analyzer` → breadth score 0–100
+   Script: `PYTHONIOENCODING=utf-8 python skills/market-breadth-analyzer/scripts/market_breadth_analyzer.py --detail-url "https://tradermonty.github.io/market-breadth-analysis/market_breadth_data.csv" --summary-url "https://tradermonty.github.io/market-breadth-analysis/market_breadth_summary.csv" --output-dir reports/`
 3. `uptrend-analyzer` → uptrend participation rate
 
 Compare each output with yesterday's memory values and flag any shifts.
@@ -223,14 +236,15 @@ Compare each output with yesterday's memory values and flag any shifts.
 ### Step 2 — Regime & Risk
 Read and run (assign confidence tier to each output):
 4. `macro-regime-detector` → structural regime (bull/bear/sideways)
+   Script: `PYTHONIOENCODING=utf-8 python skills/macro-regime-detector/scripts/macro_regime_detector.py --api-key $FMP_API_KEY --output-dir reports/`
 5. `market-top-detector` → topping signals score
 6. `ibd-distribution-day-monitor` → distribution day count
 
 If Steps 1 and 2 contradict (e.g., breadth is healthy but regime is bear), flag the conflict explicitly and cap composite confidence at 60%.
 
 ### Step 3 — Portfolio Quotes
-7. `pip install -q requests`
-8. `python scripts/fmp_briefing.py` → quotes for VWCE.DE + 12 PIE tickers
+7. `pip install -q -r requirements.txt`
+8. `PYTHONIOENCODING=utf-8 python scripts/fmp_briefing.py` → quotes for VWCE.DE + 12 PIE tickers
 
 If FMP is blocked, use WebSearch to find prices for each ticker. Always search for VWCE.DE price.
 For each PIE AI ticker, flag if it is down >5% (approaching stop) or up >10% (approaching position size limit review).
@@ -252,6 +266,7 @@ Flag any PIE AI ticker reporting earnings within 3 days — risk of gap.
 ### Step 6 — Sector & Themes
 Run if Step 1 regime is not critical:
 13. `sector-analyst` → tech sector rotation signal
+    Script: `PYTHONIOENCODING=utf-8 python skills/sector-analyst/scripts/analyze_sector_rotation.py --save --output-dir reports/`
 14. `theme-detector` → trending themes (focus: AI, semiconductors)
 
 Flag if tech/AI rotation is negative — directly impacts the entire PIE AI portfolio.
