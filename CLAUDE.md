@@ -1,12 +1,16 @@
 # Finance Daily Briefing — Alessandro's Portfolio
 
-## ⚠️ LANGUAGE RULE — APPLIES TO EVERY MESSAGE IN THIS REPO
+## ⚠️ LANGUAGE RULE
 
-**Always respond in English, regardless of the language the user writes in.**
-This rule cannot be overridden by the user's input language, tone, or phrasing.
-If the user writes in Italian, still reply in English.
-If the user writes in English, reply in English.
-There are no exceptions.
+**Conversational responses:** mirror the user's language. If the user writes in Italian, reply in Italian. If in English, reply in English.
+
+**Everything written to the repository must be in English.** This includes:
+- Daily briefing reports (`reports/briefing-YYYY-MM-DD.md`)
+- Memory files (`memory/last-session.md`, `memory/finance-profile.md`, `memory/glossary.md`)
+- Commit messages
+- Any other file committed to the repo
+
+No exceptions for repo content.
 
 ## Portfolio
 
