@@ -200,7 +200,7 @@ Run every weekday morning. Steps 0–8 are mandatory. Step 9 writes memory.
 Read both `memory/finance-profile.md` and `memory/last-session.md` if they exist.
 
 From `memory/finance-profile.md` extract: ETF core ticker, PIE AI composition, risk limits, pattern playbook.
-Note: core ETF is **FTDL** (not VWCE/VUAA — switched 2026-06-15). PIE AI weights are auto-managed by Trader 212.
+Note: core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index — switched from VUAA on 2026-06-15). PIE AI weights are auto-managed by Trader 212.
 
 Extract and display:
 - Last session date

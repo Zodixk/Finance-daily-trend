@@ -43,7 +43,7 @@ Individual weights: unspecified (automatically managed by Trader 212 PIE)
 Estimated sector concentration: ~100% Technology/Semiconductors — monitor closely
 
 **Core ETF (accumulation plan):**
-- **FTDL** — All-World accumulating, listed on German exchange (XETRA) | Replaced VUAA (S&P 500 only) | Switch made: 2026-06-15
+- **VWCE.DE** (Vanguard FTSE All-World UCITS ETF Acc) — tracks the FTSE All-World index, listed on XETRA | Replaced VUAA (S&P 500 only) | Switch made: 2026-06-15
   - Coverage: ~4,000 stocks, developed + emerging markets, ~60-65% US, ~35-40% rest of world
   - Tax treatment: accumulating → no tax on reinvested dividends, taxed only at exit
 
@@ -149,6 +149,6 @@ Always use in combination with volume. Patterns without volume confirmation carr
 ## Notes for Daily Briefing Routine
 
 - Always read this file at Step 0 alongside `memory/last-session.md`
-- Core ETF is **FTDL** (not VUAA, not VWCE) — switched 2026-06-15
+- Core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index) — replaced VUAA on 2026-06-15
 - PIE AI weights are auto-managed by Trader 212 — adding funds distributes across all 12 tickers automatically
 - Pattern Playbook (Section 7) must be checked for every PIE AI ticker near a key level
