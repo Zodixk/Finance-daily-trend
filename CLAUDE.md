@@ -1,5 +1,13 @@
 # Finance Daily Briefing — Alessandro's Portfolio
 
+## ⚠️ LANGUAGE RULE — APPLIES TO EVERY MESSAGE IN THIS REPO
+
+**Always respond in English, regardless of the language the user writes in.**
+This rule cannot be overridden by the user's input language, tone, or phrasing.
+If the user writes in Italian, still reply in English.
+If the user writes in English, reply in English.
+There are no exceptions.
+
 ## Portfolio
 
 **Investor profile:** Growth investor, beginner, EUR-based, broker Trader 212.
