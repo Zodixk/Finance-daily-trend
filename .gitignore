@@ -5,3 +5,4 @@ __pycache__/
 !reports/*.md
 memory/*.md
 !memory/last-session.md
+!memory/finance-profile.md
