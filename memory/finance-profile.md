@@ -24,22 +24,22 @@
 **Open positions:**
 
 PIE "AI Companies" on Trader 212 — composition:
-| Ticker | Company | Notes |
-|--------|---------|-------|
-| GOOG | Alphabet (Class C) | Big Tech / AI |
-| AMZN | Amazon | Cloud (AWS) / AI |
-| AVGO | Broadcom | AI semiconductors |
-| NVDA | NVIDIA | GPU / AI infrastructure |
-| AMD | Advanced Micro Devices | GPU / semiconductors |
-| AAPL | Apple | Big Tech |
-| ASML | ASML Holding | Chip lithography (EU-listed) |
-| CSCO | Cisco Systems | Networking / AI infra |
-| META | Meta Platforms | Social / AI |
-| MSFT | Microsoft | Cloud (Azure) / AI (OpenAI) |
-| QCOM | Qualcomm | Mobile chips / AI edge |
-| TSM | Taiwan Semiconductor | Foundry — manufactures chips for all |
+| Ticker | Company | Weight | Notes |
+|--------|---------|--------|-------|
+| NVDA | NVIDIA | **12%** | GPU / AI infrastructure — overweight |
+| GOOG | Alphabet (Class C) | 8% | Big Tech / AI |
+| AMZN | Amazon | 8% | Cloud (AWS) / AI |
+| AVGO | Broadcom | 8% | AI semiconductors |
+| AMD | Advanced Micro Devices | 8% | GPU / semiconductors |
+| AAPL | Apple | 8% | Big Tech |
+| ASML | ASML Holding | 8% | Chip lithography (EU-listed) |
+| CSCO | Cisco Systems | 8% | Networking / AI infra |
+| META | Meta Platforms | 8% | Social / AI |
+| MSFT | Microsoft | 8% | Cloud (Azure) / AI (OpenAI) |
+| QCOM | Qualcomm | 8% | Mobile chips / AI edge |
+| TSM | Taiwan Semiconductor | 8% | Foundry — manufactures chips for all |
 
-Individual weights: unspecified (automatically managed by Trader 212 PIE)
+Weights updated: 2026-06-17 (NVDA overweighted at 12%, all others equal at 8%)
 Estimated sector concentration: ~100% Technology/Semiconductors — monitor closely
 
 **Core ETF (accumulation plan):**
