@@ -24,7 +24,7 @@
 **Individual positions (manually managed):**
 | Ticker | Company | Entry price | Stop loss | Size | Date | Notes |
 |--------|---------|-------------|-----------|------|------|-------|
-| LRCX | Lam Research | $396.75 | $365.00 (−8%) | €10 (test position) | 2026-06-18 | Chip equipment — HBM capex cycle. Test buy. Scale up post MU earnings 24 Jun if thesis confirmed. |
+| SECO | SECO ETF | TBC | TBD (7-8% default) | €50 | 2026-06-18 | ETF position. Order placed 2026-06-18. Confirm entry price post execution. |
 
 **Core ETF (accumulation plan):**
 - **VWCE.DE** (Vanguard FTSE All-World UCITS ETF Acc) — tracks the FTSE All-World index, listed on XETRA | Replaced VUAA (S&P 500 only) | Switch made: 2026-06-15
@@ -85,7 +85,7 @@ Always use in combination with volume. Patterns without volume confirmation carr
 | **3-Weeks Tight** | 3 consecutive weeks closing within 1-1.5% of each other | Breakout above the highest week | Below the 3-week low | `vcp-screener` |
 
 **Application rules:**
-- For growth stocks (LRCX and future positions): prioritize VCP, Flag, Cup & Handle
+- For growth stocks and ETF positions: prioritize VCP, Flag, Cup & Handle
 - Head & Shoulders on any open position → immediately analyze with `market-top-detector`
 - Never enter on a false breakout: price must close above the pivot, not just touch it intraday
 
@@ -100,13 +100,13 @@ Always use in combination with volume. Patterns without volume confirmation carr
 | **VIX Spike > 40** | VIX rises > 40 in < 5 days | Peak lasts 1-3 weeks | Wait for the first day VIX declines — then look for entries at support levels |
 | **VIX Structurally > 25** | VIX stays > 25 for 2+ weeks | Weeks to months | Cash-priority: no new purchases until VIX < 20 |
 | **Dollar Strength (DXY +)** | DXY rises > 3% in 1 month | Variable | Pressure on EU-listed and Asian stocks, US multinationals less affected |
-| **Late-Cycle Rotation** | Tech loses leadership, Energy/Materials/Utilities rise | Months | Reduce tech exposure, consider hedge with defensive ETFs |
+| **Late-Cycle Rotation** | Tech loses leadership, Energy/Materials/Utilities rise | Months | Reduce growth ETF exposure, consider hedge with defensive ETFs |
 | **Sector rotation by phase** | Monitor which sector leads each quarter | Quarterly | Early: Financials → Mid: Tech (now) → Late: Energy → Recession: Utilities |
 
 **Weekly monitoring checklist:**
 - 10Y-2Y spread (target > 0 = healthy curve)
 - DXY (above 105 → pressure on EU/Asian holdings)
-- Sectors leading vs lagging (tech must be in the top 3)
+- Sectors leading vs lagging (global equity breadth must remain healthy)
 
 ---
 
@@ -134,4 +134,4 @@ Always use in combination with volume. Patterns without volume confirmation carr
 - Always read this file at Step 0 alongside `memory/last-session.md`
 - Core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index) — replaced VUAA on 2026-06-15
 - Pattern Playbook (Section 7) must be checked for every open position near a key level
-- LRCX individual position: entry $396.75, stop $365, €10 test size — review after MU earnings 24 Jun 2026
+- SECO ETF individual position: €50 order placed 2026-06-18 — confirm entry price and apply 7-8% default stop once confirmed

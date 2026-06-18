@@ -22,7 +22,7 @@ No exceptions for repo content.
 **Individual positions:**
 | Ticker | Entry | Stop | Size | Notes |
 |--------|-------|------|------|-------|
-| LRCX | $396.75 | $365.00 (−8%) | €10 (test) | Chip equipment — HBM capex cycle. Review post MU earnings 24 Jun 2026. |
+| SECO | TBC | TBD (7-8% default) | €50 | ETF position. Order placed 2026-06-18. Confirm entry price. |
 
 ## Environment Variables
 
@@ -52,7 +52,7 @@ Apply these rules throughout the entire session, including on-demand questions:
 2. **Currency:** Alessandro is EUR-based. Note EUR/USD when converting USD figures.
 3. **Position size:** never recommend a position >10% of portfolio. Always include a stop level (7-8%).
 4. **Portfolio relevance:** when any signal fires, immediately flag which open positions are directly affected.
-5. **Tech bias:** LRCX is chip equipment — directly linked to semiconductor capex cycles. Flag when sector rotation moves against semiconductors.
+5. **Diversified ETF portfolio:** both VWCE and SECO are broad global ETFs. Flag macro risks (recession signals, rising rates, global equity drawdowns) that could impact the portfolio broadly.
 6. **VWCE:** is the long-term core — never flag it as a sell unless there is an extreme, data-backed macro event.
 7. **Tone:** concrete and actionable. No generic advice. No invented numbers.
 8. **52w High context:** whenever a ticker is near or at its 52w high, always search for the exact date that high was set and whether it is also an all-time high. Distinguish clearly: a 52w high set yesterday is very different from one set 11 months ago. State it explicitly (e.g. "52w high of $558 set yesterday Jun 15 — also all-time high").
@@ -255,7 +255,7 @@ If Steps 1 and 2 contradict (e.g., breadth is healthy but regime is bear), flag 
 
 ### Step 3 — Portfolio Quotes
 7. `pip install -q -r requirements.txt`
-8. `PYTHONIOENCODING=utf-8 python scripts/fmp_briefing.py` → quotes for VWCE.DE + LRCX
+8. `PYTHONIOENCODING=utf-8 python scripts/fmp_briefing.py` → quotes for VWCE.DE + SECO
 
 If FMP is blocked, use WebSearch to find prices for each ticker. Always search for VWCE.DE price.
 For each individual position, flag if it is down >5% (approaching stop) or up >10% (approaching position size limit review).
@@ -265,22 +265,22 @@ Read and run:
 9. `market-news-analyst` → top market-moving news last 24h
 10. `finance-sentiment` for tickers: NVDA, AAPL, MSFT, META, GOOG, AMZN, AMD, AVGO → Reddit/X/Polymarket sentiment scores (market context)
 
-Flag any news that directly affects LRCX or the semiconductor sector. Note if sentiment contradicts price action.
+Flag any news that directly affects SECO or the broader global equity market. Note if sentiment contradicts price action.
 
 ### Step 5 — Forward Calendar
 Read and run:
 11. `economic-calendar-fetcher` → FOMC, CPI, NFP this week
 12. `earnings-calendar` → earnings next 7 days
 
-Flag LRCX or any semiconductor-sector ticker reporting earnings within 3 days — risk of gap.
+Flag any macro event within 3 days that could move global equity markets significantly.
 
 ### Step 6 — Sector & Themes
 Run if Step 1 regime is not critical:
 13. `sector-analyst` → tech sector rotation signal
     Script: `PYTHONIOENCODING=utf-8 python skills/sector-analyst/scripts/analyze_sector_rotation.py --save --output-dir reports/`
-14. `theme-detector` → trending themes (focus: AI, semiconductors)
+14. `theme-detector` → trending themes (focus: AI, global equity)
 
-Flag if semiconductor/chip equipment rotation is negative — directly impacts LRCX.
+Flag if global equity rotation is broadly negative — directly impacts both SECO and VWCE.
 
 ### Step 7 — Exposure Decision
 Read and run:
@@ -295,13 +295,13 @@ Save a single markdown report to `reports/briefing-YYYY-MM-DD.md`.
 **Report structure (in plain English, beginner-friendly — no unexplained jargon):**
 1. **What changed since yesterday** — compare with memory: regime, breadth, posture. Max 3 lines.
 2. **Market today** — VIX, VWCE, NASDAQ. One plain-English sentence of interpretation.
-3. **Your portfolio** — LRCX: price, change%, vs stop level. VWCE.DE: price and change%. Flag anything near stop.
+3. **Your portfolio** — SECO: price and change%. VWCE.DE: price and change%. Flag anything near stop.
 4. **Today's news** — top 3–5 real news items from WebSearch. One line each + "what it means for you".
 5. **Social sentiment** — Reddit/X/Polymarket scores for key market tickers (if available).
 6. **Key dates this week** — FOMC, CPI, NFP, earnings. Only the things that matter this week.
 7. **Sector & themes** — is tech rotating? Top 2 themes. One sentence each.
 8. **What to do** — ALLOW / RESTRICT / CASH-PRIORITY with plain-English reasoning. Confidence %.
-9. **Watchlist** — 3–5 stocks/assets/commodities to watch TODAY with key level and reason. Always include gold, oil, and the semiconductor sector.
+9. **Watchlist** — 3–5 stocks/assets/commodities to watch TODAY with key level and reason. Always include gold, oil, and global equity ETF trends.
 10. **Idea of the day** — one concrete, data-backed observation. One memorable sentence.
 11. **Glossary** — define every technical term used in today's report. One plain-English sentence per term. Always include: VIX, 52w High/Low, breadth, dot plot, FOMC, sector rotation, stop loss, bullish/bearish, yield, and any other jargon that appeared today.
 

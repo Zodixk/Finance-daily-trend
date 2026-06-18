@@ -25,7 +25,7 @@ FMP_API_KEY = os.getenv("FMP_API_KEY")
 BASE = "https://financialmodelingprep.com/stable"
 SESSION = requests.Session()
 
-INDIVIDUAL_POSITIONS = ["LRCX"]
+INDIVIDUAL_POSITIONS = ["SECO"]
 ETF = "VWCE.DE"
 INDICES = {"VIX": "^VIX", "NASDAQ": "^IXIC", "SP500": "^GSPC"}
 
@@ -123,7 +123,7 @@ def fmt_pct(val):
     return f"{arrow} {sign}{val:.2f}%"
 
 
-def fmt_price(val, currency="$"):
+def fmt_price(val, currency="€"):
     if val is None:
         return "N/A"
     return f"{currency}{val:.2f}"
@@ -198,7 +198,7 @@ def main():
 
     if etf_q:
         p, chg, _, _ = norm(etf_q)
-        lines.append(f"- **VWCE (core ETF):** {fmt_price(p, '€')} {fmt_pct(chg)}")
+        lines.append(f"- **VWCE (core ETF):** {fmt_price(p)} {fmt_pct(chg)}")
     else:
         lines.append("- **VWCE:** ⚠️ unavailable — check on Trader 212 / XETRA")
 

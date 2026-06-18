@@ -17,7 +17,7 @@ Esegui questo briefing ogni volta che l'utente scrive "briefing", "analisi merca
 ## Profilo investitore (sempre attivo)
 
 - **Chi:** Alessandro, principiante assoluto, EUR, broker Trader 212
-- **Individual positions:** LRCX (entry $396.75, stop $365)
+- **Individual positions:** SECO ETF (€50, ordine del 2026-06-18, prezzo TBC)
 - **ETF Core:** VWCE.DE — Vanguard FTSE All-World accumulating, XETRA (long-term anchor, mai vendere interamente)
 - **Rischio:** stop default 7-8% | max posizione 10% | max drawdown portafoglio 15%
 - **Output:** sempre in italiano, linguaggio semplice, per ogni segnale indica quale posizione aperta è impattata
@@ -30,7 +30,7 @@ Esegui questo briefing ogni volta che l'utente scrive "briefing", "analisi merca
 2. **Mai inventare numeri** — se non trovi un dato, scrivi ⚠️ dato non disponibile
 3. **Sezione "Cosa fare"** obbligatoria alla fine di ogni analisi
 4. **Confidenza composita** — calcola e mostra sempre (max 92%)
-5. **Specifico, mai generico** — "considera LRCX sotto $X con stop a $Y, max 5% portafoglio"
+5. **Specifico, mai generico** — es. "SECO sotto €X con stop a €Y, max 5% portafoglio"
 
 ---
 
@@ -95,25 +95,25 @@ Se regime (Passo 1) e breadth (Passo 1) si contraddicono → nota il conflitto, 
 
 ### Passo 3 — Quote portafoglio
 
-**Search:** `LRCX stock price today`
+**Search:** `SECO ETF price today`
 **Search:** `VWCE.DE ETF price today` (se non disponibile → ⚠️ verifica su Trader 212 o XETRA)
 
 Costruisci una tabella:
 
 | Ticker | Prezzo | Variazione % | Note |
 |--------|--------|--------------|------|
-| LRCX | ... | ... | stop $365 |
+| SECO | ... | ... | stop TBD |
 | VWCE.DE | ... | ... | ETF core |
 
 Flag automatici:
-- LRCX variazione < -5% → ⚠️ vicino allo stop loss ($365)
-- LRCX variazione > +10% → 📈 movimento forte, valuta presa profitto parziale
+- SECO variazione < -5% → ⚠️ vicino allo stop loss (7-8% default)
+- SECO variazione > +10% → 📈 movimento forte, valuta presa profitto parziale
 
 ---
 
 ### Passo 4 — News e sentiment
 
-**Search:** `stock market news today` | `tech stocks news today` | `semiconductors news today`
+**Search:** `stock market news today` | `global equity ETF news today`
 
 Top 5 notizie rilevanti. Per ognuna: titolo, fonte, impatto sulle posizioni aperte.
 
@@ -132,20 +132,20 @@ Se sentiment e prezzo vanno in direzioni opposte → segnalalo (divergenza).
 
 Identifica eventi macro nei prossimi 7 giorni. Flag se coincidono con period di alta volatilità attesa.
 
-**Search:** `earnings calendar this week tech stocks` | `LRCX earnings date 2026`
+**Search:** `SECO ETF news 2026` | `earnings calendar this week market moving`
 
-Flag se LRCX riporta earnings entro 3 giorni → rischio gap (il prezzo può aprire molto diverso).
+Flag eventi macro entro 3 giorni che potrebbero muovere i mercati globali in modo significativo.
 
 ---
 
 ### Passo 6 — Settori e temi
 
-**Search:** `sector rotation today 2026` | `technology sector performance today` | `semiconductors ETF SMH today`
+**Search:** `sector rotation today 2026` | `global equity ETF performance today` | `MSCI World ETF trend today`
 
-Identifica: tech/semiconduttori sono in testa o in coda rispetto agli altri settori?
-Flag se semiconduttori/chip equipment perdono leadership → impatto diretto su LRCX.
+Identifica: i mercati globali stanno salendo o scendendo in modo generalizzato?
+Flag se rotazione globale è negativa → impatto diretto su SECO e VWCE.
 
-**Search:** `AI stocks trend 2026` | `semiconductor cycle 2026` | `top investment themes today`
+**Search:** `top investment themes today 2026` | `global market trends June 2026`
 
 Top 2 temi dominanti del momento.
 
@@ -176,7 +176,7 @@ VIX, S&P 500, Nasdaq, breadth score, regime.
 Top 5 notizie con impatto sulle posizioni aperte.
 
 **3. Quote portafoglio**
-LRCX: prezzo, variazione, confronto con stop ($365). VWCE.DE: prezzo e variazione.
+SECO: prezzo e variazione. VWCE.DE: prezzo e variazione.
 
 **4. Social Sentiment**
 NVDA, AAPL, MSFT, META: bullish/neutral/bearish (market context).
@@ -234,7 +234,7 @@ Questa sezione non può mai essere omessa. Deve essere concreta e specifica.
 
 **Comprare (se ALLOW):**
 Lista titoli con: entry price, stop loss, size massima (% portafoglio)
-Esempio: "Considera LRCX sotto $X con stop a $Y, max 5% portafoglio"
+Esempio: "Considera SECO sotto €X con stop a €Y, max 5% portafoglio"
 
 **Vendere o ridurre:**
 Lista titoli con motivazione e livello di uscita suggerito
@@ -280,4 +280,4 @@ Le istruzioni sono permanenti — non devi re-incollare ogni volta.
 | Memoria sessione precedente | Git (automatica) | Project Knowledge (manuale) |
 | Skill avanzate (71) | Tutte disponibili | Solo web search |
 
-Per analisi approfondite su singoli titoli (es. "analizza LRCX in dettaglio"), chiedile esplicitamente dopo il briefing — claude.ai con web search può comunque fare analisi di qualità.
+Per analisi approfondite su singoli titoli o ETF, chiedile esplicitamente dopo il briefing.
