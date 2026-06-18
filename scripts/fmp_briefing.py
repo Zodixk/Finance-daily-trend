@@ -2,7 +2,7 @@
 """
 Daily Finance Briefing — Alessandro's Portfolio
 FMP stable API (one ticker at a time — multi-symbol is premium)
-Fallback: yfinance for VWCE.DE and any ticker FMP can't serve
+Fallback: yfinance for European ETFs and any ticker FMP can't serve
 """
 
 import os
@@ -25,8 +25,9 @@ FMP_API_KEY = os.getenv("FMP_API_KEY")
 BASE = "https://financialmodelingprep.com/stable"
 SESSION = requests.Session()
 
-INDIVIDUAL_POSITIONS = ["SECO"]
-ETF = "VWCE.DE"
+# SEC0.DE = iShares MSCI Global Semiconductors UCITS ETF (XETRA)
+INDIVIDUAL_POSITIONS = ["SEC0.DE"]
+ETF_CORE = "VWCE.DE"
 INDICES = {"VIX": "^VIX", "NASDAQ": "^IXIC", "SP500": "^GSPC"}
 
 
@@ -147,10 +148,10 @@ def main():
             if q:
                 idx[key] = q
 
-    # ETF (VWCE.DE): yfinance directly (FMP doesn't support European ETFs on free plan)
-    etf_q = yf_quote(ETF)
+    # Core ETF (VWCE.DE): yfinance directly
+    etf_q = yf_quote(ETF_CORE)
 
-    # Individual positions: FMP first, yfinance fallback
+    # Individual positions: yfinance (European ETFs not on FMP free plan)
     positions_q = {}
     for ticker in INDIVIDUAL_POSITIONS:
         q = fmp_quote(ticker)
@@ -161,16 +162,16 @@ def main():
             if q:
                 positions_q[ticker] = q
 
-    # Earnings calendar
+    # Earnings calendar (for semiconductor majors as market context)
+    SEMIS_WATCHLIST = {"NVDA", "TSM", "ASML", "AVGO", "AMD", "QCOM", "INTC", "AMAT", "LRCX", "KLAC"}
     today = date.today()
     earnings = fmp_earnings(today.isoformat(), (today + timedelta(days=7)).isoformat())
-    position_earnings = [e for e in earnings if e.get("symbol") in set(INDIVIDUAL_POSITIONS)]
+    semi_earnings = [e for e in earnings if e.get("symbol") in SEMIS_WATCHLIST]
 
     # ── Build report ──────────────────────────────────────────────────────────
     lines = []
     lines.append(f"# Daily Briefing — {today_str}\n")
 
-    # Market overview
     lines.append("## Market Overview\n")
     vix_q = idx.get("VIX")
     nasdaq_q = idx.get("NASDAQ")
@@ -204,7 +205,6 @@ def main():
 
     lines.append("")
 
-    # Individual positions
     lines.append("## Individual Positions — Quotes\n")
     lines.append("| Ticker | Price | Change | 52w High | 52w Low | Flag |")
     lines.append("|--------|-------|--------|----------|---------|------|")  
@@ -227,11 +227,10 @@ def main():
 
     lines.append("")
 
-    # Earnings
-    lines.append("## Earnings This Week\n")
-    if position_earnings:
-        lines.append("**⚠️ Individual positions reporting:**")
-        for e in position_earnings:
+    lines.append("## Semiconductor Earnings This Week\n")
+    if semi_earnings:
+        lines.append("**⚠️ Semiconductor sector reporting (impacts SEC0):**")
+        for e in semi_earnings:
             eps = e.get("epsEstimated")
             rev = e.get("revenueEstimated")
             eps_s = f"EPS est: ${eps:.2f}" if eps else ""
@@ -239,13 +238,7 @@ def main():
             extra = " · ".join(filter(None, [eps_s, rev_s]))
             lines.append(f"- **{e['symbol']}** — {e.get('date','TBD')} {e.get('time','')} {f'· {extra}' if extra else ''}")
     else:
-        lines.append("- ✅ No individual positions reporting this week.")
-
-    other_e = [e for e in earnings if e.get("symbol") not in set(INDIVIDUAL_POSITIONS)]
-    if other_e:
-        lines.append("\n**Other notable reports:**")
-        for e in other_e[:5]:
-            lines.append(f"- {e['symbol']} — {e.get('date','TBD')}")
+        lines.append("- ✅ No major semiconductor companies reporting this week.")
 
     lines.append("")
     lines.append("---")
@@ -264,7 +257,7 @@ def main():
     return {
         "vix": idx.get("VIX"), "nasdaq": idx.get("NASDAQ"),
         "sp500": idx.get("SP500"), "vwce": etf_q,
-        "positions": positions_q, "position_earnings": position_earnings,
+        "positions": positions_q, "semi_earnings": semi_earnings,
     }
 
 

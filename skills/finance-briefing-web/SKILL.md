@@ -17,7 +17,7 @@ Esegui questo briefing ogni volta che l'utente scrive "briefing", "analisi merca
 ## Profilo investitore (sempre attivo)
 
 - **Chi:** Alessandro, principiante assoluto, EUR, broker Trader 212
-- **Individual positions:** SECO ETF (€50, ordine del 2026-06-18, prezzo TBC)
+- **Individual positions:** SEC0.DE — iShares MSCI Global Semiconductors UCITS ETF USD (Acc), €50, ordine del 2026-06-18, prezzo TBC
 - **ETF Core:** VWCE.DE — Vanguard FTSE All-World accumulating, XETRA (long-term anchor, mai vendere interamente)
 - **Rischio:** stop default 7-8% | max posizione 10% | max drawdown portafoglio 15%
 - **Output:** sempre in italiano, linguaggio semplice, per ogni segnale indica quale posizione aperta è impattata
@@ -30,7 +30,7 @@ Esegui questo briefing ogni volta che l'utente scrive "briefing", "analisi merca
 2. **Mai inventare numeri** — se non trovi un dato, scrivi ⚠️ dato non disponibile
 3. **Sezione "Cosa fare"** obbligatoria alla fine di ogni analisi
 4. **Confidenza composita** — calcola e mostra sempre (max 92%)
-5. **Specifico, mai generico** — es. "SECO sotto €X con stop a €Y, max 5% portafoglio"
+5. **Specifico, mai generico** — es. "SEC0 sotto €X con stop a €Y, max 5% portafoglio"
 
 ---
 
@@ -64,10 +64,7 @@ Estrai:
 
 **Search:** `stock market advance decline ratio today` | `percentage stocks above 200 day moving average`
 
-Stima il breadth score 0-100:
-- >70% sopra 200MA → breadth HIGH (score 70-100)
-- 50-70% → MEDIUM (score 40-70)
-- <50% → LOW (score 0-40)
+Stima il breadth score 0-100.
 
 **Search:** `S&P 500 uptrend stocks percentage today`
 
@@ -83,43 +80,39 @@ Classifica regime: **BULL** / **BEAR** / **SIDEWAYS**
 
 **Search:** `S&P 500 distribution days IBD` | `market top signals 2026`
 
-Conta distribution days (vendite istituzionali pesanti). >6 negli ultimi 25 giorni = segnale di allarme.
-
 **Search:** `US stock market bubble indicators 2026` | `Shiller PE CAPE ratio today`
 
-Valuta probabilità bolla (0-100%).
-
-Se regime (Passo 1) e breadth (Passo 1) si contraddicono → nota il conflitto, cappare confidenza a 60%.
+Se regime e breadth si contraddicono → cappare confidenza a 60%.
 
 ---
 
 ### Passo 3 — Quote portafoglio
 
-**Search:** `SECO ETF price today`
+**Search:** `SEC0 ETF price today XETRA` | `iShares MSCI Semiconductors ETF price`
 **Search:** `VWCE.DE ETF price today` (se non disponibile → ⚠️ verifica su Trader 212 o XETRA)
 
 Costruisci una tabella:
 
 | Ticker | Prezzo | Variazione % | Note |
 |--------|--------|--------------|------|
-| SECO | ... | ... | stop TBD |
+| SEC0.DE | ... | ... | stop TBD (7-8%) |
 | VWCE.DE | ... | ... | ETF core |
 
 Flag automatici:
-- SECO variazione < -5% → ⚠️ vicino allo stop loss (7-8% default)
-- SECO variazione > +10% → 📈 movimento forte, valuta presa profitto parziale
+- SEC0 variazione < -5% → ⚠️ vicino allo stop loss (7-8% default)
+- SEC0 variazione > +10% → 📈 movimento forte, valuta presa profitto parziale
 
 ---
 
 ### Passo 4 — News e sentiment
 
-**Search:** `stock market news today` | `global equity ETF news today`
+**Search:** `semiconductor sector news today` | `NVDA TSMC ASML news today` | `chip stocks today`
 
-Top 5 notizie rilevanti. Per ognuna: titolo, fonte, impatto sulle posizioni aperte.
+Top 5 notizie rilevanti con impatto su SEC0.
 
-**Search per sentiment:** `NVDA Reddit sentiment today` | `AAPL stocktwits today` | `MSFT investor sentiment`
+**Search per sentiment:** `NVDA Reddit sentiment today` | `semiconductor stocks sentiment today`
 
-Per i top 4 ticker di mercato (NVDA, AAPL, MSFT, META): classifica sentiment Reddit/StockTwits/X:
+Per i top 4 ticker del settore (NVDA, TSMC, ASML, AVGO): classifica sentiment:
 - BULLISH / NEUTRAL / BEARISH
 
 Se sentiment e prezzo vanno in direzioni opposte → segnalalo (divergenza).
@@ -128,24 +121,24 @@ Se sentiment e prezzo vanno in direzioni opposte → segnalalo (divergenza).
 
 ### Passo 5 — Calendario
 
-**Search:** `economic calendar this week` | `FOMC meeting 2026` | `CPI report date 2026` | `NFP jobs report date 2026`
+**Search:** `economic calendar this week` | `FOMC meeting 2026` | `CPI report date 2026`
 
-Identifica eventi macro nei prossimi 7 giorni. Flag se coincidono con period di alta volatilità attesa.
+Identifica eventi macro nei prossimi 7 giorni.
 
-**Search:** `SECO ETF news 2026` | `earnings calendar this week market moving`
+**Search:** `NVDA earnings date 2026` | `TSMC earnings date 2026` | `ASML earnings date 2026` | `semiconductor earnings this week`
 
-Flag eventi macro entro 3 giorni che potrebbero muovere i mercati globali in modo significativo.
+Flag se un major del settore semiconduttori riporta entro 3 giorni → rischio gap su SEC0.
 
 ---
 
 ### Passo 6 — Settori e temi
 
-**Search:** `sector rotation today 2026` | `global equity ETF performance today` | `MSCI World ETF trend today`
+**Search:** `semiconductor sector performance today` | `SMH ETF today` | `SOXX ETF today` | `chip stocks rotation 2026`
 
-Identifica: i mercati globali stanno salendo o scendendo in modo generalizzato?
-Flag se rotazione globale è negativa → impatto diretto su SECO e VWCE.
+I semiconduttori stanno outperformando o underperformando il mercato?
+Flag se il settore perde leadership → impatto diretto su SEC0.
 
-**Search:** `top investment themes today 2026` | `global market trends June 2026`
+**Search:** `AI chips demand 2026` | `semiconductor cycle 2026` | `top investment themes today`
 
 Top 2 temi dominanti del momento.
 
@@ -153,51 +146,37 @@ Top 2 temi dominanti del momento.
 
 ### Passo 7 — Decisione di esposizione
 
-Basandoti su tutti i passi precedenti, determina la postura:
-
 | Condizione | Postura |
 |---|---|
-| Regime BULL + breadth HIGH + VIX <20 + nessun evento macro imminente | **ALLOW** — puoi aprire nuove posizioni |
-| Regime SIDEWAYS o breadth MEDIUM o VIX 20-30 | **RESTRICT** — mantieni posizioni, no nuovi acquisti |
-| Regime BEAR o breadth LOW o VIX >30 o evento macro entro 2 giorni | **CASH-PRIORITY** — riduci esposizione, aumenta liquidità |
-
-Motiva la decisione con i dati dei passi precedenti.
+| Regime BULL + breadth HIGH + VIX <20 + nessun evento macro imminente | **ALLOW** |
+| Regime SIDEWAYS o breadth MEDIUM o VIX 20-30 | **RESTRICT** |
+| Regime BEAR o breadth LOW o VIX >30 o evento macro entro 2 giorni | **CASH-PRIORITY** |
 
 ---
 
 ### Passo 8 — Sintesi e report
 
-Costruisci il report finale con questa struttura:
+**1. Market Overview** — VIX, S&P 500, Nasdaq, breadth, regime.
 
-**1. Market Overview**
-VIX, S&P 500, Nasdaq, breadth score, regime.
+**2. Morning News** — Top 5 notizie con impatto su SEC0 e VWCE.
 
-**2. Morning News**
-Top 5 notizie con impatto sulle posizioni aperte.
+**3. Quote portafoglio** — SEC0.DE: prezzo e variazione. VWCE.DE: prezzo e variazione.
 
-**3. Quote portafoglio**
-SECO: prezzo e variazione. VWCE.DE: prezzo e variazione.
+**4. Social Sentiment** — NVDA, TSMC, ASML, AVGO: bullish/neutral/bearish.
 
-**4. Social Sentiment**
-NVDA, AAPL, MSFT, META: bullish/neutral/bearish (market context).
+**5. Calendario** — Macro eventi + earnings semiconduttori questa settimana.
 
-**5. Calendario**
-Macro eventi + earnings questa settimana.
+**6. Settori e Temi** — Rotazione semiconduttori, top 2 temi.
 
-**6. Settori e Temi**
-Rotazione settoriale, top 2 temi.
+**7. Esposizione** — ALLOW / RESTRICT / CASH-PRIORITY + **confidenza composita %**
 
-**7. Esposizione**
-ALLOW / RESTRICT / CASH-PRIORITY + ragionamento + **confidenza composita %**
-
-**8. Insight del giorno**
-Un'osservazione concreta e basata sui dati per Alessandro.
+**8. Insight del giorno** — Un'osservazione concreta e basata sui dati.
 
 ---
 
 ### Passo 9 — Aggiorna memoria
 
-Genera il contenuto aggiornato del file `last-session.md` da salvare nella Project Knowledge:
+Genera il contenuto aggiornato del file `last-session.md`:
 
 ```
 # Session Memory — [DATA OGGI]
@@ -212,7 +191,7 @@ Genera il contenuto aggiornato del file `last-session.md` da salvare nella Proje
 
 ## Segnali
 - Sentiment bias: [bullish/bearish/neutral]
-- Rotazione settoriale: [tech leading/lagging]
+- Rotazione settoriale: [semiconduttori leading/lagging]
 - Top temi: [tema1, tema2]
 
 ## Decisione esposizione
@@ -223,49 +202,35 @@ Genera il contenuto aggiornato del file `last-session.md` da salvare nella Proje
 - [Evento macro o earnings nei prossimi 1-3 giorni]
 ```
 
-Mostra questo blocco all'utente con le istruzioni:
-> "Copia questo testo, vai su Project Knowledge, sostituisci il file `last-session.md` con questo contenuto. La prossima sessione partirà da qui."
-
 ---
 
 ### Passo 10 — Cosa fare (OBBLIGATORIO)
 
-Questa sezione non può mai essere omessa. Deve essere concreta e specifica.
-
 **Comprare (se ALLOW):**
-Lista titoli con: entry price, stop loss, size massima (% portafoglio)
-Esempio: "Considera SECO sotto €X con stop a €Y, max 5% portafoglio"
+Esempio: "Considera SEC0 sotto €X con stop a €Y, max 5% portafoglio"
 
 **Vendere o ridurre:**
 Lista titoli con motivazione e livello di uscita suggerito
 
 **Watchlist:**
-Titoli da monitorare con il trigger specifico che li renderebbe acquistabili
+Titoli/ETF da monitorare con il trigger specifico
 
 **Trigger da monitorare:**
-Eventi, livelli di prezzo, scadenze entro 7 giorni
+Eventi, livelli di prezzo, earnings semiconduttori entro 7 giorni
 
 **Opportunità fuori dal portafoglio:**
-Se il contesto suggerisce un titolo interessante non in portafoglio, segnalarlo con entry/stop/size
+Se il contesto suggerisce un titolo interessante, segnalarlo con entry/stop/size
 
 ---
 
 ## Come salvare su claude.ai
 
-### Setup iniziale (una volta sola)
+1. Vai su **claude.ai → Projects → New Project**
+2. In **Project Instructions** incolla questo file
+3. In **Project Knowledge** carica `last-session.md` vuoto
+4. Ogni volta che scrivi **"briefing"** esegue l'analisi completa
 
-1. Vai su **claude.ai → Projects → New Project** (es. "Finance Briefing")
-2. In **Project Instructions** incolla il contenuto di questo file
-3. In **Project Knowledge** carica un file `last-session.md` vuoto (o con "First session — no prior memory")
-4. Ogni volta che scrivi **"briefing"** in quel progetto, Claude esegue l'analisi completa
-
-### Aggiornare la memoria dopo ogni sessione
-
-Al termine di ogni briefing, Claude genera un blocco `last-session.md` aggiornato.
-Vai su Project Knowledge → sostituisci il file con il nuovo contenuto.
-La sessione successiva partirà dal contesto di quella precedente.
-
-Le istruzioni sono permanenti — non devi re-incollare ogni volta.
+Al termine aggiorna `last-session.md` con il blocco generato al Passo 9.
 
 ---
 
@@ -278,6 +243,3 @@ Le istruzioni sono permanenti — non devi re-incollare ogni volta.
 | Breadth quantitativo | CSV pubblici (precisi) | Web search (stimato) |
 | Salvataggio report | File locale automatico | Copia/incolla manuale |
 | Memoria sessione precedente | Git (automatica) | Project Knowledge (manuale) |
-| Skill avanzate (71) | Tutte disponibili | Solo web search |
-
-Per analisi approfondite su singoli titoli o ETF, chiedile esplicitamente dopo il briefing.
