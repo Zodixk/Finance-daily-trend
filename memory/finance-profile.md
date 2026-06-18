@@ -157,3 +157,4 @@ Always use in combination with volume. Patterns without volume confirmation carr
 - Core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index) — replaced VUAA on 2026-06-15
 - PIE AI weights are auto-managed by Trader 212 — adding funds distributes across all 12 tickers automatically
 - Pattern Playbook (Section 7) must be checked for every PIE AI ticker near a key level
+- LRCX individual position: entry $396.75, stop $365, €10 test size — review after MU earnings 24 Jun 2026
