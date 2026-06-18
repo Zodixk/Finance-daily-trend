@@ -42,6 +42,11 @@ PIE "AI Companies" on Trader 212 — composition:
 Weights updated: 2026-06-17 (NVDA overweighted at 12%, all others equal at 8%)
 Estimated sector concentration: ~100% Technology/Semiconductors — monitor closely
 
+**Individual positions (manually managed):**
+| Ticker | Company | Entry price | Stop loss | Size | Date | Notes |
+|--------|---------|-------------|-----------|------|------|-------|
+| LRCX | Lam Research | $396.75 | $365.00 (−8%) | €10 (test position) | 2026-06-18 | Chip equipment — HBM capex cycle. Test buy. Scale up post MU earnings 24 Jun if thesis confirmed. |
+
 **Core ETF (accumulation plan):**
 - **VWCE.DE** (Vanguard FTSE All-World UCITS ETF Acc) — tracks the FTSE All-World index, listed on XETRA | Replaced VUAA (S&P 500 only) | Switch made: 2026-06-15
   - Coverage: ~4,000 stocks, developed + emerging markets, ~60-65% US, ~35-40% rest of world
