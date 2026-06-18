@@ -25,7 +25,7 @@ FMP_API_KEY = os.getenv("FMP_API_KEY")
 BASE = "https://financialmodelingprep.com/stable"
 SESSION = requests.Session()
 
-PIE = ["GOOG", "AMZN", "AVGO", "NVDA", "AMD", "AAPL", "ASML", "CSCO", "META", "MSFT", "QCOM", "TSM"]
+INDIVIDUAL_POSITIONS = ["LRCX"]
 ETF = "VWCE.DE"
 INDICES = {"VIX": "^VIX", "NASDAQ": "^IXIC", "SP500": "^GSPC"}
 
@@ -100,7 +100,7 @@ def yf_quote(ticker):
         return None
 
 
-# ── Normalise quote dict (FMP stable uses different keys than v3) ─────────────
+# ── Normalise quote dict ──────────────────────────────────────────────────────
 
 def norm(q):
     """Return (price, change_pct, year_high, year_low) from any quote dict."""
@@ -150,21 +150,21 @@ def main():
     # ETF (VWCE.DE): yfinance directly (FMP doesn't support European ETFs on free plan)
     etf_q = yf_quote(ETF)
 
-    # PIE AI tickers: FMP one at a time, yfinance fallback per ticker
-    pie_q = {}
-    for ticker in PIE:
+    # Individual positions: FMP first, yfinance fallback
+    positions_q = {}
+    for ticker in INDIVIDUAL_POSITIONS:
         q = fmp_quote(ticker)
         if q:
-            pie_q[ticker] = q
+            positions_q[ticker] = q
         else:
             q = yf_quote(ticker)
             if q:
-                pie_q[ticker] = q
+                positions_q[ticker] = q
 
     # Earnings calendar
     today = date.today()
     earnings = fmp_earnings(today.isoformat(), (today + timedelta(days=7)).isoformat())
-    pie_earnings = [e for e in earnings if e.get("symbol") in set(PIE)]
+    position_earnings = [e for e in earnings if e.get("symbol") in set(INDIVIDUAL_POSITIONS)]
 
     # ── Build report ──────────────────────────────────────────────────────────
     lines = []
@@ -204,13 +204,13 @@ def main():
 
     lines.append("")
 
-    # PIE AI quotes
-    lines.append("## PIE AI — Quotes\n")
+    # Individual positions
+    lines.append("## Individual Positions — Quotes\n")
     lines.append("| Ticker | Price | Change | 52w High | 52w Low | Flag |")
-    lines.append("|--------|-------|--------|----------|---------|------|")
+    lines.append("|--------|-------|--------|----------|---------|------|")  
 
-    for ticker in PIE:
-        q = pie_q.get(ticker)
+    for ticker in INDIVIDUAL_POSITIONS:
+        q = positions_q.get(ticker)
         if q:
             p, chg, hi, lo = norm(q)
             flag = ""
@@ -229,9 +229,9 @@ def main():
 
     # Earnings
     lines.append("## Earnings This Week\n")
-    if pie_earnings:
-        lines.append("**⚠️ PIE AI tickers reporting:**")
-        for e in pie_earnings:
+    if position_earnings:
+        lines.append("**⚠️ Individual positions reporting:**")
+        for e in position_earnings:
             eps = e.get("epsEstimated")
             rev = e.get("revenueEstimated")
             eps_s = f"EPS est: ${eps:.2f}" if eps else ""
@@ -239,9 +239,9 @@ def main():
             extra = " · ".join(filter(None, [eps_s, rev_s]))
             lines.append(f"- **{e['symbol']}** — {e.get('date','TBD')} {e.get('time','')} {f'· {extra}' if extra else ''}")
     else:
-        lines.append("- ✅ No PIE AI stocks reporting this week.")
+        lines.append("- ✅ No individual positions reporting this week.")
 
-    other_e = [e for e in earnings if e.get("symbol") not in set(PIE)]
+    other_e = [e for e in earnings if e.get("symbol") not in set(INDIVIDUAL_POSITIONS)]
     if other_e:
         lines.append("\n**Other notable reports:**")
         for e in other_e[:5]:
@@ -264,7 +264,7 @@ def main():
     return {
         "vix": idx.get("VIX"), "nasdaq": idx.get("NASDAQ"),
         "sp500": idx.get("SP500"), "vwce": etf_q,
-        "pie": pie_q, "pie_earnings": pie_earnings,
+        "positions": positions_q, "position_earnings": position_earnings,
     }
 
 

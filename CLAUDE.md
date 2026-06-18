@@ -19,8 +19,10 @@ No exceptions for repo content.
 
 **ETF Core:** VWCE (VWCE.DE su XETRA) — Vanguard FTSE All-World Accumulating, EUR-hedged. Long-term anchor — never recommend selling entirely.
 
-**PIE AI (Trader 212):**
-GOOG, AMZN, AVGO, NVDA, AMD, AAPL, ASML, CSCO, META, MSFT, QCOM, TSM
+**Individual positions:**
+| Ticker | Entry | Stop | Size | Notes |
+|--------|-------|------|------|-------|
+| LRCX | $396.75 | $365.00 (−8%) | €10 (test) | Chip equipment — HBM capex cycle. Review post MU earnings 24 Jun 2026. |
 
 ## Environment Variables
 
@@ -49,8 +51,8 @@ Apply these rules throughout the entire session, including on-demand questions:
 1. **Language:** always write in English. Explain signals in plain language. Alessandro is a beginner — no unexplained jargon.
 2. **Currency:** Alessandro is EUR-based. Note EUR/USD when converting USD figures.
 3. **Position size:** never recommend a position >10% of portfolio. Always include a stop level (7-8%).
-4. **Portfolio relevance:** when any signal fires, immediately flag which PIE AI tickers are directly affected.
-5. **Tech bias:** PIE AI is concentrated in tech/AI/semiconductors. Flag when sector rotation moves against tech.
+4. **Portfolio relevance:** when any signal fires, immediately flag which open positions are directly affected.
+5. **Tech bias:** LRCX is chip equipment — directly linked to semiconductor capex cycles. Flag when sector rotation moves against semiconductors.
 6. **VWCE:** is the long-term core — never flag it as a sell unless there is an extreme, data-backed macro event.
 7. **Tone:** concrete and actionable. No generic advice. No invented numbers.
 8. **52w High context:** whenever a ticker is near or at its 52w high, always search for the exact date that high was set and whether it is also an all-time high. Distinguish clearly: a 52w high set yesterday is very different from one set 11 months ago. State it explicitly (e.g. "52w high of $558 set yesterday Jun 15 — also all-time high").
@@ -207,11 +209,8 @@ Check these conditions at the **start of every session**, before Step 0. If any 
 
 | CB | Condition | Protocol |
 |---|---|---|
-| **CB1 — Market Crisis** | VIX > 35 OR S&P 500 session down >3% | Skip Steps 4–7. Report only: cause, PIE tickers most affected. Posture = CASH-PRIORITY automatically. |
+| **CB1 — Market Crisis** | VIX > 35 OR S&P 500 session down >3% | Skip Steps 4–7. Report only: cause, open positions most affected. Posture = CASH-PRIORITY automatically. |
 | **CB2 — Insufficient Data** | More than 3 skills fail or return no data | Cap composite confidence at 45%. Note which skills failed. Continue with remaining data only. |
-| **CB3 — Concentration Alert** | PIE AI sector concentration >40% in one sector | Standing alert — fires every session. Add to every report: “⚠️ PIE AI is 100% tech/AI/semiconductors — any tech rotation directly impacts your entire portfolio.” |
-
-CB3 is not a blocker — it is a permanent reminder that fires every session for Alessandro’s current portfolio.
 
 ---
 
@@ -223,8 +222,8 @@ Run every weekday morning. Steps 0–8 are mandatory. Step 9 writes memory.
 
 Read both `memory/finance-profile.md` and `memory/last-session.md` if they exist.
 
-From `memory/finance-profile.md` extract: ETF core ticker, PIE AI composition, risk limits, pattern playbook.
-Note: core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index — switched from VUAA on 2026-06-15). PIE AI weights are auto-managed by Trader 212.
+From `memory/finance-profile.md` extract: ETF core ticker, individual positions, risk limits, pattern playbook.
+Note: core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index — switched from VUAA on 2026-06-15).
 
 Extract and display:
 - Last session date
@@ -256,24 +255,24 @@ If Steps 1 and 2 contradict (e.g., breadth is healthy but regime is bear), flag 
 
 ### Step 3 — Portfolio Quotes
 7. `pip install -q -r requirements.txt`
-8. `PYTHONIOENCODING=utf-8 python scripts/fmp_briefing.py` → quotes for VWCE.DE + 12 PIE tickers
+8. `PYTHONIOENCODING=utf-8 python scripts/fmp_briefing.py` → quotes for VWCE.DE + LRCX
 
 If FMP is blocked, use WebSearch to find prices for each ticker. Always search for VWCE.DE price.
-For each PIE AI ticker, flag if it is down >5% (approaching stop) or up >10% (approaching position size limit review).
+For each individual position, flag if it is down >5% (approaching stop) or up >10% (approaching position size limit review).
 
 ### Step 4 — News & Sentiment
 Read and run:
 9. `market-news-analyst` → top market-moving news last 24h
-10. `finance-sentiment` for tickers: NVDA, AAPL, MSFT, META, GOOG, AMZN, AMD, AVGO → Reddit/X/Polymarket sentiment scores
+10. `finance-sentiment` for tickers: NVDA, AAPL, MSFT, META, GOOG, AMZN, AMD, AVGO → Reddit/X/Polymarket sentiment scores (market context)
 
-Flag any news that directly affects PIE AI tickers. Note if sentiment contradicts price action.
+Flag any news that directly affects LRCX or the semiconductor sector. Note if sentiment contradicts price action.
 
 ### Step 5 — Forward Calendar
 Read and run:
 11. `economic-calendar-fetcher` → FOMC, CPI, NFP this week
-12. `earnings-calendar` → earnings next 7 days, flag PIE tickers
+12. `earnings-calendar` → earnings next 7 days
 
-Flag any PIE AI ticker reporting earnings within 3 days — risk of gap.
+Flag LRCX or any semiconductor-sector ticker reporting earnings within 3 days — risk of gap.
 
 ### Step 6 — Sector & Themes
 Run if Step 1 regime is not critical:
@@ -281,7 +280,7 @@ Run if Step 1 regime is not critical:
     Script: `PYTHONIOENCODING=utf-8 python skills/sector-analyst/scripts/analyze_sector_rotation.py --save --output-dir reports/`
 14. `theme-detector` → trending themes (focus: AI, semiconductors)
 
-Flag if tech/AI rotation is negative — directly impacts the entire PIE AI portfolio.
+Flag if semiconductor/chip equipment rotation is negative — directly impacts LRCX.
 
 ### Step 7 — Exposure Decision
 Read and run:
@@ -296,13 +295,13 @@ Save a single markdown report to `reports/briefing-YYYY-MM-DD.md`.
 **Report structure (in plain English, beginner-friendly — no unexplained jargon):**
 1. **What changed since yesterday** — compare with memory: regime, breadth, posture. Max 3 lines.
 2. **Market today** — VIX, VWCE, NASDAQ. One plain-English sentence of interpretation.
-3. **Your portfolio (PIE AI)** — table: price, change%, 52w high/low. Flag anything near stop or limit.
+3. **Your portfolio** — LRCX: price, change%, vs stop level. VWCE.DE: price and change%. Flag anything near stop.
 4. **Today's news** — top 3–5 real news items from WebSearch. One line each + "what it means for you".
-5. **Social sentiment** — Reddit/X/Polymarket scores per ticker (if available).
+5. **Social sentiment** — Reddit/X/Polymarket scores for key market tickers (if available).
 6. **Key dates this week** — FOMC, CPI, NFP, earnings. Only the things that matter this week.
 7. **Sector & themes** — is tech rotating? Top 2 themes. One sentence each.
 8. **What to do** — ALLOW / RESTRICT / CASH-PRIORITY with plain-English reasoning. Confidence %.
-9. **Watchlist** — 3–5 stocks/assets/commodities to watch TODAY with key level and reason. Always include gold, oil, and 2–3 specific PIE AI tickers.
+9. **Watchlist** — 3–5 stocks/assets/commodities to watch TODAY with key level and reason. Always include gold, oil, and the semiconductor sector.
 10. **Idea of the day** — one concrete, data-backed observation. One memorable sentence.
 11. **Glossary** — define every technical term used in today's report. One plain-English sentence per term. Always include: VIX, 52w High/Low, breadth, dot plot, FOMC, sector rotation, stop loss, bullish/bearish, yield, and any other jargon that appeared today.
 

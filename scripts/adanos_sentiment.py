@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Adanos sentiment for PIE AI tickers.
+Adanos sentiment for market context tickers.
 Fetches Reddit + X (Twitter) sentiment scores.
 API docs: api.adanos.org — requires X-API-Key header.
 """
@@ -24,6 +24,7 @@ API_KEY = os.getenv("ADANOS_API_KEY")
 BASE = "https://api.adanos.org"
 HEADERS = {"X-API-Key": API_KEY} if API_KEY else {}
 
+# Major AI/tech tickers tracked for market context
 TICKERS = ["NVDA", "AAPL", "MSFT", "META", "GOOG", "AMZN", "AMD", "AVGO"]
 
 

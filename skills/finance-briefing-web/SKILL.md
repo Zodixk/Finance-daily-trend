@@ -2,7 +2,7 @@
 name: finance-briefing-web
 description: >
   Briefing finanziario completo per il portafoglio di Alessandro. Versione claude.ai:
-  usa web search invece di API/script. Copertua completa: mercato, regime, quote PIE AI,
+  usa web search invece di API/script. Copertura completa: mercato, regime, quote portafoglio,
   news, sentiment, calendario, settori, esposizione, sezione "Cosa fare".
   Trigger: "briefing", "analisi mercato", "come va oggi", "situazione portafoglio".
 ---
@@ -17,10 +17,10 @@ Esegui questo briefing ogni volta che l'utente scrive "briefing", "analisi merca
 ## Profilo investitore (sempre attivo)
 
 - **Chi:** Alessandro, principiante assoluto, EUR, broker Trader 212
-- **PIE AI:** GOOG, AMZN, AVGO, NVDA, AMD, AAPL, ASML, CSCO, META, MSFT, QCOM, TSM
-- **ETF Core:** FTDL.DE — All-World accumulating, XETRA (ancora a lungo termine, mai vendere interamente)
+- **Individual positions:** LRCX (entry $396.75, stop $365)
+- **ETF Core:** VWCE.DE — Vanguard FTSE All-World accumulating, XETRA (long-term anchor, mai vendere interamente)
 - **Rischio:** stop default 7-8% | max posizione 10% | max drawdown portafoglio 15%
-- **Output:** sempre in italiano, linguaggio semplice, per ogni segnale indica quale ticker PIE AI è impattato
+- **Output:** sempre in italiano, linguaggio semplice, per ogni segnale indica quale posizione aperta è impattata
 
 ---
 
@@ -30,7 +30,7 @@ Esegui questo briefing ogni volta che l'utente scrive "briefing", "analisi merca
 2. **Mai inventare numeri** — se non trovi un dato, scrivi ⚠️ dato non disponibile
 3. **Sezione "Cosa fare"** obbligatoria alla fine di ogni analisi
 4. **Confidenza composita** — calcola e mostra sempre (max 92%)
-5. **Specifico, mai generico** — "considera NVDA sotto $X con stop a $Y, max 5% portafoglio"
+5. **Specifico, mai generico** — "considera LRCX sotto $X con stop a $Y, max 5% portafoglio"
 
 ---
 
@@ -93,38 +93,33 @@ Se regime (Passo 1) e breadth (Passo 1) si contraddicono → nota il conflitto, 
 
 ---
 
-### Passo 3 — Quote PIE AI
+### Passo 3 — Quote portafoglio
 
-Per ogni ticker, cerca il prezzo attuale e la variazione giornaliera.
-
-**Search batch:** `NVDA AAPL MSFT META GOOG AMZN stock price today`
-**Search batch:** `AMD AVGO ASML CSCO QCOM TSM stock price today`
+**Search:** `LRCX stock price today`
+**Search:** `VWCE.DE ETF price today` (se non disponibile → ⚠️ verifica su Trader 212 o XETRA)
 
 Costruisci una tabella:
 
 | Ticker | Prezzo | Variazione % | Note |
 |--------|--------|--------------|------|
-| NVDA | ... | ... | |
-| AAPL | ... | ... | |
-| ... | | | |
+| LRCX | ... | ... | stop $365 |
+| VWCE.DE | ... | ... | ETF core |
 
 Flag automatici:
-- Variazione < -5% → ⚠️ vicino allo stop loss (7-8%)
-- Variazione > +10% → 📈 movimento forte, valuta presa profitto parziale
-
-**Search:** `FTDL.DE ETF price today` (se non disponibile → ⚠️ verifica su Trader 212)
+- LRCX variazione < -5% → ⚠️ vicino allo stop loss ($365)
+- LRCX variazione > +10% → 📈 movimento forte, valuta presa profitto parziale
 
 ---
 
 ### Passo 4 — News e sentiment
 
-**Search:** `stock market news today` | `tech stocks news today`
+**Search:** `stock market news today` | `tech stocks news today` | `semiconductors news today`
 
-Top 5 notizie rilevanti. Per ognuna: titolo, fonte, impatto sui tuoi ticker.
+Top 5 notizie rilevanti. Per ognuna: titolo, fonte, impatto sulle posizioni aperte.
 
 **Search per sentiment:** `NVDA Reddit sentiment today` | `AAPL stocktwits today` | `MSFT investor sentiment`
 
-Per i top 4 ticker (NVDA, AAPL, MSFT, META): classifica sentiment Reddit/StockTwits/X:
+Per i top 4 ticker di mercato (NVDA, AAPL, MSFT, META): classifica sentiment Reddit/StockTwits/X:
 - BULLISH / NEUTRAL / BEARISH
 
 Se sentiment e prezzo vanno in direzioni opposte → segnalalo (divergenza).
@@ -137,9 +132,9 @@ Se sentiment e prezzo vanno in direzioni opposte → segnalalo (divergenza).
 
 Identifica eventi macro nei prossimi 7 giorni. Flag se coincidono con period di alta volatilità attesa.
 
-**Search:** `earnings calendar this week tech stocks` | `NVDA AAPL MSFT META GOOG earnings date 2026`
+**Search:** `earnings calendar this week tech stocks` | `LRCX earnings date 2026`
 
-Flag se un ticker PIE AI riporta entro 3 giorni → rischio gap (il prezzo può aprire molto diverso).
+Flag se LRCX riporta earnings entro 3 giorni → rischio gap (il prezzo può aprire molto diverso).
 
 ---
 
@@ -147,8 +142,8 @@ Flag se un ticker PIE AI riporta entro 3 giorni → rischio gap (il prezzo può 
 
 **Search:** `sector rotation today 2026` | `technology sector performance today` | `semiconductors ETF SMH today`
 
-Identifica: tech è in testa o in coda rispetto agli altri settori?
-Flag se tech perde leadership → impatto diretto sul 100% del PIE AI.
+Identifica: tech/semiconduttori sono in testa o in coda rispetto agli altri settori?
+Flag se semiconduttori/chip equipment perdono leadership → impatto diretto su LRCX.
 
 **Search:** `AI stocks trend 2026` | `semiconductor cycle 2026` | `top investment themes today`
 
@@ -177,17 +172,17 @@ Costruisci il report finale con questa struttura:
 **1. Market Overview**
 VIX, S&P 500, Nasdaq, breadth score, regime.
 
-**2. PIE AI Quotes**
-Tabella ticker con prezzi, variazioni e flag.
+**2. Morning News**
+Top 5 notizie con impatto sulle posizioni aperte.
 
-**3. Morning News**
-Top 5 notizie con impatto sui tuoi ticker.
+**3. Quote portafoglio**
+LRCX: prezzo, variazione, confronto con stop ($365). VWCE.DE: prezzo e variazione.
 
 **4. Social Sentiment**
-NVDA, AAPL, MSFT, META: bullish/neutral/bearish.
+NVDA, AAPL, MSFT, META: bullish/neutral/bearish (market context).
 
 **5. Calendario**
-Macro eventi + earnings questa settimana, flag PIE AI.
+Macro eventi + earnings questa settimana.
 
 **6. Settori e Temi**
 Rotazione settoriale, top 2 temi.
@@ -239,7 +234,7 @@ Questa sezione non può mai essere omessa. Deve essere concreta e specifica.
 
 **Comprare (se ALLOW):**
 Lista titoli con: entry price, stop loss, size massima (% portafoglio)
-Esempio: "Considera NVDA sotto $X con stop a $Y, max 5% portafoglio"
+Esempio: "Considera LRCX sotto $X con stop a $Y, max 5% portafoglio"
 
 **Vendere o ridurre:**
 Lista titoli con motivazione e livello di uscita suggerito
@@ -251,7 +246,7 @@ Titoli da monitorare con il trigger specifico che li renderebbe acquistabili
 Eventi, livelli di prezzo, scadenze entro 7 giorni
 
 **Opportunità fuori dal portafoglio:**
-Se il contesto suggerisce un titolo interessante non nella PIE AI, segnalarlo con entry/stop/size
+Se il contesto suggerisce un titolo interessante non in portafoglio, segnalarlo con entry/stop/size
 
 ---
 
@@ -285,4 +280,4 @@ Le istruzioni sono permanenti — non devi re-incollare ogni volta.
 | Memoria sessione precedente | Git (automatica) | Project Knowledge (manuale) |
 | Skill avanzate (71) | Tutte disponibili | Solo web search |
 
-Per analisi approfondite su singoli titoli (es. "analizza NVDA in dettaglio"), chiedile esplicitamente dopo il briefing — claude.ai con web search può comunque fare analisi di qualità.
+Per analisi approfondite su singoli titoli (es. "analizza LRCX in dettaglio"), chiedile esplicitamente dopo il briefing — claude.ai con web search può comunque fare analisi di qualità.

@@ -21,27 +21,6 @@
 
 ## Section 3 — Current Portfolio
 
-**Open positions:**
-
-PIE "AI Companies" on Trader 212 — composition:
-| Ticker | Company | Weight | Notes |
-|--------|---------|--------|-------|
-| NVDA | NVIDIA | **12%** | GPU / AI infrastructure — overweight |
-| GOOG | Alphabet (Class C) | 8% | Big Tech / AI |
-| AMZN | Amazon | 8% | Cloud (AWS) / AI |
-| AVGO | Broadcom | 8% | AI semiconductors |
-| AMD | Advanced Micro Devices | 8% | GPU / semiconductors |
-| AAPL | Apple | 8% | Big Tech |
-| ASML | ASML Holding | 8% | Chip lithography (EU-listed) |
-| CSCO | Cisco Systems | 8% | Networking / AI infra |
-| META | Meta Platforms | 8% | Social / AI |
-| MSFT | Microsoft | 8% | Cloud (Azure) / AI (OpenAI) |
-| QCOM | Qualcomm | 8% | Mobile chips / AI edge |
-| TSM | Taiwan Semiconductor | 8% | Foundry — manufactures chips for all |
-
-Weights updated: 2026-06-17 (NVDA overweighted at 12%, all others equal at 8%)
-Estimated sector concentration: ~100% Technology/Semiconductors — monitor closely
-
 **Individual positions (manually managed):**
 | Ticker | Company | Entry price | Stop loss | Size | Date | Notes |
 |--------|---------|-------------|-----------|------|------|-------|
@@ -58,7 +37,7 @@ Estimated sector concentration: ~100% Technology/Semiconductors — monitor clos
 ## Section 4 — Operative Preferences
 
 - **preferred_screeners:** to be defined (beginner — use simple screening initially)
-- **current_focus:** learning + building base portfolio (AI stocks + core ETF)
+- **current_focus:** learning + building base portfolio (individual picks + core ETF)
 - **minimum_confidence_threshold:** 50%
 - **output_language:** English
 - **notes:** user is an absolute beginner — always add a contextual glossary explaining every technical term used in the output
@@ -87,7 +66,7 @@ Always be specific and concrete. Never generic ("consider buying X") — always 
 
 ## Section 7 — Pattern Playbook
 
-Recognize and apply these patterns in every analysis. For each signal, indicate which PIE AI ticker is involved and the concrete action suggested.
+Recognize and apply these patterns in every analysis. For each signal, indicate which open position is involved and the concrete action suggested.
 
 ---
 
@@ -106,8 +85,8 @@ Always use in combination with volume. Patterns without volume confirmation carr
 | **3-Weeks Tight** | 3 consecutive weeks closing within 1-1.5% of each other | Breakout above the highest week | Below the 3-week low | `vcp-screener` |
 
 **Application rules:**
-- For PIE AI (growth stocks): prioritize VCP, Flag, Cup & Handle
-- Head & Shoulders on any PIE AI ticker → immediately analyze with `market-top-detector`
+- For growth stocks (LRCX and future positions): prioritize VCP, Flag, Cup & Handle
+- Head & Shoulders on any open position → immediately analyze with `market-top-detector`
 - Never enter on a false breakout: price must close above the pivot, not just touch it intraday
 
 ---
@@ -116,17 +95,17 @@ Always use in combination with volume. Patterns without volume confirmation carr
 
 | Pattern | Activation signal | Typical duration | Portfolio action |
 |---|---|---|---|
-| **Yield Curve Inversion** | 10Y-2Y spread < 0 (2Y exceeds 10Y) | Recession on average 12-18 months later | Reduce cyclical positions (AMD, QCOM), increase cash |
+| **Yield Curve Inversion** | 10Y-2Y spread < 0 (2Y exceeds 10Y) | Recession on average 12-18 months later | Reduce cyclical positions, increase cash |
 | **Fed Pivot** | Pause between last hike and first cut | 3-9 month window | Build growth positions during the pause — market anticipates the cut |
-| **VIX Spike > 40** | VIX rises > 40 in < 5 days | Peak lasts 1-3 weeks | Wait for the first day VIX declines — then buy PIE AI at support levels |
+| **VIX Spike > 40** | VIX rises > 40 in < 5 days | Peak lasts 1-3 weeks | Wait for the first day VIX declines — then look for entries at support levels |
 | **VIX Structurally > 25** | VIX stays > 25 for 2+ weeks | Weeks to months | Cash-priority: no new purchases until VIX < 20 |
-| **Dollar Strength (DXY +)** | DXY rises > 3% in 1 month | Variable | Pressure on ASML (EU), TSM (Taiwan, FX), US multinationals less affected |
-| **Late-Cycle Rotation** | Tech loses leadership, Energy/Materials/Utilities rise | Months | Reduce PIE AI, consider hedge with defensive ETFs |
+| **Dollar Strength (DXY +)** | DXY rises > 3% in 1 month | Variable | Pressure on EU-listed and Asian stocks, US multinationals less affected |
+| **Late-Cycle Rotation** | Tech loses leadership, Energy/Materials/Utilities rise | Months | Reduce tech exposure, consider hedge with defensive ETFs |
 | **Sector rotation by phase** | Monitor which sector leads each quarter | Quarterly | Early: Financials → Mid: Tech (now) → Late: Energy → Recession: Utilities |
 
 **Weekly monitoring checklist:**
 - 10Y-2Y spread (target > 0 = healthy curve)
-- DXY (above 105 → pressure on ASML/TSM)
+- DXY (above 105 → pressure on EU/Asian holdings)
 - Sectors leading vs lagging (tech must be in the top 3)
 
 ---
@@ -142,19 +121,17 @@ Always use in combination with volume. Patterns without volume confirmation carr
 | **Guidance > Beat** | Report release | Market rewards raised guidance more than the current beat. Miss + raised guidance → possible rally |
 | **Whisper vs Consensus** | Days before earnings | If price already up 15%+ pre-earnings, the market already "knows" — beat is partially priced in |
 
-**Application to PIE AI tickers:**
-- NVDA, META, MSFT → high institutional ownership → good PEAD candidates after beat
-- AAPL, GOOG → often "buy rumor sell news" when already at highs
-- AMD, QCOM → more volatile post-earnings → wait for stabilization before entering
-- ASML → reports in EUR, analyze FX impact separately
-- TSM → monthly report (not quarterly) — monitor shipment data every month
-
 ---
+
+**How to use the Pattern Playbook in every analysis:**
+1. Identify the current cycle phase (Section 7.2) → determines overall posture
+2. For each open position near a key level: apply chart patterns (Section 7.1)
+3. For each ticker with earnings within 3 weeks: apply earnings patterns (Section 7.3)
+4. Always flag which pattern triggered and the specific level (price + volume)
 
 ## Notes for Daily Briefing Routine
 
 - Always read this file at Step 0 alongside `memory/last-session.md`
 - Core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index) — replaced VUAA on 2026-06-15
-- PIE AI weights are auto-managed by Trader 212 — adding funds distributes across all 12 tickers automatically
-- Pattern Playbook (Section 7) must be checked for every PIE AI ticker near a key level
+- Pattern Playbook (Section 7) must be checked for every open position near a key level
 - LRCX individual position: entry $396.75, stop $365, €10 test size — review after MU earnings 24 Jun 2026
