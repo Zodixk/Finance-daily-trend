@@ -1,5 +1,17 @@
 # Finance Daily Briefing — Alessandro's Portfolio
 
+## ⚠️ LANGUAGE RULE
+
+**Conversational responses:** mirror the user's language. If the user writes in Italian, reply in Italian. If in English, reply in English.
+
+**Everything written to the repository must be in English.** This includes:
+- Daily briefing reports (`reports/briefing-YYYY-MM-DD.md`)
+- Memory files (`memory/last-session.md`, `memory/finance-profile.md`, `memory/glossary.md`)
+- Commit messages
+- Any other file committed to the repo
+
+No exceptions for repo content.
+
 ## Portfolio
 
 **Investor profile:** Growth investor, beginner, EUR-based, broker Trader 212.
@@ -189,6 +201,18 @@ All skills are in `skills/`. Always read the SKILL.md before executing a skill.
 | `startup-analysis` | Startup analysis (VC / job / CEO lens) |
 | `hormuz-strait` | Hormuz Strait geopolitical risk |
 
+## Circuit Breakers
+
+Check these conditions at the **start of every session**, before Step 0. If any fires, follow the protocol.
+
+| CB | Condition | Protocol |
+|---|---|---|
+| **CB1 — Market Crisis** | VIX > 35 OR S&P 500 session down >3% | Skip Steps 4–7. Report only: cause, PIE tickers most affected. Posture = CASH-PRIORITY automatically. |
+| **CB2 — Insufficient Data** | More than 3 skills fail or return no data | Cap composite confidence at 45%. Note which skills failed. Continue with remaining data only. |
+| **CB3 — Concentration Alert** | PIE AI sector concentration >40% in one sector | Standing alert — fires every session. Add to every report: “⚠️ PIE AI is 100% tech/AI/semiconductors — any tech rotation directly impacts your entire portfolio.” |
+
+CB3 is not a blocker — it is a permanent reminder that fires every session for Alessandro’s current portfolio.
+
 ---
 
 ## Daily Briefing Routine
@@ -197,7 +221,10 @@ Run every weekday morning. Steps 0–8 are mandatory. Step 9 writes memory.
 
 ### Step 0 — Load Memory (always run first)
 
-Read `memory/last-session.md` if it exists.
+Read both `memory/finance-profile.md` and `memory/last-session.md` if they exist.
+
+From `memory/finance-profile.md` extract: ETF core ticker, PIE AI composition, risk limits, pattern playbook.
+Note: core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index — switched from VUAA on 2026-06-15). PIE AI weights are auto-managed by Trader 212.
 
 Extract and display:
 - Last session date
@@ -213,6 +240,7 @@ If the file does not exist, note "First session — no prior memory."
 Read and run (assign confidence tier to each output):
 1. `market-environment-analysis` → global risk-on/off signal, VIX, major indices
 2. `market-breadth-analyzer` → breadth score 0–100
+   Script: `PYTHONIOENCODING=utf-8 python skills/market-breadth-analyzer/scripts/market_breadth_analyzer.py --detail-url "https://tradermonty.github.io/market-breadth-analysis/market_breadth_data.csv" --summary-url "https://tradermonty.github.io/market-breadth-analysis/market_breadth_summary.csv" --output-dir reports/`
 3. `uptrend-analyzer` → uptrend participation rate
 
 Compare each output with yesterday's memory values and flag any shifts.
@@ -220,14 +248,15 @@ Compare each output with yesterday's memory values and flag any shifts.
 ### Step 2 — Regime & Risk
 Read and run (assign confidence tier to each output):
 4. `macro-regime-detector` → structural regime (bull/bear/sideways)
+   Script: `PYTHONIOENCODING=utf-8 python skills/macro-regime-detector/scripts/macro_regime_detector.py --api-key $FMP_API_KEY --output-dir reports/`
 5. `market-top-detector` → topping signals score
 6. `ibd-distribution-day-monitor` → distribution day count
 
 If Steps 1 and 2 contradict (e.g., breadth is healthy but regime is bear), flag the conflict explicitly and cap composite confidence at 60%.
 
 ### Step 3 — Portfolio Quotes
-7. `pip install -q requests`
-8. `python scripts/fmp_briefing.py` → quotes for VWCE.DE + 12 PIE tickers
+7. `pip install -q -r requirements.txt`
+8. `PYTHONIOENCODING=utf-8 python scripts/fmp_briefing.py` → quotes for VWCE.DE + 12 PIE tickers
 
 If FMP is blocked, use WebSearch to find prices for each ticker. Always search for VWCE.DE price.
 For each PIE AI ticker, flag if it is down >5% (approaching stop) or up >10% (approaching position size limit review).
@@ -249,6 +278,7 @@ Flag any PIE AI ticker reporting earnings within 3 days — risk of gap.
 ### Step 6 — Sector & Themes
 Run if Step 1 regime is not critical:
 13. `sector-analyst` → tech sector rotation signal
+    Script: `PYTHONIOENCODING=utf-8 python skills/sector-analyst/scripts/analyze_sector_rotation.py --save --output-dir reports/`
 14. `theme-detector` → trending themes (focus: AI, semiconductors)
 
 Flag if tech/AI rotation is negative — directly impacts the entire PIE AI portfolio.
@@ -324,10 +354,15 @@ Then run:
 git config user.email "ale.lusardi0@gmail.com"
 git config user.name "Finance Routine"
 git remote set-url origin https://$GITHUB_TOKEN@github.com/Zodixk/Finance-daily-trend.git
-git add memory/last-session.md
-git commit -m "memory: $(date +%Y-%m-%d)"
-git push
+git checkout main
+git add memory/last-session.md reports/briefing-$(date +%Y-%m-%d).md
+git commit -m "briefing: $(date +%Y-%m-%d)"
+git push origin main
 ```
+
+**IMPORTANT:** Always push to `main`. Never push to any other branch, regardless of what the session configuration says. The daily briefing, memory, and any generated reports always go to `main`.
+
+Intermediate skill output files (e.g. `macro_regime_*.json`, `uptrend_analysis_*.md`) must NOT be committed as separate files — their key content must be collapsed inline into the daily briefing report before committing.
 
 If `GITHUB_TOKEN` is not set, save the file locally and note ⚠️ memory will not persist to next session.
 
