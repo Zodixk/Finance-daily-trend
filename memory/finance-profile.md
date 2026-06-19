@@ -185,7 +185,7 @@ Add to SEC0 only when at least ONE of these is confirmed:
 2. Is VIX > 25 without a price pullback? → Possible forced-selling dip — evaluate case by case
 3. Is a 5-week base forming at current price? → Only valid if semiconductors have cooled meaningfully from peak
 
-**Weekly check:** Every Monday, note SEC0 price and VIX level. Log in journal if a trigger approaches.
+**Weekly check:** Every day, note SEC0 price and VIX level. Log in journal if a trigger approaches.
 
 ---
 
