@@ -178,9 +178,10 @@ Always use in combination with volume. Patterns without volume confirmation carr
 
 ### 8.1 — Portfolio Architecture
 
-Current design (as of 2026-06-19):
-- **Core (90%+ of capital):** VWCE.DE — Vanguard FTSE All-World Accumulating. Optimal choice for a European beginner. No changes needed; continue monthly accumulation.
-- **Satellite (≤10% of capital):** Thematic/sector ETF for growth tilt. Currently: SEC0.DE.
+Target allocation (confirmed by Alessandro 2026-06-19): **90% VWCE / 10% SEC0**
+
+- **Core (90%):** VWCE.DE — Vanguard FTSE All-World Accumulating. Every new capital injection goes here by default (85-90% of each deposit).
+- **Satellite (10%):** SEC0.DE — iShares MSCI Global Semiconductors. Add only when re-entry triggers confirmed (§8.3). Cap strictly at 10% of total portfolio.
 
 **Key correlation note:** VWCE already contains semiconductors (~5% of the index via tech allocation). Adding SEC0 is a **deliberate overweight** on semiconductors, not true diversification. In a semiconductor correction, both VWCE and SEC0 will fall together. This is intentional and acceptable as long as SEC0 stays ≤10% of total portfolio.
 
@@ -242,7 +243,17 @@ Add to SEC0 only when at least ONE of these is confirmed:
 2. Is VIX > 25 without a price pullback? → Possible forced-selling dip — evaluate case by case
 3. Is a 5-week base forming at current price? → Only valid if semiconductors have cooled meaningfully from peak
 
-**Weekly check:** Every Monday, note SEC0 price and VIX level. Log in journal if a trigger approaches.
+**Weekly check:** Every Monday, note SEC0 price and VIX level. Update the table below.
+
+### SEC0 Trigger Status (update every Monday)
+
+| Trigger | Level required | Last checked | Current value | Status |
+|---|---|---|---|---|
+| Price pullback ≥25% | SEC0 ≤ €17.54 | 2026-06-19 | €23.33 | ❌ |
+| VIX > 25 | VIX > 25 | 2026-06-19 | 16.40 | ❌ |
+| Base formation (VCP) | ≥5 weeks sideways | 2026-06-19 | 0 weeks | ❌ |
+
+**Current recommendation: HOLD €50. Do NOT add.**
 
 ---
 
