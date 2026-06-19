@@ -192,7 +192,32 @@ Current design (as of 2026-06-19):
 
 ### 8.2 — SEC0 Active Thesis
 
-**Thesis:** AI infrastructure boom drives structural demand for semiconductors (GPUs, memory, logic chips, equipment). Thesis valid 2025–2028+ if AI capex continues.
+**Core thesis (Alessandro's own reasoning):**
+Semiconductors have reached a point of irreversibility — they are no longer a technology sector, they are foundational infrastructure, like electricity in the 20th century. Three structural drivers underpin this:
+
+**1. Pervasiveness across all sectors**
+Chips are now embedded in every industry: military systems, surveillance, healthcare devices, automotive (EVs and autonomous driving), industrial automation, smart grids, 5G/6G networks, consumer electronics. A slowdown in one sector does not kill demand — others absorb it. This cross-sector application makes semiconductors structurally different from previous tech cycles.
+
+**2. Geopolitical necessity — the arms race argument**
+The US and Europe cannot afford to fall behind China and Russia in semiconductor capability. This is not a market thesis — it is a national security imperative. Governments are funding the industry regardless of the economic cycle:
+- US CHIPS Act: $52 billion in subsidies + tax credits
+- EU Chips Act: €43 billion target
+- TSMC fabs in Arizona, Intel in Ohio, Samsung in Texas — onshoring of critical supply chains
+This government-backed demand provides a structural floor that pure market cycles cannot eliminate.
+
+**3. AI explosion as accelerant**
+The AI boom of 2024–2026 has compressed years of semiconductor demand into months. GPUs, memory (HBM, NAND), networking chips, custom ASICs — all in shortage simultaneously. But unlike previous booms, this demand is driven by sovereign investments (governments, militaries) and hyperscalers (Microsoft, Google, Meta, Amazon) with multi-year capex commitments, not speculative consumer demand.
+
+**Applications (current and future):**
+- Military: autonomous weapons, missile guidance, battlefield AI, electronic warfare
+- Surveillance: facial recognition, smart city infrastructure, border control
+- Healthcare: AI diagnostics, robotic surgery, wearables, genomics
+- Automotive: ADAS, EV powertrains, V2X communication
+- Industrial: factory automation, robotics, predictive maintenance
+- Energy: smart grid management, battery management systems
+- Space & defense: satellite constellations, quantum computing
+
+**Thesis validity:** 2025–2030+ as long as AI capex continues and geopolitical competition persists. The thesis does NOT depend on any single company or product cycle.
 
 **Entry context (2026-06-18):** Entry near 52-week high after +98% YTD rally. Valuation stretched. Michael Burry has placed put options on semiconductor ETFs (SOXX), warning of a dot-com style bubble. The thesis is intact but the timing of the initial €50 entry was suboptimal.
 
