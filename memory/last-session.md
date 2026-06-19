@@ -1,80 +1,63 @@
-# Session Memory — 2026-06-18
+# Last Session Summary
+**Date:** 2026-06-19
 
-## Regime
-- Market environment: risk-off (FOMC hawkish surprise, tech selling, rising yields)
-- VIX: 17.12 (▲ +5.5% from 16.23; rose above 18 intraday post-FOMC)
-- Breadth score: N/A (TraderMonty CSV 403 Forbidden — unavailable again)
-- Uptrend participation: 24.9% of ~2,800 stocks (56.0/100 composite, Neutral zone, trend DOWN from 28.6%)
-- Macro regime: Broadening (transitional — 5/6 components signaling shift, 70-90% probability, score 54.8/100)
-- Distribution days: Elevated (persistent — no new confirmed count; today S&P -1.21% on likely elevated volume = potential new distribution day)
-- Bubble score: N/A (FMP premium endpoint unavailable)
+---
 
-## Market Levels (June 18, 2026 close)
-- NASDAQ: 26,021.66 (-1.34%)
-- S&P 500: 7,420.10 (-1.21%)
-- Dow Jones: 51,492.55 (-0.98%)
-- VWCE: €165.00 (+0.22%)
-- 2-year Treasury yield: 4.216% (+16bps — biggest single-day move in months)
-- 10-year Treasury yield: 4.469% (+4bps)
-- Gold: ~$4,200 area (down ~2% post-FOMC; hawkish Fed = stronger dollar = lower gold)
-- Oil (WTI): ~$74-76 (US-Iran deal reduces risk premium; signing tomorrow June 19)
+## What was done
 
-## FOMC Outcome (June 17, 2026 — KEY EVENT)
-- Decision: Hold at 3.50-3.75% (unanimous 12-0)
-- Dot plot RAISED: year-end projections 3.6-4.1%
-- 9/18 members project rate hike in 2026 (6 project multiple hikes)
-- CME FedWatch: 50% prob hike by October, 67% by December
-- Warsh's first meeting as Fed Chair: statement shortened, easing bias removed
-- Market reaction: Hawkish → triggered CASH-PRIORITY per pre-set framework
+Full portfolio review using finance-orchestrator (FULL size). Analyzed both ETFs in the portfolio:
+- **VWCE.DE** — confirmed as optimal core ETF. No changes needed.
+- **SEC0.DE** — entry confirmed at ~€22.87–23.35 on 2026-06-18. Entry timing suboptimal (near 52-week high after +98% YTD rally). Established stop and re-entry triggers.
 
-## Portfolio (June 18 close)
-- META: $567.58 (-5.44%) — 🔴 INSIDE 7% stop zone (~$558). Legal cases + Snap competition.
-- MSFT: $378.91 (-3.79%) — down 19% YTD. Earnings July 25 = low bar / potential catalyst.
-- AMZN: $237.50 (-3.46%) — pulling back from $278.56 52w high
-- GOOG: $362.10 (-2.43%) — sector leader losing momentum
-- AVGO: $392.90 (+4.30%) — ✅ Outperformer. JPMorgan "aggressive buy." AI accelerator leader.
-- ASML: $1,867.83 (+3.54%) — near ATH ($1,938.49 set June 16). Bernstein Top Pick upgrade.
-- AMD: $512.48 (+1.02%) — below $520 ALLOW threshold. CEO insider sell flagged.
-- TSM: $432.15 (+1.48%) — 4% below 52w high/ATH ($450.16, set ~June 2)
-- NVDA: $204.65 (-1.33%) — sector drag; earnings Aug 26
-- AAPL: $295.95 (-1.10%) — holding relative to peers; earnings ~Aug 1
-- CSCO: $117.33 (-1.87%) — modest decline
-- QCOM: $212.97 (-0.51%) — most resilient today; Investor Day June 24
+Educational session: explained the 3 SEC0 re-entry triggers in detail with real-world analogies (pullback, VIX forced selling, base formation/VCP).
 
-## Signals
-- Sentiment bias: Reddit neutral across board; X/Twitter universally bullish — diverges from price action (caution signal)
-- Sector rotation: Technology DOWNTRENDING (rank 3, ratio 28.4%, trend DOWN). Industrials (#1 33.0%) and Healthcare (#2 31.0%) leading. Money rotating OUT of tech INTO industrials/financials.
-- Top themes: Hawkish Fed / Rate Hike Risk (dominant), AI Supercycle Intact Structurally (AVGO/ASML show demand real)
+---
 
-## Exposure Decision
-- Posture: CASH-PRIORITY (triggered by hawkish FOMC per pre-set framework)
-- Composite confidence: 62% (MEDIUM)
+## Key decisions
 
-## Pending
-- 🕊️ **US-Iran deal signing: June 19 (TOMORROW)** — Bürgenstock resort, Switzerland. Qatar + Pakistan attending. KEY RISK: deal breakdown → oil spike + Fed hawkishness.
-- 📊 **QCOM Investor Day: June 24** — Dragonfly data center brand, custom silicon roadmap, hyperscaler shipments late 2026. Potential ±5-10% move.
-- 📋 **NFP: July 2** — Strong jobs = more hike pressure
-- 📋 **CPI: July 14** — CRITICAL. If elevated → October hike base case confirmed
-- 📋 **MSFT Earnings: July 25 (after close)** — Low bar (down 19% YTD). Potential positive catalyst.
-- 📋 **AAPL Earnings: ~August 1** (estimate)
-- 📋 **NVDA Earnings: August 26** (confirmed)
+1. **VWCE** = keep as core. Continue monthly accumulation.
+2. **SEC0** = HOLD €50. Stop at ~€18.50. Do NOT add more until a re-entry trigger fires.
+3. Portfolio architecture confirmed: VWCE (core 90%+) + SEC0 (satellite ≤10%). Valid beginner setup.
+4. Correlation noted: VWCE and SEC0 are NOT independent. Both fall in a semiconductor correction.
 
-## META Stop Framework
-- Yesterday close: $600.21
-- 7% stop: ~$558 → META at $567.58 = INSIDE 7% ZONE
-- 8% stop: ~$552
-- Action: Prepare exit. No averaging down. Monitor opening June 19.
+---
 
-## ALLOW Threshold Framework
-- AMD: needs close >$520 on volume to re-enter (currently $512.48 — below threshold)
-- Posture upgrade triggers: 2Y yield <4.0%, VIX closes <16 for 2+ days, Fed speaker turns dovish
+## SEC0 re-entry triggers (do not add until one fires)
 
-## Infrastructure
-- FMP API: ✅ Working — /stable/quote one ticker at a time; GOOG/AVGO/ASML/QCOM → HTTP 402 → yfinance fallback
-- Adanos API: ✅ Working — /reddit/stocks/v1/compare with tickers param, header X-API-Key
-- yfinance: ✅ Working — fallback active
-- Market Breadth CSV: ❌ 403 Forbidden (TraderMonty GitHub) — unavailable for second consecutive session
-- Uptrend Analyzer CSV: ✅ Working — TraderMonty GitHub, 18,202 rows, data through June 17
-- Macro Regime Detector: ✅ Working — yfinance fallback for some FMP 403 endpoints
-- Sector Analyst: ✅ Working
-- Telegram: ✅ Sent successfully
+| # | Trigger | Level |
+|---|---|---|
+| 1 | Price pullback ≥25% from high | SEC0 ≤ €17.54 (range €17–18) |
+| 2 | VIX spike above 25 | VIX currently 16.4 |
+| 3 | Base formation ≥5 weeks + VCP | Sideways consolidation with contracting volatility |
+
+---
+
+## Macro regime (as of 2026-06-19)
+
+- Regime: BROADENING (RSP outperforming SPY by ~5% YTD)
+- Yield curve: +0.29–0.39% (healthy, not inverted)
+- VIX: 16.4 (risk-on)
+- Credit: NEUTRAL
+- Semiconductors: pulled back ~12% from highs — correction in progress
+
+---
+
+## Risk flagged
+
+- Michael Burry has put options on semiconductor ETFs (SOXX), expiry Jan 2027
+- Semiconductor valuations described as historically stretched
+- Burry warning active — monitor through H2 2026
+
+---
+
+## Alternative ETFs noted for future (when capital grows)
+
+- IUIT.DE — broader S&P 500 tech, TER 0.15%
+- LGTG — global tech + software, TER 0.22%
+- VWCE remains the optimal global core (vs IWDA, ACWI)
+
+---
+
+## MCP note (technical)
+
+FMP legacy endpoints deprecated — macro-regime-detector script failed. Used WebSearch fallback throughout. Analysis confidence: 64%. Yfinance not installed in local environment — affects macro-regime and market-breadth scripts.

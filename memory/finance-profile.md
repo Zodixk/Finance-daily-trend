@@ -1,3 +1,13 @@
+---
+name: finance-profile
+description: "Alessandro's investor profile — style, risk, portfolio, watchlist"
+metadata: 
+  node_type: memory
+  type: project
+  updated: 2026-06-19
+  originSessionId: e0c50a76-f17e-4dbe-8d3b-38d41d863a92
+---
+
 # Investor Profile — Alessandro
 
 ## Section 1 — Identity and Style
@@ -24,11 +34,12 @@
 **Individual positions (manually managed):**
 | Ticker | Company | Entry price | Stop loss | Size | Date | Notes |
 |--------|---------|-------------|-----------|------|------|-------|
-| SEC0 | iShares MSCI Global Semiconductors UCITS ETF USD (Acc) | TBC | TBD (7-8% default) | €50 | 2026-06-18 | ISIN IE000I8KRLL9. XETRA: SEC0.DE. Semiconductors global (261 holdings). Order placed 2026-06-18. Confirm entry price. |
+| SEC0 | iShares MSCI Global Semiconductors UCITS ETF USD (Acc) | ~€22.87–23.35 | ~€18.50 (-20% from entry) | €50 | 2026-06-18 | ISIN IE000I8KRLL9. XETRA: SEC0.DE. 261 holdings, 10% single-stock cap (NVIDIA capped). Entry near 52-week high after +98% YTD rally. HOLD €50, do NOT add until re-entry triggers confirmed (see Section 8). |
 
 **Core ETF (accumulation plan):**
-- **VWCE.DE** (Vanguard FTSE All-World UCITS ETF Acc) — tracks the FTSE All-World index, listed on XETRA | Replaced VUAA (S&P 500 only) | Switch made: 2026-06-15
+- **VWCE** — Vanguard FTSE All-World UCITS ETF (accumulating), listed on multiple exchanges | Replaced VUAA (S&P 500 only) | Switch made: 2026-06-15
   - Coverage: ~4,000 stocks, developed + emerging markets, ~60-65% US, ~35-40% rest of world
+  - Index tracked: FTSE All-World
   - Tax treatment: accumulating → no tax on reinvested dividends, taxed only at exit
 
 **Excluded sectors:**
@@ -100,13 +111,13 @@ Always use in combination with volume. Patterns without volume confirmation carr
 | **VIX Spike > 40** | VIX rises > 40 in < 5 days | Peak lasts 1-3 weeks | Wait for the first day VIX declines — then look for entries at support levels |
 | **VIX Structurally > 25** | VIX stays > 25 for 2+ weeks | Weeks to months | Cash-priority: no new purchases until VIX < 20 |
 | **Dollar Strength (DXY +)** | DXY rises > 3% in 1 month | Variable | Pressure on EU-listed and Asian stocks, US multinationals less affected |
-| **Late-Cycle Rotation** | Tech loses leadership, Energy/Materials/Utilities rise | Months | Reduce tech/semiconductor exposure, consider hedge with defensive ETFs |
+| **Late-Cycle Rotation** | Tech loses leadership, Energy/Materials/Utilities rise | Months | Reduce tech exposure, consider hedge with defensive ETFs |
 | **Sector rotation by phase** | Monitor which sector leads each quarter | Quarterly | Early: Financials → Mid: Tech (now) → Late: Energy → Recession: Utilities |
 
 **Weekly monitoring checklist:**
 - 10Y-2Y spread (target > 0 = healthy curve)
 - DXY (above 105 → pressure on EU/Asian holdings)
-- Sectors leading vs lagging (semiconductors must be in the top 3 for SEC0 to perform)
+- Sectors leading vs lagging (tech must be in the top 3)
 
 ---
 
@@ -129,9 +140,63 @@ Always use in combination with volume. Patterns without volume confirmation carr
 3. For each ticker with earnings within 3 weeks: apply earnings patterns (Section 7.3)
 4. Always flag which pattern triggered and the specific level (price + volume)
 
-## Notes for Daily Briefing Routine
+---
 
-- Always read this file at Step 0 alongside `memory/last-session.md`
-- Core ETF is **VWCE.DE** (Vanguard FTSE All-World, tracks FTSE All-World index) — replaced VUAA on 2026-06-15
-- Pattern Playbook (Section 7) must be checked for every open position near a key level
-- SEC0 (SEC0.DE on XETRA): iShares MSCI Global Semiconductors ETF, €50 order placed 2026-06-18 — confirm entry price and apply 7-8% default stop once confirmed
+## Section 8 — Portfolio Structure & Active Theses
+
+### 8.1 — Portfolio Architecture
+
+Current design (as of 2026-06-19):
+- **Core (90%+ of capital):** VWCE.DE — Vanguard FTSE All-World Accumulating. Optimal choice for a European beginner. No changes needed; continue monthly accumulation.
+- **Satellite (≤10% of capital):** Thematic/sector ETF for growth tilt. Currently: SEC0.DE.
+
+**Key correlation note:** VWCE already contains semiconductors (~5% of the index via tech allocation). Adding SEC0 is a **deliberate overweight** on semiconductors, not true diversification. In a semiconductor correction, both VWCE and SEC0 will fall together. This is intentional and acceptable as long as SEC0 stays ≤10% of total portfolio.
+
+**Alternative satellite candidates** (to evaluate when more capital is available):
+- **IUIT.DE** (iShares S&P 500 IT, TER 0.15%) — broader tech exposure, lower concentration than SEC0
+- **LGTG** (L&G Global Technology Index, TER 0.22%) — tech + chips + software, lower semiconductor-only risk
+
+---
+
+### 8.2 — SEC0 Active Thesis
+
+**Thesis:** AI infrastructure boom drives structural demand for semiconductors (GPUs, memory, logic chips, equipment). Thesis valid 2025–2028+ if AI capex continues.
+
+**Entry context (2026-06-18):** Entry near 52-week high after +98% YTD rally. Valuation stretched. Michael Burry has placed put options on semiconductor ETFs (SOXX), warning of a dot-com style bubble. The thesis is intact but the timing of the initial €50 entry was suboptimal.
+
+**Status:** HOLD €50. Do NOT add more until at least one re-entry trigger is confirmed (see below).
+
+**Stop loss:** ~€18.50 (-20% from entry ~€22.87). If SEC0 closes below €18.50 for 2 consecutive days → exit and reassess.
+
+---
+
+### 8.3 — SEC0 Re-entry Triggers (confirmed 2026-06-19)
+
+Add to SEC0 only when at least ONE of these is confirmed:
+
+| Trigger | What to look for | Why it creates opportunity |
+|---|---|---|
+| **Price pullback ≥25%** | SEC0/SEMI.AS price reaches €17–18 range (25% below recent high of ~€23.39) | Buys at a rational price after the parabolic run. Same ETF, 25% cheaper. |
+| **VIX spike above 25** | VIX index rises above 25 (currently 16.4 — watch for spike) | Panic causes forced selling by leveraged investors, pushing prices below fair value. Patient cash buyers benefit. |
+| **New base formation** | SEC0 moves sideways for ≥5 consecutive weeks with daily price swings getting progressively smaller (VCP pattern) | Confirms sellers are exhausted. Institutional buyers are quietly accumulating. Safe to enter before the next breakout. |
+
+**Decision tree for re-entry:**
+1. Is SEC0 down ≥25% from high (≤€17.54)? → YES: check if VIX > 25 or base formed → both confirm = strong entry
+2. Is VIX > 25 without a price pullback? → Possible forced-selling dip — evaluate case by case
+3. Is a 5-week base forming at current price? → Only valid if semiconductors have cooled meaningfully from peak
+
+**Weekly check:** Every Monday, note SEC0 price and VIX level. Log in journal if a trigger approaches.
+
+---
+
+### 8.4 — Macro Regime Summary (last updated 2026-06-19)
+
+| Indicator | Value | Signal |
+|---|---|---|
+| Regime | BROADENING (RSP outperforming SPY by ~5% YTD) | Leadership expanding beyond mega-caps |
+| Yield curve (10Y-2Y) | +0.29–0.39% | Positive — no recession signal |
+| VIX | 16.4 | Risk-on, below long-term average |
+| Credit spreads (HYG/LQD) | NEUTRAL | No credit stress |
+| Semiconductor sector | Pulled back ~12% from highs | Correction underway — do not add to SEC0 |
+
+Update this table whenever a portfolio review is run.
