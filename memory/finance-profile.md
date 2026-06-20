@@ -4,7 +4,7 @@ description: "Alessandro's investor profile — style, risk, portfolio, watchlis
 metadata: 
   node_type: memory
   type: project
-  updated: 2026-06-18
+  updated: 2026-06-20
   originSessionId: e0c50a76-f17e-4dbe-8d3b-38d41d863a92
 ---
 
@@ -36,9 +36,6 @@ metadata:
 |--------|---------|-------------|-----------|------|------|-------|
 | SEC0 | iShares MSCI Global Semiconductors UCITS ETF USD (Acc) | ~€22.87–23.35 | ~€18.50 (-20% from entry) | €50 | 2026-06-18 | ISIN IE000I8KRLL9. XETRA: SEC0.DE. 261 holdings, 10% single-stock cap (NVIDIA capped). Entry near 52-week high after +98% YTD rally. HOLD €50, do NOT add until re-entry triggers confirmed (see Section 8). |
 
-**T212 micro-positions (pie — scheduled closure 2026-06-20):**
-LRCX, NVDA, AMD, QCOM, AVGO, TSM, MSFT, ASML, AAPL, META, GOOG, CSCO, AMZN — posizioni da €1–10 in pie T212. Alessandro li vende il 2026-06-20. **Escludere da ogni cross-check di portafoglio e analisi di concentrazione settoriale.** Dopo la vendita il portafoglio attivo è: VWCE (core) + SEC0.DE (satellite).
-
 **Core ETF (accumulation plan):**
 - **VWCE** — Vanguard FTSE All-World UCITS ETF (accumulating), listed on multiple exchanges | Replaced VUAA (S&P 500 only) | Switch made: 2026-06-15
   - Coverage: ~4,000 stocks, developed + emerging markets, ~60-65% US, ~35-40% rest of world
@@ -61,33 +58,6 @@ LRCX, NVDA, AMD, QCOM, AVGO, TSM, MSFT, ASML, AAPL, META, GOOG, CSCO, AMZN — p
 *No trades recorded — portfolio in construction phase.*
 
 ---
-
-## Section 5b — Watchlist (organized by sector)
-
-Monitor these tickers in every relevant analysis. Flag any that approach key levels or re-entry triggers.
-
-### ETF
-| Ticker | Name | Description |
-|--------|------|-------------|
-| VWCE.DE | Vanguard FTSE All-World Accumulating | Core holding. ~4,000 titoli globali, developed + emerging markets. Strumento principale di accumulo a lungo termine. |
-| SEC0.DE | iShares MSCI Global Semiconductors | Satellite holding. 261 titoli del settore semiconduttori globale. Re-entry triggers in §8.3. |
-| SMH | VanEck Semiconductor ETF | ETF semi US-listed. Top 25 aziende semi per market cap. Utile come benchmark tecnico per confrontare con SEC0. |
-
-### AI Infrastructure
-| Ticker | Name | Description |
-|--------|------|-------------|
-| NVDA | Nvidia | Leader assoluto nelle GPU per AI. Principale beneficiario del boom dell'AI infrastructure. Benchmark del settore. |
-| AMD | Advanced Micro Devices | CPU e GPU ad alte prestazioni. Sfida Intel nei server e NVDA nell'AI con chip MI-series. |
-| AVGO | Broadcom | Semiconduttori + software infrastrutturale. Revenue diversificato, free cash flow molto elevato. |
-| TSM | Taiwan Semiconductor | Più grande foundry al mondo. Produce i chip di Apple, NVDA, AMD. Termometro dell'intera industria semi. |
-| ASML | ASML Holding | Monopolio mondiale sulle macchine EUV per la litografia. Senza ASML non si producono chip avanzati. Bellwether del ciclo semi. |
-| KLAC | KLA Corporation | Strumenti di process control per la produzione di wafer. Margini alti, revenue ricorrente. |
-| LRCX | Lam Research | Apparecchiature di etch e deposition. Ciclico, alto leverage ai capex dei produttori di chip. |
-| MU | Micron Technology | DRAM e NAND flash. Competitor diretto di SNDK nella memoria. Indicatore del ciclo memory. |
-| SNDK | SanDisk | Pure-play NAND flash. Spin-off da Western Digital (feb 2025). +800% YTD 2026 — in watchlist, NON comprare ora. Entry possibile su pullback $1,200–1,400 + base di 5 settimane. |
-| CSCO | Cisco Systems | Hardware e software di rete. Presenza nei data center e infrastruttura AI. Revenue stabile, dividendo solido. |
-| META | Meta Platforms | Facebook, Instagram, WhatsApp. Uno dei maggiori investitori in AI e data center al mondo. Monetizzazione via advertising potenziata da AI. |
-| GOOGL | Alphabet Class A | Google, YouTube, Google Cloud. Pioniere dell'AI (TPU, Gemini). Cloud in crescita, dominio nella search. Classe A = diritto di voto. |
 
 ## Section 6 — Analysis Preferences (global)
 
