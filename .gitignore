@@ -2,8 +2,16 @@
 __pycache__/
 *.pyc
 *.pyo
-!reports/*.md
+# Skill intermediate outputs — NEVER commit; collapse inline into briefing
+reports/*.json
+reports/macro_regime_*
+reports/uptrend_analysis_*
+reports/exposure_posture_*
+reports/sector_rotation_*
+reports/market_breadth_*
+# Memory: only these files are tracked
 memory/*.md
 !memory/last-session.md
 !memory/finance-profile.md
 !memory/glossary.md
+!memory/sec0-trigger-tracker.md
