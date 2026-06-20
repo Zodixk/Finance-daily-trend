@@ -9,7 +9,7 @@ metadata:
 
 # SEC0 Re-Entry Trigger Tracker
 
-**Last updated:** 2026-06-19
+**Last updated:** 2026-06-20
 **Entry price:** ~€22.87–23.35 | **Stop loss:** €18.50 | **Current size:** €50 (HOLD)
 
 Rule: add to SEC0 only when at least ONE trigger is confirmed.
@@ -46,6 +46,14 @@ Rule: add to SEC0 only when at least ONE trigger is confirmed.
 | Required | SEC0 sideways ≥5 weeks, price swings contracting |
 | Weeks of base so far | 0 — no base forming |
 | **STATUS** | ❌ NOT TRIGGERED |
+
+---
+
+## Catalysts to Watch
+
+| Date | Event | Relevance to SEC0 |
+|------|-------|-------------------|
+| 2026-06-25 (Wed) | **MU (Micron) earnings** | MU è uno dei principali bellwether del settore semi. Revenue e guidance impattano direttamente il sentiment su NAND/DRAM e sull'AI memory cycle. Un miss o una guidance negativa può trascinare giù l'intero settore e SEC0. Monitorare la reazione post-market. |
 
 ---
 
