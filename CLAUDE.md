@@ -301,9 +301,8 @@ Save a single markdown report to `reports/briefing-YYYY-MM-DD.md`.
 6. **Key dates this week** — FOMC, CPI, NFP, earnings. Only the things that matter this week.
 7. **Sector & themes** — are semiconductors rotating? Top 2 themes. One sentence each.
 8. **What to do** — ALLOW / RESTRICT / CASH-PRIORITY with plain-English reasoning. Confidence %.
-9. **Watchlist** — 3–5 stocks/assets/commodities to watch TODAY with key level and reason. Always include gold, oil, and semiconductor sector (SMH/SOXX as proxy).
-10. **Idea of the day** — one concrete, data-backed observation. One memorable sentence.
-11. **Glossary** — define every technical term used in today's report. One plain-English sentence per term.
+9. **Idea of the day** — one concrete, data-backed observation. One memorable sentence.
+10. **Glossary** — define every technical term used in today's report. One plain-English sentence per term.
 
 **Always end with:** "Any questions about something specific today?"
 
@@ -352,10 +351,16 @@ git config user.email "ale.lusardi0@gmail.com"
 git config user.name "Finance Routine"
 git remote set-url origin https://$GITHUB_TOKEN@github.com/Zodixk/Finance-daily-trend.git
 git checkout main
-git add memory/last-session.md reports/briefing-$(date +%Y-%m-%d).md
+git add memory/last-session.md "reports/briefing-$(date +%Y-%m-%d).md"
 git commit -m "briefing: $(date +%Y-%m-%d)"
 git push origin main
 ```
+
+**⚠️ CRITICAL — git add rules:**
+- ONLY ever stage the two files above: `memory/last-session.md` and `reports/briefing-YYYY-MM-DD.md`.
+- NEVER use `git add -A`, `git add .`, or `git add reports/` — these would accidentally commit intermediate skill output files.
+- Skill scripts (macro-regime-detector, uptrend-analyzer, exposure-coach, sector-analyst, market-breadth-analyzer) write temporary files to `reports/`. These are excluded by `.gitignore` and must NEVER be committed.
+- If in doubt: run `git status` first and verify only the two intended files appear under "Changes to be committed".
 
 **IMPORTANT:** Always push to `main`. Never push to any other branch.
 
