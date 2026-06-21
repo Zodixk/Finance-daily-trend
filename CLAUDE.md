@@ -78,7 +78,8 @@ Report composite confidence explicitly in the Exposure Decision section.
 
 ## Available Skills
 
-All skills are in `skills/`. Always read the SKILL.md before executing a skill.
+All skills in `skills/` are local script-based skills — read their `SKILL.md` before executing.
+Bigdata.com skills (marked `bigdata-com:`) are cloud plugin skills — invoke via the Skill tool (no local script).
 
 ### Market Structure
 | Skill | Purpose |
@@ -116,8 +117,8 @@ All skills are in `skills/`. Always read the SKILL.md before executing a skill.
 |---|---|
 | `economic-calendar-fetcher` | FOMC, CPI, NFP this week |
 | `earnings-calendar` | Earnings next 7 days |
-| `earnings-preview` | Pre-earnings setup for a ticker |
-| `earnings-recap` | Post-earnings analysis |
+| `earnings-preview` | Pre-earnings setup for a ticker (local fallback) |
+| `earnings-recap` | Post-earnings analysis (local fallback) |
 | `earnings-trade-analyzer` | Earnings trade structure |
 
 ### Stock & ETF Analysis
@@ -202,6 +203,55 @@ All skills are in `skills/`. Always read the SKILL.md before executing a skill.
 | `skill-creator` | Create a new skill |
 | `startup-analysis` | Startup analysis (VC / job / CEO lens) |
 | `hormuz-strait` | Hormuz Strait geopolitical risk |
+
+### Bigdata.com Research (Cloud Plugin)
+
+These skills use [bigdata.com](https://bigdata.com) MCP data. They are **cloud plugin skills** — not local scripts. Invoke with the Skill tool (`bigdata-com:<name>`). All produce structured output with Bigdata.com attribution.
+
+**Redundancy note:** `bigdata-com:earnings-preview` supersedes the local `earnings-preview` skill when bigdata MCP is available. Same for `bigdata-com:earnings-digest` vs `earnings-recap`. All other bigdata-com skills are complementary (different depth or angle) — not redundant.
+
+#### Company analysis (public)
+| Skill | Purpose |
+|---|---|
+| `bigdata-com:company-brief` | Structured company overview: business model, financials, estimates |
+| `bigdata-com:quick-take` | Fast 2-min institutional opinion: thesis, risk, catalyst |
+| `bigdata-com:investment-memo` | Full institutional memo: EPIC + FaVeS + scenarios + recommendation |
+| `bigdata-com:valuation-snapshot` | Valuation multiples + DCF snapshot with MCP data |
+| `bigdata-com:peer-comparables` | Valuation multiples vs peer group (EV/EBITDA, P/E, P/S) |
+| `bigdata-com:risk-assessment` | Company risks: operational, financial, regulatory, ESG |
+| `bigdata-com:scenario-analysis` | Bull/base/bear with probability-weighted expected value |
+| `bigdata-com:moat-governance-review` | Competitive moat type/strength + ESG/governance quality |
+| `bigdata-com:catalyst-monitor` | Upcoming catalysts: earnings, conferences, regulatory, product |
+| `bigdata-com:variant-perception` | Where your thesis differs from consensus (EPIC + FaVeS) |
+| `bigdata-com:earnings-quality-screen` | OCF/NI ratio, accruals, DSO, Beneish M-Score |
+
+#### Earnings
+| Skill | Purpose |
+|---|---|
+| `bigdata-com:earnings-preview` | Pre-earnings: consensus, EPIC table, FaVeS, scenarios ← **preferred over local** |
+| `bigdata-com:earnings-digest` | Post-earnings: beat/miss, guidance, reaction ← **preferred over local** |
+| `bigdata-com:earnings-reaction` | Post-earnings price reaction: gap, volume, momentum |
+
+#### IPO analysis
+| Skill | Purpose |
+|---|---|
+| `bigdata-com:pre-ipo-analysis` | S-1/F-1 analysis, upcoming listing, balanced bull/bear |
+| `bigdata-com:post-ipo-day1` | Day-1 listing reaction note |
+| `bigdata-com:post-ipo-day14` | NASDAQ-100 inclusion impact (14 days post-IPO) |
+| `bigdata-com:post-ipo-day179` | 180-day lock-up expiry analysis |
+| `bigdata-com:post-ipo-day365` | 366-day founder lock-up / float expansion |
+
+#### Macro, sector & thematic
+| Skill | Purpose |
+|---|---|
+| `bigdata-com:sector-analysis` | Deep sector analysis with MCP data |
+| `bigdata-com:sector-playbook` | Sector investment playbook: themes, leaders, rotation triggers |
+| `bigdata-com:thematic-research` | Thematic analysis with data + source attribution |
+| `bigdata-com:cross-sector` | Cross-sector rotation analysis |
+| `bigdata-com:country-analysis` | Country economic profile + investment implications |
+| `bigdata-com:country-sector-analysis` | Country-specific sector analysis |
+| `bigdata-com:regional-comparison` | Regional comparison (e.g. Europe vs Asia) |
+| `bigdata-com:g7-comparison` | G7 economies comparison |
 
 ## Circuit Breakers
 
@@ -374,12 +424,26 @@ If `GITHUB_TOKEN` is not set, save the file locally and note ⚠️ memory will 
 
 After the briefing, Alessandro may ask follow-up questions. Use any skill in `skills/` to answer. Always apply User-Aware Framing Rules.
 
+**Local skills** — invoke by reading `skills/<name>/SKILL.md` and executing the defined script or steps.
+**Bigdata.com skills** — invoke via the Skill tool with prefix `bigdata-com:`. Use bigdata-com variants as the **preferred** choice wherever both exist (earnings-preview, earnings-recap).
+
 Examples:
 - "analizza NVDA" → `us-stock-analysis` + `technical-analyst`
 - "screena breakout VCP" → `vcp-screener`
 - "quante azioni tenere ora?" → `exposure-coach` + `position-sizer`
-- "mostrami gli earnings di AAPL" → `earnings-preview` + `earnings-trade-analyzer`
+- "mostrami gli earnings di AAPL" → `bigdata-com:earnings-preview` (preferred) or `earnings-preview` (fallback)
 - "è un buon momento per entrare?" → `breakout-trade-planner` + `position-sizer`
+- "brief su LRCX" → `bigdata-com:company-brief`
+- "quanto vale NVDA?" → `bigdata-com:valuation-snapshot`
+- "rischi su LRCX" → `bigdata-com:risk-assessment`
+- "earnings LRCX ieri?" → `bigdata-com:earnings-digest` (preferred) or `earnings-recap` (fallback)
+- "reaction al report NVDA" → `bigdata-com:earnings-reaction`
+- "analisi settore semiconduttori" → `bigdata-com:sector-analysis`
+- "investment memo ASML" → `bigdata-com:investment-memo`
+- "IPO [company]" → `bigdata-com:pre-ipo-analysis`
+- "cross-sector rotation" → `bigdata-com:cross-sector`
+- "moat NVDA" → `bigdata-com:moat-governance-review`
+- "catalysts LRCX" → `bigdata-com:catalyst-monitor`
 
 ---
 
@@ -388,4 +452,5 @@ Examples:
 - If a skill script fails → fall back to web search replicating the skill's logic
 - If Adanos API unavailable → skip sentiment, note ⚠️ in report
 - If FMP rate limit reached → use yfinance as fallback for quotes
+- If bigdata.com MCP unavailable → fall back to local equivalent skill (see redundancy notes above)
 - Never invent or estimate numbers — skip the section and flag it
