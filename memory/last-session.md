@@ -1,45 +1,45 @@
-# Session Memory — 2026-06-21
+# Session Memory — 2026-06-23
 
 ## Regime
-- Market environment: risk-on (VIX 16.78, S&P 7,500.58 +1.08% June 18 close)
-- VIX: 16.78 (stable — data from June 18, last trading day before Juneteenth weekend)
-- Breadth score: N/A (market breadth CSV returning 403 error — second consecutive session)
-- Uptrend participation: 27.7% (composite score 62.6/100 — Bull-Lower zone, UNCHANGED from June 20)
-- Macro regime: Broadening (composite 55.5/100, transition probability 70-90%) — UNCHANGED
+- Market environment: risk-off (VIX 20.13 +16.5%, NASDAQ -1.32%, S&P 500 -0.37% June 22 US close)
+- VIX: 20.13 (FMP, 08:03 UTC) | web search shows 17.29 — range 17–20, elevated, rising
+- Breadth score: N/A (market breadth CSV returning 403 error — fourth consecutive session)
+- Uptrend participation: 28.3% ratio (data June 22 EOD), composite score 63.4/100 — Bull-Lower zone
+- Macro regime: Broadening (composite 55.9/100, transition probability 70-90%) — UNCHANGED from June 22
 - Distribution days: N/A (data unavailable)
 - Bubble score: N/A (not run)
 
 ## Portfolio
-- VWCE.DE: €165.44 (June 18 close) — core ETF, stable
-- SEC0.DE: €20.76 (June 18 close) — entry ~€22.87, stop €18.50, P&L ~-9.2%
-- 52w high for SEC0.DE: €22.68 (confirmed)
-- Note: US markets CLOSED June 19 (Juneteenth) and June 20-21 (weekend). Last trading day: June 18. Markets reopen Monday June 22.
+- VWCE.DE: €163.24 (-1.69% June 23 XETRA morning) — core ETF, down from €165.94 yesterday
+- SEC0.DE: €20.25 (-4.91% June 23 XETRA morning) — entry €22.87, stop €18.50, P&L **-11.46%**
+- ⚠️ SEC0 is past the soft stop zone and approaching the hard stop buffer zone
+- Hard stop at €18.50 remains active — distance from current price: €1.75 (-8.6%)
+- Two-consecutive-close rule: exit only if SEC0 closes below €18.50 for 2 consecutive days
+- 52w high for SEC0.DE per FMP: €21.52 (likely unreliable for EU ETF — prior sessions showed €22.68–€23.39)
+- NVDA: ~$209.38 (-1.45%), AMD: ~$523.64 (-4.32%) June 22 US close
 
 ## Signals
-- Sentiment bias: neutral (Reddit) / bullish (X/Twitter) for all major tech tickers
-- ALL buzz scores FALLING — NVDA (78, falling), AMD (75, falling), AVGO (65, falling)
-- Sector rotation: Tech #2 (34.5%) behind Industrials #1 (36.5%) — unchanged, no negative rotation
-- Top themes: AI Memory Supercycle (Micron HBM sold out through 2026, $700B+ Big Tech AI capex); Hawkish Fed Repricing (Warsh dot plot → rate hike by year-end)
-- SOXX June 18: +6.24% (Intel +12% Trump/Apple chip deal, Micron +9% pre-earnings momentum)
-- Marvell Technology (MRVL) joins S&P 500 on Monday June 22 — AI chipmaker, positive for semiconductor sector sentiment
-
-## Key Week Events
-- FOMC June 17 (Kevin Warsh debut): Rates held 3.5–3.75%, but 9/18 members see rate hike in 2026. 2026 rate cut REMOVED from dot plot. Hawkish shift confirmed. Market fell Dow -507 pts, then recovered.
-- US-Iran: Memorandum of understanding signed — tensions easing. Oil pressure reduced.
-- Global semiconductor revenue 2026 forecast: $1.29T (+52.8% YoY). AI chips = $500B (half of industry for first time).
+- Sentiment bias: Reddit neutral / X bullish across all semiconductor tickers (Adanos working)
+- NVDA buzz 79/86 stable, AMD 73/82 falling, AVGO 69/80 rising
+- Sector rotation: Tech #3 (33.7% uptrend ratio, trend up) — behind Industrials #1 (37.7%) and Healthcare #2 (35.0%)
+- Risk regime: Risk-ON score 72/100 at breadth level — cyclical sectors outperforming defensive by 8.7pp
+- Top themes: AI Memory Supercycle (MU HBM sold out 2026, all-time high $1,133 June 18); Hawkish Fed Repricing (Warsh dot plot: PCE 3.6% year-end, rate hike bias)
+- Cause of today's selloff: SpaceX post-IPO institutional liquidity drain (~$75B), Big Tech weakness (Alphabet -5%), not semiconductor-specific
 
 ## Exposure Decision
-- Posture: RESTRICT
-- Composite confidence: 45% (LOW — CB2 triggered: breadth CSV 403, top-risk detector unavailable, IBD distribution day unavailable, bubble score unavailable = 4 skills failed)
+- Posture: RESTRICT (maintained, 4th consecutive session)
+- Exposure coach output: REDUCE_ONLY, ceiling 54%, LOW confidence
+- Composite confidence: 45% (CB2 active — breadth 403 x4, top-risk/FTD/IBD/institutional/theme all absent = >3 skills with no data)
 
 ## Pending
-- **Jun 22 (Mon)**: US markets reopen after 4-day break. MRVL joins S&P 500 (forced index buying). Watch if semiconductor recovery from June 18 continues or reverses.
-- **Jun 24 (Wed, after close)**: Micron (MU) Q3 Earnings — EPS est ~$19.92, Revenue ~$33.5B, gross margin ~81%. CRITICAL for SEC0. Miss = semiconductor sector pressure. Beat = validation of AI memory supercycle.
-- **Jun 25 (Thu)**: PCE Inflation (May) — expected +0.5% MoM, 4.1% annual, Core PCE +0.3% MoM, 3.4% YoY. Hot print = more rate hike probability → headwind for SEC0 and tech.
-- **Jun 26 (Fri)**: REASSESSMENT DAY. If Micron beat + PCE in-line → upgrade to ALLOW. If miss or hot PCE → maintain RESTRICT through July.
-- **Active risk**: Michael Burry SOXX puts (Jan 2027) — semiconductor bubble warning still live.
-- **Active risk**: Fed hawkish pivot under Warsh — rate hike probability now live for 2026.
+- **Jun 24 (Wed, after close)**: Micron (MU) Q3 Earnings — EPS est $19.95 (+942% YoY), Revenue ~$34.66B (+272%). Options pricing 17% move. Focus: FY2027 guidance, HBM4 demand, NVIDIA Vera Rubin platform. CRITICAL for SEC0. Beat + guidance raise = likely relief rally for SEC0. Miss = risk toward €18.50 hard stop.
+- **Jun 25 (Thu)**: PCE Inflation (May) — April PCE was 3.8% YoY (hottest since May 2023), Core PCE 3.3%. Hot print = more rate hike probability → headwind for SEC0 and tech.
+- **Jun 26 (Fri)**: REASSESSMENT DAY. If Micron beat + PCE in-line → evaluate upgrade to ALLOW. If miss or hot PCE → maintain RESTRICT. Review SEC0 position vs hard stop.
+- **Active risk**: SEC0 at -11.46% from entry. Hard stop €18.50 is €1.75 away. Watch consecutive closes below €18.50.
+- **Active risk**: Fed hawkish pivot under Warsh — rate hike to 3.75-4.00% by year-end 2026. PCE June 25 is next key data point.
+- **Active risk**: SpaceX (SPCX) IPO liquidity drain (week 2 of post-IPO selling pressure on tech). Typically subsides within 2–3 weeks post-IPO.
 - **SEC0 re-entry triggers** (do NOT add until one fires):
-  1. Price ≤ €17.54 (-25% from high) — not triggered (current: €20.76)
-  2. VIX > 25 — not triggered (VIX 16.78)
-  3. 5-week sideways VCP base — ~2 weeks in, not triggered (~3 more weeks needed: ~July 20–25)
+  1. Price ≤ €17.54 (-25% from high) — not triggered (current: €20.25)
+  2. VIX > 25 — not triggered (VIX ~17–20)
+  3. 5-week sideways VCP base — ~3 weeks in, not triggered (~2 more weeks needed: est. Jul 20–25)
+- **SEC0 hard stop**: Close below €18.50 for 2 consecutive days → EXIT. No averaging down.
