@@ -1,45 +1,43 @@
-# Session Memory — 2026-06-23
+# Session Memory — 2026-06-24
 
 ## Regime
-- Market environment: risk-off (VIX 20.13 +16.5%, NASDAQ -1.32%, S&P 500 -0.37% June 22 US close)
-- VIX: 20.13 (FMP, 08:03 UTC) | web search shows 17.29 — range 17–20, elevated, rising
-- Breadth score: N/A (market breadth CSV returning 403 error — fourth consecutive session)
-- Uptrend participation: 28.3% ratio (data June 22 EOD), composite score 63.4/100 — Bull-Lower zone
-- Macro regime: Broadening (composite 55.9/100, transition probability 70-90%) — UNCHANGED from June 22
+- Market environment: risk-off (NASDAQ -2.21%, S&P 500 -1.44%, SOXX -7.88%)
+- VIX: 19.08 (FMP, ~08:10 UTC) — elevated and rising, above early-June 16.4 level
+- Breadth score: N/A (market breadth CSV returning 403 — fifth consecutive session)
+- Uptrend participation: N/A (same CSV blocked)
+- Macro regime: N/A (yfinance blocked — macro regime script 0/6 components)
 - Distribution days: N/A (data unavailable)
 - Bubble score: N/A (not run)
 
 ## Portfolio
-- VWCE.DE: €163.24 (-1.69% June 23 XETRA morning) — core ETF, down from €165.94 yesterday
-- SEC0.DE: €20.25 (-4.91% June 23 XETRA morning) — entry €22.87, stop €18.50, P&L **-11.46%**
-- ⚠️ SEC0 is past the soft stop zone and approaching the hard stop buffer zone
-- Hard stop at €18.50 remains active — distance from current price: €1.75 (-8.6%)
-- Two-consecutive-close rule: exit only if SEC0 closes below €18.50 for 2 consecutive days
-- 52w high for SEC0.DE per FMP: €21.52 (likely unreliable for EU ETF — prior sessions showed €22.68–€23.39)
-- NVDA: ~$209.38 (-1.45%), AMD: ~$523.64 (-4.32%) June 22 US close
+- VWCE.DE: ~€161–163 estimated (yfinance blocked; Jun 23 close was €163.24; S&P -1.44%)
+- SEC0.DE: ~€18.65–€19.50 estimated (SOXX -7.88% correlation from Jun 23 close €20.25)
+- ⚠️ SEC0 NEAR HARD STOP — estimated current price €1.20-€1.89 above €18.50 hard stop
+- Hard stop €18.50 active — two-consecutive-close rule applies
+- Entry: €22.87 | Estimated P&L: ~-14% to -19%
+- NVDA: $200.04 (-4.13%) | AMD: $519.85 (-5.76%) | TSM: $436.39 (-6.69%) | INTC: $132.28 (-6.14%)
 
 ## Signals
-- Sentiment bias: Reddit neutral / X bullish across all semiconductor tickers (Adanos working)
-- NVDA buzz 79/86 stable, AMD 73/82 falling, AVGO 69/80 rising
-- Sector rotation: Tech #3 (33.7% uptrend ratio, trend up) — behind Industrials #1 (37.7%) and Healthcare #2 (35.0%)
-- Risk regime: Risk-ON score 72/100 at breadth level — cyclical sectors outperforming defensive by 8.7pp
-- Top themes: AI Memory Supercycle (MU HBM sold out 2026, all-time high $1,133 June 18); Hawkish Fed Repricing (Warsh dot plot: PCE 3.6% year-end, rate hike bias)
-- Cause of today's selloff: SpaceX post-IPO institutional liquidity drain (~$75B), Big Tech weakness (Alphabet -5%), not semiconductor-specific
+- Sentiment bias: Reddit neutral / X bullish across NVDA, AMD, AVGO (Adanos working)
+  - NVDA buzz 80/86, AMD 73/83 falling, AVGO 72/84 rising
+- Semiconductor sector rotation: NEGATIVE — SOXX -7.88% worst session since Jun 5
+- Top themes: Hawkish Fed Repricing (BofA: 3 rate hikes 2026, PCE rising to 4.1% est.); HBM Demand in Question (SK Hynix HBM4 scale-back report — KOSPI circuit breaker -9.99%)
+- New negative: SK Hynix HBM4 expansion scale-back — direct threat to Micron/HBM thesis
 
 ## Exposure Decision
-- Posture: RESTRICT (maintained, 4th consecutive session)
-- Exposure coach output: REDUCE_ONLY, ceiling 54%, LOW confidence
-- Composite confidence: 45% (CB2 active — breadth 403 x4, top-risk/FTD/IBD/institutional/theme all absent = >3 skills with no data)
+- Posture: RESTRICT (maintained, 5th consecutive session)
+- Composite confidence: 45% (CB2 active — 5+ skills failed: breadth CSV x5, yfinance x3, FMP news 402, FMP econ-cal 402, sector-analyst CSV error, macro-regime yfinance blocked)
 
 ## Pending
-- **Jun 24 (Wed, after close)**: Micron (MU) Q3 Earnings — EPS est $19.95 (+942% YoY), Revenue ~$34.66B (+272%). Options pricing 17% move. Focus: FY2027 guidance, HBM4 demand, NVIDIA Vera Rubin platform. CRITICAL for SEC0. Beat + guidance raise = likely relief rally for SEC0. Miss = risk toward €18.50 hard stop.
-- **Jun 25 (Thu)**: PCE Inflation (May) — April PCE was 3.8% YoY (hottest since May 2023), Core PCE 3.3%. Hot print = more rate hike probability → headwind for SEC0 and tech.
-- **Jun 26 (Fri)**: REASSESSMENT DAY. If Micron beat + PCE in-line → evaluate upgrade to ALLOW. If miss or hot PCE → maintain RESTRICT. Review SEC0 position vs hard stop.
-- **Active risk**: SEC0 at -11.46% from entry. Hard stop €18.50 is €1.75 away. Watch consecutive closes below €18.50.
-- **Active risk**: Fed hawkish pivot under Warsh — rate hike to 3.75-4.00% by year-end 2026. PCE June 25 is next key data point.
-- **Active risk**: SpaceX (SPCX) IPO liquidity drain (week 2 of post-IPO selling pressure on tech). Typically subsides within 2–3 weeks post-IPO.
-- **SEC0 re-entry triggers** (do NOT add until one fires):
-  1. Price ≤ €17.54 (-25% from high) — not triggered (current: €20.25)
-  2. VIX > 25 — not triggered (VIX ~17–20)
-  3. 5-week sideways VCP base — ~3 weeks in, not triggered (~2 more weeks needed: est. Jul 20–25)
-- **SEC0 hard stop**: Close below €18.50 for 2 consecutive days → EXIT. No averaging down.
+- **Tonight (Jun 24, ~22:30 CET)**: Micron (MU) Q3 Earnings — EPS est $19.95 (+942% YoY), Rev $34.66B (+272%). SK Hynix HBM4 scale-back is a bearish pre-cursor. Key: HBM4 allocation guidance, FY2027 revenue outlook, gross margin sustainability. Beat + guidance raise = SEC0 relief rally. Miss = SEC0 hard stop critically at risk.
+- **Jun 25 (Thu, 14:30 CET)**: PCE Inflation (May) — est 4.1% YoY (prev 3.8%). Hot print = 3rd rate hike confirmed → additional tech headwind. Core PCE est 3.3% YoY.
+- **Jun 26 (Fri)**: REASSESSMENT DAY. If MU beat + PCE in-line → evaluate upgrade to ALLOW. If miss or hot PCE → maintain RESTRICT. Evaluate SEC0 hard stop status.
+- **SEC0 hard stop protocol**: Check close tonight vs €18.50. Two consecutive closes below = EXIT at open Jun 26.
+- **Active risk**: BofA warns of 3 rate hikes in 2026 — most aggressive hawkish call seen this cycle. PCE Jun 25 is the confirming/denying data point.
+- **Active risk**: SK Hynix HBM4 scale-back — if confirmed by MU tonight, threatens primary AI memory demand thesis for SEC0.
+- **Active risk**: KOSPI circuit breaker (-9.99%) — Korean leveraged ETF unwind can continue for 1-3 sessions before stabilizing.
+- **SEC0 re-entry triggers** (none triggered):
+  1. Price ≤ €17.54 (-25% from high) — not triggered (current est: €18.65–€19.50)
+  2. VIX > 25 — not triggered (VIX 19.08)
+  3. 5-week sideways VCP base — ~1 week completed (started ~Jun 18), ~4 more weeks needed (est. Jul 20–25)
+- **Note on VCP base**: SEC0 has been declining, not forming a sideways base. VCP clock resets if price makes new lows. Monitor from Jul 20 if price stabilizes above €18.50.
