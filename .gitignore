@@ -9,6 +9,8 @@ reports/uptrend_analysis_*
 reports/exposure_posture_*
 reports/sector_rotation_*
 reports/market_breadth_*
+reports/ibd_distribution_day_monitor_*
+reports/market_top_*
 # Memory: only these files are tracked
 memory/*.md
 !memory/last-session.md
