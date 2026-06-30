@@ -1,51 +1,50 @@
-# Session Memory — 2026-06-28
+# Session Memory — 2026-06-30
 
 ## Regime
-- Market environment: risk-on (VIX 18.41 ▼ -2.54%, below 20) — weekend, no new trading
-- VIX: 18.41 — unchanged from Friday Jun 26 close, risk-on
-- Breadth score: N/A (market breadth CSV 403 error — ninth consecutive session)
-- Uptrend participation: 30.4% ratio (data: Jun 26), composite score 57.6/100 — Neutral zone, 6/11 sectors uptrending, defensive tilt (44/100 rotation score), positive momentum (68/100)
-- Macro regime: Insufficient data (all yfinance components failed — 0/100 score) — maintaining prior "Broadening" assessment
-- Distribution days: **IBD SEVERE** — SPY d5/d15/d25 = 2/6/7; SPY below 21 EMA and 50 SMA; DD added Jun 26 (-0.72%, +31% vol)
-- Market top detector: 38.9/100 Yellow (Early Warning) — from Jun 27 session, not re-run today
+- Market environment: risk-on (VIX 17.53 ▼ from 18.41, below 18)
+- VIX: 17.53 — declining, risk-on
+- Breadth score: N/A (market breadth CSV 403 error — 10th consecutive session)
+- Uptrend participation: 31.5% (up from 30.4% Jun 26); composite score 62.5/100 — Bull-Lower zone; 8/11 sectors uptrending (up from 6/11 on Jun 26); momentum accelerating (68/100)
+- Macro regime: FAILED (yfinance 403 for all components) — maintaining prior "Broadening" assessment; 10Y yield 4.37% (easing), PCE 4.1%, Fed hawkish (rate hike Oct 2026 expected)
+- Distribution days: Estimated 6-7 (one may have expired past 25-session window); prior was 7 on Jun 26; Jun 29 big up day does not add a DD; no new IBD data
+- Market top detector: Not re-run today
 - Bubble score: N/A (not run)
 
 ## Portfolio
-- VWCE.DE: €163.52 (Jun 26 close, web search) — core ETF, hold
-- SEC0.DE: ~€20.36 (Jun 26 close, Yahoo Finance); entry €22.87, stop €18.50, P&L **-11.0%**, distance to stop ~€1.86 (~9.1%)
-- Two-consecutive-close rule: NOT triggered. SEC0 above stop.
-- Semiconductor sector recovery this week: SOXX +9–11% (MU blowout Q3, QCOM Investor Day)
+- VWCE.DE: €163.40 (Jun 30 intraday, -0.18% on day); 52w range €129.06 – €167.08; 2.2% below 52w high
+- SEC0.DE: ~€20.60 estimated (XETRA/yfinance blocked; Jun 26 close was ~€20.36 per memory; markets +2% on Jun 29); entry €22.87, stop €18.50, P&L **~-9.9%**, distance to stop ~€2.10 (~10.2%)
+- Two-consecutive-close rule: NOT triggered. SEC0 above hard stop.
+- SEC0 re-entry trigger check: Price pullback ❌ (est. €20.60 vs ≤€17.54 trigger), VIX ❌ (17.53 vs >25 trigger), Base ❌ (~1.7 weeks vs 5 weeks needed)
 
 ## Signals
-- Sentiment bias: Reddit neutral across all tickers (NVDA 78, AVGO 67, AMD 70); X/Twitter bullish; buzz falling trend across all mega-cap tech except AVGO (stable)
-- NVDA: Reddit 78 neutral, X 86 bullish — buzz falling. Rubin NVL72 memory cut CONFIRMED this week.
-- AVGO: Reddit 67 neutral, X 80 bullish — buzz stable
-- Sector rotation: Technology lagging (#6 of 11 sectors, 23.8% uptrend). Healthcare #1 (41.9%), Industrials #2 (35.8%). Semiconductor sector recovered this week but overall tech weak.
-- Top themes: AI Semiconductor Supercycle (tactical pause — MU Q3 blowout confirms structural demand; NVDA Rubin cut is tactical, not structural); Hawkish Fed Repricing (PCE 4.1% May, potential rate hike Oct 2026)
+- Sentiment bias: Reddit neutral across all major tech tickers; X/Twitter bullish on NVDA (86), AVGO (78), AMD (80), MSFT (84), META (83), GOOG (82), AMZN (83); all buzz trends falling
+- NVDA: ~$193.35 (below $200); Reddit 78 neutral, X 86 bullish — buzz falling; Rubin NVL72 memory cut concern persists
+- Alphabet joined Dow Jones → +4% Jun 29 — positive tech milestone
+- Tesla +7% Jun 29 — broad risk-on relief rally
+- Oracle Q4: $638B AI backlog, $67B new AI contracts — AI capex thesis intact
+- TSMC/Amkor partnership AZ — onshoring positive for SEC0
+- AMD: Meta 6GW MI450 deal — diversified chip demand confirmed
+- Sector rotation: 8/11 sectors uptrending (major improvement from 6/11); technology still recovering (#6 of 11 approx); balanced cyclical/defensive
+- Top themes: AI Infrastructure Buildout (Oracle $638B backlog), Semiconductor Onshoring (TSMC/Amkor AZ)
 
 ## Exposure Decision
-- Posture: RESTRICT (maintained — 8th consecutive session)
-- Composite confidence: 45% (CB2 active — breadth CSV 403 x9, macro regime 0/100, sector analyst failed, XETRA quotes blocked = 4+ skills failed; regime conflict: uptrend Neutral vs IBD SEVERE)
-- Exposure coach: REDUCE_ONLY, 35% ceiling, NEUTRAL bias, LOW confidence
+- Posture: RESTRICT (maintained — 9th consecutive session)
+- Composite confidence: 48% (CB2 active — breadth CSV 403 x10, macro regime 0/100, sector analyst IncompleteRead = 3+ skills failed; cap 55%; regime signals partially conflicting)
+- Uptrend improving but NFP trigger not yet fired; maintain RESTRICT until Jul 2 NFP result
 
 ## Pending
-- **Tue Jun 30:** Conference Board Consumer Confidence (10 AM ET) — medium impact
-- **Wed Jul 1:** ISM Manufacturing PMI (10 AM ET) — HIGH impact. Prior 54.0 (expansion). Above 50 = positive for semis; below 50 = contraction signal
-- **Thu Jul 2:** NFP Jobs Report (8:30 AM ET) — HIGHEST impact. Prior 172K. <150K = potential ALLOW upgrade; >200K = maintain RESTRICT
-- **Fri Jul 3:** Markets likely closed (Independence Day observance — July 4 falls on Saturday 2026; verify with broker)
+- **Thu Jul 2:** NFP Jobs Report (8:30 AM ET) — HIGHEST IMPACT. Prior 172K. **<150K → upgrade to ALLOW. >200K → maintain RESTRICT.** KEY TRIGGER FOR POSTURE UPGRADE.
+- **Wed Jul 1:** ISM Manufacturing PMI (10 AM ET) — Prior 54.0 (expansion). Above 50 = positive for semis capex; below 48 = additional caution signal.
+- **Fri Jul 3:** Markets likely CLOSED (Independence Day observance — July 4 falls on Saturday 2026; verify with broker)
+- **Today Jun 30:** Conference Board Consumer Confidence (10 AM ET) — result not yet published at time of report
 - **Jul 16:** TSMC Q2 2026 earnings — major catalyst for SEC0 thesis
-- **Jul 29 (approx):** Next PCE release. If headline drops to ≤3.6% → evaluate upgrade to ALLOW
-- **POSTURE UPGRADE CONDITION:** NFP Jul 2 weak (<150K) OR PCE Jul 29 ≤3.6% → reassess to ALLOW
-- **Active risk:** SEC0 at -11.0% from entry. Hard stop EUR 18.50, distance ~EUR 1.86. Two-consecutive-close rule NOT triggered.
-- **Active risk:** Fed hawkish under Warsh — PCE 4.1% May 2026 (highest since Apr 2023), dot plot 3.8% year-end, one 25bp hike expected October 2026. Rate cuts pushed to 2027.
-- **Resolved risk (partial):** NVDA Rubin NVL72 memory cut CONFIRMED. MU -10%, SanDisk -11% on the news. However MU Q3 blowout (EPS $25.11, Rev $41.46B, Q4 guidance $50B) confirms structural HBM4 demand intact. Net: tactical headwind, not thesis-breaker.
-- **IBD SEVERE active:** 7 distribution days in 25 sessions, SPY below 21 EMA and 50 SMA. Does NOT override RESTRICT (no CASH-PRIORITY) because VIX < 20 and SEC0 above stop.
-- **SEC0 re-entry triggers** (do NOT add until one fires):
-  1. Price ≤ EUR 17.54 (-25% from high) — not triggered (current ~€20.36)
-  2. VIX > 25 — not triggered (VIX 18.41)
-  3. 5-week sideways VCP base — approximately 1.5 weeks since entry Jun 18, need ~3.5 more weeks (est. late Jul 2026)
+- **Jul 29 (approx):** PCE release. If headline drops to ≤3.6% → evaluate upgrade to ALLOW
+- **POSTURE UPGRADE CONDITIONS:** NFP Jul 2 weak (<150K) OR PCE Jul 29 ≤3.6% → reassess to ALLOW
+- **Active risk:** SEC0 at ~-9.9% from entry (estimated). Hard stop EUR 18.50, distance ~EUR 2.10. Two-consecutive-close rule NOT triggered.
+- **Active risk:** Fed hawkish under Warsh — PCE 4.1% May 2026, dot plot 3.8% year-end, one 25bp hike expected October 2026.
+- **Resolved risk (partial):** NVDA Rubin NVL72 memory cut confirmed but MU Q3 blowout (Rev $41.46B, Q4 guidance $50B) confirms structural HBM4 demand intact. AMD Meta 6GW deal further confirms diversified semiconductor demand.
+- **IBD estimated SEVERE:** ~6-7 distribution days in 25 sessions. Does NOT override RESTRICT (VIX < 20, SEC0 above stop). Jun 29 rally may have moved S&P above 21 EMA — no confirmed data.
+- **Breadth improvement positive sign:** 8/11 sectors uptrending (up from 6/11 Jun 26) and uptrend composite 62.5 (up from 57.6). Watch if this holds through NFP.
 - **SEC0 hard stop:** Close below EUR 18.50 for 2 consecutive days → EXIT. Currently NOT triggered.
-- **TSMC/ASML positive:** Both raised outlooks on strong AI demand — structural SEC0 thesis intact.
-- **QCOM catalyst:** Investor Day Jun 24-25 — raised 2029 non-handset revenue to $40B, $5B data-center AI target FY27.
-- **Micron context:** MU Q3 FY2026 all-time record (EPS $25.11, Rev $41.46B, Q4 guidance $50B, HBM4 sold out 2026). NVDA Rubin cut is cost optimization, not demand collapse.
-- **No semiconductor earnings next week.** TSMC reports July 16.
+- **SEC0 re-entry triggers** (do NOT add until one fires): Price ≤€17.54 ❌ | VIX >25 ❌ | 5-week VCP base (need ~3.3 more weeks, est. late Jul 2026) ❌
+- **TSMC/ASML thesis intact:** TSMC/Amkor AZ partnership confirms onshoring structural demand. AI capex (Oracle $638B backlog) intact.
