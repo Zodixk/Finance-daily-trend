@@ -1,41 +1,39 @@
-# Session Memory — 2026-07-08
+# Session Memory — 2026-07-09
 
 ## Regime
-- Market environment: risk-on, calm (VIX 16.45, +1.98%); NASDAQ 25,818.69 (-1.16% last close); S&P 500 7,503.85 (-0.45% last close) — European morning session, US market data reflects last close (Jul 7)
-- VIX: 16.45
-- Breadth score: N/A (market breadth CSV 403 error — 14th consecutive session)
-- Uptrend participation: 27.0% (composite score 48.3/100 — Neutral zone, down slightly from 50.7 on Jul 7); 7/11 sectors uptrending; sector rotation component DEFENSIVE TILT (Cyclical-Defensive gap -7.2pp, was -3.0pp BALANCED on Jul 7) — degraded
-- Macro regime: FAILED (FMP legacy-endpoint 403, yfinance proxy blocked) — composite 0/100, insufficient data
-- Distribution days (IBD monitor): FAILED (same FMP legacy-endpoint issue) — no data; note market-top-detector's own distribution-day component flagged WARNING (score 75, O'Neil threshold reached)
-- Market top detector: composite 37.5/100, Yellow (Early Warning), risk budget 80-90% — up from 32.1 on Jul 7 (worse); several sub-components used neutral defaults due to missing breadth/sentiment data
-- Sector rotation (separate skill): DEFENSIVE TILT (score 34/100); Technology ranked DEAD LAST 11th of 11 sectors (12.1%, downtrending) — worse than 8th on Jul 7; cycle-phase model leans "Recession" (low confidence)
+- Market environment: risk-on (technically), but deteriorating internals; VIX 16.90 (+4.77%); S&P 500 7,482.71 (-0.28%); NASDAQ 25,870.65 (+0.20%); Dow -1.09% to 52,348.39 on Iran-ceasefire-collapse/oil spike (Brent +5.4% to $78.19)
+- VIX: 16.90
+- Breadth score: N/A (market breadth CSV 403 error — 15th consecutive session)
+- Uptrend participation: 23.2% ratio (composite score 31.8/100 — Cautious zone, down sharply from 48.3 on Jul 8); only 4/11 sectors uptrending (was 7/11); sector rotation DEFENSIVE TILT (score 33/100, Defensive leads Cyclical by 7.4pp) — Technology ranked 8th of 11 (14.8%, downtrending)
+- Macro regime: FAILED (FMP legacy-endpoint 403, yfinance proxy blocked) — composite 0/100, insufficient data (same persistent issue)
+- Distribution days (IBD monitor): SPY = SEVERE (d5/d15/d25 = 1/5/8, well above thresholds); QQQ data failed to load
+- Market top detector: composite 50.0/100, Orange (Elevated Risk), risk budget 60-75% — up sharply from 37.5 Yellow on Jul 8 (worse); Distribution Day Count component CRITICAL (90/100); other components used neutral defaults due to missing ETF data
+- Sector rotation (separate skill): DEFENSIVE TILT (score 33/100, roughly flat vs 34 on Jul 8); cycle-phase model leans "Late Cycle" (low confidence); Healthcare/Energy leading, Technology/Consumer Cyclical/Industrials lagging
 - Bubble score: N/A (not run)
 
 ## Portfolio
-- VWCE.DE: €164.82 (WebSearch fallback, -1.07% vs €166.60 prior close); FMP/yfinance both blocked for direct quote
-- SEC0.DE: €19.42 (WebSearch fallback, -1.14% today's European session); entry ~€22.87, stop €18.50, P&L **≈-15.1%**, distance to stop **≈4.7%** — unchanged from Jul 7 but under fresh pressure from a broader chip-sector sell-off (SMH -5%, PSI -7.8% in US session)
-- Two-consecutive-close rule: NOT triggered (cannot confirm without historical closes — not available today). SEC0 above hard stop.
-- SEC0 re-entry trigger check: Price pullback ❌ (€19.42 vs ≤€17.54 trigger), VIX ❌ (16.45 vs >25 trigger), Base ❌ (no confirmed base)
+- VWCE.DE: €163.78 (WebSearch fallback, -0.63% vs €164.82 prior close); FMP/yfinance both blocked for direct quote
+- SEC0.DE: €17.49 (WebSearch fallback, -1.86% intraday vs €17.82 prior close); entry ~€22.87-23.35, stop €18.50, P&L **≈-23.5%**
+- 🚨 **SEC0 hard stop breached:** Jul 8 close €17.82 (below €18.50 stop, day 1). Jul 9 intraday €17.49 (also below stop). Two-consecutive-close exit rule likely to trigger pending today's confirmed close — flagged prominently in report and Telegram notification. Cause: broad semiconductor sector selloff (Samsung earnings-triggered profit-taking cascaded into Intel -21%, AMD -8%, Applied Materials -10%, SOXX -6%, SOX/SMH -7-10%, ~$1.3-1.4T sector market cap erased), not SEC0-specific weakness.
+- SEC0 re-entry trigger check: Price pullback ✅ TRIGGERED (€17.49 vs ≤€17.54 trigger — first time this trigger has fired), VIX ❌ (16.90 vs >25 trigger), Base ❌ (no confirmed base — this is an active decline, not consolidation). Note: pullback trigger firing during an active stop-loss breach is not a re-entry signal — wait for base formation before considering adding.
 
 ## Signals
 - Sentiment: ⚠️ UNAVAILABLE — Adanos API monthly free-tier limit (250 req) still exhausted; resets 2026-07-14
-- Sector rotation: WORSENED for semiconductors — Technology now dead-last (11th of 11), still downtrending
-- Theme detector: FAILED (finvizfinance client unavailable) — themes derived manually: (1) AI-capex valuation anxiety (bearish, chip-specific), (2) Defensive rotation into Healthcare/Financials
-- Key news: Samsung Q2 earnings miss triggered a global chip-sector rout (Micron -4.7%, Broadcom/AMD/KLA/Marvell down) — directly relevant to SEC0 (overlaps top holdings ASML, TSMC, Micron, NVIDIA, Broadcom). SMH broke below 50-day MA, other US semi ETFs down 5-8%. FOMC June minutes release TODAY (Jul 8, 2pm ET) — first detail on rate-path debate (9 lean hike vs 1 cut) since Chair Warsh withheld his dot. Oil (Brent) spiked >$76 (+5%) after US revoked Iran oil-sale license. Dow topped 53,000 for the first time even as Nasdaq/chips lagged — rotation signal.
-- Economic calendar: FMP endpoint returned 0 events again (broken, confirmed via WebSearch instead). No CPI/NFP found this week. FOMC minutes today Jul 8; next full FOMC meeting Jul 28-29 (no SEP).
+- Sector rotation: WORSENED further — Technology 8th of 11, downtrending; broad chip selloff confirmed via news
+- Theme detector: not run this session (known persistent failure — finvizfinance unavailable); themes derived manually: (1) AI-capex valuation anxiety (bearish, chip-specific, direct SEC0 driver), (2) Defensive rotation into Healthcare/Energy
+- Key news: Samsung Q2 beat but fell 7% on profit-taking, triggering a global chip selloff (Intel -21%, AMD -8%, Applied Materials -10%, SOXX -6% to $544, SOX/SMH -7-10%, ~$1.3-1.4T market cap erased) — directly hits SEC0 (top holdings NVIDIA, TSMC, ASML, Broadcom). Trump said Iran ceasefire is "over" at NATO summit, oil spiked (Brent +5.4%), Dow -1.09%. Framed by multiple sources as a valuation check on AI capex, not yet a fundamental demand break.
+- Economic calendar: FMP endpoint returned 0 events again (persistent failure, v3 direct fallback also 403'd) — WebSearch could not confirm exact CPI/NFP dates this week either; flagged as data gap. Next confirmed FOMC: Jul 28-29 (no SEP).
+- Earnings calendar: ASML reports Jul 15 (before open) and TSMC reports Jul 16 (14:00 Taiwan/2pm ET, quiet period Jul 6-15) — both top SEC0 holdings, both within the week, major gap-risk catalysts for SEC0.
 
 ## Exposure Decision
-- Posture: RESTRICT (maintained — continuing multi-session pattern)
-- Composite confidence: 45% (CB2 triggered — 6 skills failed/no-data: market-breadth-analyzer, macro-regime-detector, ibd-distribution-day-monitor, economic-calendar-fetcher, finance-sentiment, theme-detector)
-- exposure-coach run (inputs: uptrend + regime + top-risk): Exposure Ceiling 46% (down from 49% on Jul 7), Recommendation REDUCE_ONLY, Bias NEUTRAL, Confidence MEDIUM (missing breadth/institutional/sector-json/theme/ftd inputs)
+- Posture: RESTRICT (tightened from Jul 8 — bordering on cash-priority for new semiconductor exposure specifically)
+- Composite confidence: 45% (CB2 triggered — 5 skills failed/no-data: market-breadth-analyzer, macro-regime-detector, finance-sentiment, economic-calendar-fetcher, direct FMP/yfinance VWCE/SEC0 quotes)
+- exposure-coach run (inputs: uptrend + regime + top-risk): Exposure Ceiling 35% (down sharply from 46% on Jul 8), Recommendation REDUCE_ONLY, Bias NEUTRAL, Participation NARROW, Confidence MEDIUM (missing breadth/institutional/sector-json/theme/ftd inputs)
 
 ## Pending
-- **Active risk — SEC0 approaching stop (steady but fresh pressure):** ~-15.1% from entry, distance to hard stop (€18.50) still ~4.7%. Today's broader chip-sector sell-off (SMH -5%, PSI -7.8% in the US) is a fresh escalation risk even though SEC0 itself only fell ~1.1% today — check daily this week, especially before/after the FOMC minutes reaction.
-- **Today, Jul 8, 2:00pm ET:** FOMC June minutes — watch for hawkish tone confirmation (9 hike-leaning vs 1 cut-leaning officials).
-- **Jul 9:** PEP, DAL earnings — no direct SEC0/VWCE relevance.
+- **URGENT — SEC0 stop-loss exit rule likely triggering:** verify today's (Jul 9) confirmed XETRA close. If below €18.50 for the 2nd consecutive session, the playbook rule says EXIT and reassess rather than average down. This was flagged in today's report and Telegram notification as the top priority item.
 - **Jul 14:** Q2 bank earnings season begins (JPM, BAC, GS, WFC, C); Adanos sentiment quota resets same day.
-- **Jul 15:** JNJ, UAL earnings.
-- **Jul 16:** TSMC Q2 2026 earnings (per prior memory) — major SEC0 catalyst — re-confirm exact date next session, not independently verified today.
+- **Jul 15:** ASML Q2 earnings (before open) — major SEC0 catalyst.
+- **Jul 16:** TSMC Q2 2026 earnings (confirmed via WebSearch, 14:00 Taiwan/2pm ET) — major SEC0 catalyst, largest single holding.
 - **Jul 28-29:** Next full FOMC meeting (no Summary of Economic Projections).
-- **Data quality risk (persistent, unchanged):** FMP's historical-price/legacy endpoints still return 403 across macro-regime-detector, ibd-distribution-day-monitor, market-top-detector (partial), economic-calendar-fetcher (0 events), and direct VWCE/SEC0 quotes. yfinance also blocked by sandbox proxy (403 on CONNECT tunnel) — not just missing module. market-breadth-analyzer blocked 14 consecutive sessions (tradermonty.github.io proxy). Adanos sentiment exhausted (resets Jul 14). theme-detector still blocked (finvizfinance not installed). Recommend reviewing FMP subscription tier, the sandbox network egress allowlist (yfinance/tradermonty proxy 403s look like network policy, not just plan tier), and installing finvizfinance for theme-detector.
-- **SEC0 hard stop:** Close below EUR 18.50 for 2 consecutive days → EXIT. Currently NOT triggered, buffer still thin (~4.7%).
+- **Data quality risk (persistent, worsening):** FMP's historical-price/legacy endpoints still return 403 across macro-regime-detector, most of market-top-detector's ETF basket, and direct VWCE/SEC0 quotes. yfinance still blocked by sandbox proxy (403 on CONNECT tunnel). market-breadth-analyzer blocked 15 consecutive sessions (tradermonty.github.io proxy). Adanos sentiment exhausted (resets Jul 14). Economic calendar endpoint effectively broken (0 events, direct v3 fallback also 403'd). Recommend reviewing FMP subscription tier and the sandbox network egress allowlist — this is a network-policy pattern, not just an API plan limitation.
