@@ -1,28 +1,27 @@
-# Session Memory — 2026-10-28
+# Session Memory — 2026-11-01 (Sunday, reduced run; data = Fri Oct 30 close)
 
 ## Regime
-- Market environment: risk-on, calm. S&P 500 7,722.60 (+0.60%), NASDAQ 26,477.81 (+1.18%), VIX 17.47.
-- VIX: 17.47
-- Breadth score: N/A (TraderMonty CSV blocked, proxy 403)
-- Uptrend participation: composite 53.7/100 (Neutral)
-- Macro regime: Concentration (transition score 54/100, 70-90% transition probability, ambiguous vs Contraction)
+- Market environment: risk-off tilt. S&P 500 7,580.07 (-1.82%), NASDAQ 25,437.00 (-2.86%), VIX 19.42 (+12.9%).
+- Breadth score: not run
+- Uptrend participation: not run
+- Macro regime: not run (last known: Concentration, 2026-10-28)
 - Distribution days: not run
 - Bubble score: not run
 
 ## Portfolio
-- VWCE.DE: EUR 170.00 (+0.41%)
-- SEC0.DE: EUR 16.42 (+1.97%) — BELOW the EUR 18.50 stop (entry ~22.87-23.35). Unknown whether the July stop decision was executed; no memory between 2026-07-20 and today.
+- VWCE.DE: EUR 168.90 (-1.48%)
+- SEC0.DE: EUR 15.91 (-7.58%) — far below EUR 18.50 stop and below entry. Execution status of stop still unverified.
 
 ## Signals
-- Sentiment bias: mildly bullish on Reddit (NVDA 26/20, AVGO 27/18, AMD 30/20 bull/bear %)
-- Sector rotation: Technology #2 of 11 (37.2%, overbought); Energy #1; risk regime BALANCED 63/100
-- Top themes: AI capex/revenue debate, rate-hike fears (Fed hiked in Sept; Iran-related inflation)
+- Sentiment: not run
+- Sector rotation: semiconductors sharply down; cause unconfirmed
+- Top themes: not run
 
 ## Exposure Decision
 - Posture: RESTRICT
-- Composite confidence: 45% (CB2: several skills failed/not run)
+- Composite confidence: 40% (CB2: most skills not run)
 
 ## Pending
-- SEC0 stop-loss decision: verify live price on Trader 212; confirm with user whether position was sold.
-- FOMC decision Oct 28 (hold expected); MSFT and GOOGL earnings after close Oct 28; INTC/AMZN/AAPL earnings this week (dates unverified).
-- Persistent failures: market-breadth-analyzer (proxy 403), FMP economic calendar (0 events), theme-detector, FMP 402 on SEC0.DE, Telegram script language bug (Italian markers) — not fixed.
+- Verify SEC0 status/stop on Trading 212 and confirm with Alessandro.
+- Monday Nov 2: check whether Friday's selloff continues; run full briefing.
+- Persistent failures: breadth CSV blocked, FMP 402 on SEC0.DE, Yahoo cookie errors, Telegram script language bug.
