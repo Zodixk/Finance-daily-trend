@@ -1,28 +1,28 @@
-# Session Memory — 2026-11-02
+# Session Memory — 2026-11-10
 
 ## Regime
-- Market environment: risk-off-ish pullback (Oct 30 close). S&P 500 7,580.07 (-1.82%), NASDAQ 25,437.00 (-2.86%), VIX 19.42.
-- VIX: 19.42
-- Breadth score: N/A (not run)
-- Uptrend participation: not run (last: 53.7/100)
-- Macro regime: not run (last: Concentration)
+- Market environment: relief bounce (S&P 500 7,549.94 +2.35%, NASDAQ 25,253.14 +2.74%)
+- VIX: 19.92
+- Breadth score: N/A (not run, CSV host blocked)
+- Uptrend participation: not run
+- Macro regime: Contraction (score 54.2, transition probability 70-90%)
 - Distribution days: not run
 - Bubble score: not run
 
 ## Portfolio
-- VWCE.DE: EUR 168.78 (-0.07%)
-- SEC0.DE: EUR 16.19 (+1.77%) — still BELOW the EUR 18.50 stop. User must confirm whether position was sold.
+- VWCE.DE: EUR 165.84 (-0.08%)
+- SEC0.DE: EUR 14.00 (+1.57%) — ~24% below the EUR 18.50 stop, ~-39% from entry. User must confirm whether sold.
 
 ## Signals
 - Sentiment bias: not run
-- Sector rotation: not run (last: Technology overbought)
-- Top themes: AI revenue doubts, rate-hike fears
+- Sector rotation: not run
+- Top themes: not run (last: AI revenue doubts, rate-hike fears)
 
 ## Exposure Decision
 - Posture: RESTRICT
-- Composite confidence: 45% (CB2: most skills not run)
+- Composite confidence: 40% (CB2)
 
 ## Pending
-- SEC0 stop-loss decision: confirm on Trader 212 whether sold.
-- Verify jobs report (NFP) and any FOMC/CPI dates manually; economic calendar skill returned nothing.
-- Persistent failures: breadth CSV blocked, FMP 402 on SEC0.DE, economic calendar empty, bigdata MCP proxy 403, Telegram script language bug.
+- SEC0 stop-loss decision (open since Oct 30).
+- October CPI/PPI this week; verify dates.
+- Persistent failures: breadth CSV blocked, FMP 402 on SEC0.DE, bigdata MCP 403, dated news search empty.
