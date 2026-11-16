@@ -1,29 +1,30 @@
-# Session Memory — 2026-11-12
+# Session Memory — 2026-11-16
 
 ## Regime
-- Market environment: risk-on bounce (VIX falling), regime indicators defensive
-- VIX: 17.49
-- Breadth score: N/A (CSV blocked by proxy)
+- Market environment: mild risk-off day (NASDAQ -0.91%, S&P -0.40%)
+- VIX: 19.30
+- Breadth score: N/A (not run)
 - Uptrend participation: not run
-- Macro regime: Contraction (transition score 50.5/100, high confidence)
+- Macro regime: not available today (FMP legacy 403); last known Contraction
 - Distribution days: not run
 - Bubble score: not run
 
 ## Portfolio
-- VWCE.DE: EUR 167.62 (+0.12%)
-- SEC0.DE: EUR 14.77 (+0.76%) — ~20% BELOW the EUR 18.50 stop (~-35% from entry). User must confirm whether sold.
+- VWCE.DE: EUR 169.92 (+0.04%)
+- SEC0.DE: EUR 15.11 (-4.77%) — far below EUR 18.50 stop. User must confirm whether sold.
 
 ## Signals
-- Sentiment bias: neutral — NVDA -0.02, AMD +0.04
-- Sector rotation: BALANCED; Technology trending down (not leading)
+- Sentiment bias: not run
+- Sector rotation: BALANCED 57/100; Technology trending down
 - Top themes: not run
 
 ## Exposure Decision
 - Posture: RESTRICT
-- Composite confidence: 45% (CB2: >3 skills failed/no data)
+- Composite confidence: 45% (CB2)
 
 ## Pending
-- SEC0 stop-loss decision: confirm on Trader 212 whether sold.
-- Applied Materials and Cisco earnings after close Nov 12 (semicap read-through for SEC0).
-- Next FOMC Dec 9; next jobs report Dec 4.
-- Persistent failures: breadth CSV (proxy 403), FMP 402 on SEC0.DE and economic calendar, bigdata MCP 403, news search returns no same-day items. Use python3.13 (pip installs there; `python` is 3.11 without deps).
+- Nvidia earnings Nov 17 or Nov 20 (verify) — SEC0 gap risk.
+- SEC0 stop-loss decision still unconfirmed.
+- SOX fell 12.25% on Nov 5 (midterms/AI doubts).
+- Next jobs report Dec 4; FOMC Dec 9.
+- Persistent failures: FMP legacy endpoints 403 (macro regime), SEC0.DE FMP 402, breadth CSV, bigdata MCP. Use python3.13.
