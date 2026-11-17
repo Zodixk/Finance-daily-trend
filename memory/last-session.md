@@ -1,21 +1,21 @@
-# Session Memory — 2026-11-12
+# Session Memory — 2026-11-17
 
 ## Regime
-- Market environment: risk-on bounce (VIX falling), regime indicators defensive
-- VIX: 17.49
-- Breadth score: N/A (CSV blocked by proxy)
+- Market environment: risk-off (VIX +18.7%, Nasdaq -2.49%, S&P -1.92%)
+- VIX: 22.91
+- Breadth score: N/A (not run)
 - Uptrend participation: not run
-- Macro regime: Contraction (transition score 50.5/100, high confidence)
+- Macro regime: Contraction (score 49.5/100, transition probability 40-60%)
 - Distribution days: not run
 - Bubble score: not run
 
 ## Portfolio
-- VWCE.DE: EUR 167.62 (+0.12%)
-- SEC0.DE: EUR 14.77 (+0.76%) — ~20% BELOW the EUR 18.50 stop (~-35% from entry). User must confirm whether sold.
+- VWCE.DE: EUR 169.86 (-0.91%)
+- SEC0.DE: EUR 15.11 (-4.77%) — ~18% BELOW the EUR 18.50 stop. User must confirm whether sold.
 
 ## Signals
-- Sentiment bias: neutral — NVDA -0.02, AMD +0.04
-- Sector rotation: BALANCED; Technology trending down (not leading)
+- Sentiment bias: not run
+- Sector rotation: not run; Nasdaq weakness suggests tech/semis negative
 - Top themes: not run
 
 ## Exposure Decision
@@ -24,6 +24,5 @@
 
 ## Pending
 - SEC0 stop-loss decision: confirm on Trader 212 whether sold.
-- Applied Materials and Cisco earnings after close Nov 12 (semicap read-through for SEC0).
 - Next FOMC Dec 9; next jobs report Dec 4.
-- Persistent failures: breadth CSV (proxy 403), FMP 402 on SEC0.DE and economic calendar, bigdata MCP 403, news search returns no same-day items. Use python3.13 (pip installs there; `python` is 3.11 without deps).
+- Persistent failures: breadth CSV, Yahoo hosts blocked, FMP 402 on SEC0.DE and economic calendar, bigdata MCP 403, same-day news search empty. Use python3.13.
